@@ -1,0 +1,24 @@
+filters:
+  and:
+    - file.inFolder("inbox")
+    - file.ext == "md"
+formulas:
+  days_old: (now() - file.ctime).days.round(0)
+properties:
+  formula.days_old:
+    displayName: Days Old
+views:
+  - type: table
+    name: All Items
+    order:
+      - file.name
+      - tags
+      - formula.days_old
+    sort:
+      - property: file.ctime
+        direction: DESC
+    columnSize:
+      file.name: 500
+      file.tags: 150
+      formula.days_old: 120
+    rowHeight: medium

@@ -1,0 +1,125 @@
+formulas:
+  days_since_modified: (now() - file.mtime).days.round(0)
+properties:
+  formula.days_since_modified:
+    displayName: Days Stale
+views:
+  - type: table
+    name: Disconnected 📖
+    filters:
+      and:
+        - file.hasTag("📖")
+        - related.isEmpty()
+        - '!file.hasProperty("parent") || parent.isEmpty()'
+        - '!file.folder.contains("archive")'
+    order:
+      - file.name
+      - related
+      - parent
+      - challenges
+    sort: []
+    columnSize:
+      file.name: 400
+      note.related: 300
+      note.parent: 200
+      note.challenges: 200
+    rowHeight: medium
+    relationProperty: related
+  - type: table
+    name: Unchallenged 📖
+    filters:
+      and:
+        - file.hasTag("📖")
+        - file.hasProperty("referenced-in")
+        - "!referenced-in.isEmpty()"
+        - challenges.isEmpty()
+        - '!file.folder.contains("archive")'
+    order:
+      - file.name
+      - referenced-in
+      - related
+      - challenges
+    sort: []
+    columnSize:
+      file.name: 400
+      note.referenced-in: 250
+      note.related: 250
+      note.challenges: 200
+    rowHeight: medium
+    relationProperty: challenges
+  - type: table
+    name: Seedling 🌱
+    filters:
+      and:
+        - file.hasTag("🌱")
+        - '!file.folder.contains("archive")'
+    order:
+      - file.name
+      - related
+      - formula.days_since_modified
+    sort:
+      - property: file.mtime
+        direction: DESC
+    columnSize:
+      file.name: 450
+      note.related: 300
+      formula.days_since_modified: 120
+    rowHeight: medium
+  - type: table
+    name: Growing 🌿
+    filters:
+      and:
+        - file.hasTag("🌿")
+        - '!file.folder.contains("archive")'
+    order:
+      - file.name
+      - related
+      - formula.days_since_modified
+    sort:
+      - property: file.mtime
+        direction: DESC
+    columnSize:
+      file.name: 450
+      note.related: 300
+      formula.days_since_modified: 120
+    rowHeight: medium
+  - type: table
+    name: Stale
+    filters:
+      and:
+        - or:
+            - file.hasTag("🌱")
+            - file.hasTag("🌿")
+        - '!file.folder.contains("archive")'
+        - (now() - file.mtime).days > 30
+    order:
+      - file.name
+      - file.tags
+      - formula.days_since_modified
+    sort:
+      - property: formula.days_since_modified
+        direction: DESC
+    columnSize:
+      file.name: 450
+      file.tags: 150
+      formula.days_since_modified: 120
+    rowHeight: medium
+  - type: table
+    name: Parentless
+    filters:
+      and:
+        - '!file.tags.contains("📋")'
+        - parent.isEmpty()
+        - file.fullname.endsWith(".md")
+        - '!file.folder.contains("archive")'
+    order:
+      - file.name
+      - parent
+    sort: []
+    columnSize:
+      file.folder: 270
+      file.name: 554
+      note.parent: 195
+      note.related: 340
+    rowHeight: medium
+    relationProperty: parent

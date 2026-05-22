@@ -1,0 +1,57 @@
+/* --- PRIMARY THEME: VIBRANT FLOWCHART OVERRIDE --- */
+
+.mermaid {
+    /* Main Variables */
+    --mermaid-node-bg: var(--interactive-accent);
+    --mermaid-label-fg: #ffffff; /* Sharp white for readability */
+}
+
+/* 1. Rectangular Nodes (Steps/Processes) */
+.mermaid .node rect, 
+.mermaid .node polygon {
+    fill: var(--color-blue) !important; /* Vibrant Blue from Primary palette */
+    stroke: var(--text-normal) !important;
+    stroke-width: 1.5px !important;
+}
+
+/* 2. Diamond Nodes (Decisions) */
+.mermaid .node .rhombus {
+    fill: var(--color-yellow) !important; /* Bright Gold/Yellow */
+    stroke: var(--text-normal) !important;
+}
+
+/* 3. Global Text Readability */
+/* This ensures text is high-contrast regardless of the background */
+.mermaid .node .label, 
+.mermaid .label text,
+.mermaid .node text,
+.mermaid .labelText,
+.mermaid .mindmap-nodes .node-text {
+    fill: #000000 !important; /* Deep black for maximum legibility on bright colors */
+    font-weight: 700 !important;
+    font-family: var(--font-interface) !important;
+}
+
+/* 4. Decision Path Labels (Yes/No text) */
+/* In your image, these are hard to see. Let's fix that. */
+.mermaid .edgeLabel,
+.mermaid .edgeLabel rect {
+    background-color: var(--background-primary) !important;
+    fill: var(--background-primary) !important;
+    color: var(--text-accent) !important;
+    font-weight: 800 !important;
+}
+
+/* 5. Connectors (Lines & Arrows) */
+.mermaid .path,
+.mermaid .arrowheadPath,
+.mermaid .edgePath .path {
+    stroke: var(--text-accent) !important;
+    stroke-width: 2.5px !important;
+}
+
+/* 6. Special 'Class' Styles */
+/* If you use classDef in your mermaid code, this maps them to Primary colors */
+.mermaid .red-node rect { fill: var(--color-red) !important; }
+.mermaid .green-node rect { fill: var(--color-green) !important; }
+.mermaid .orange-node rect { fill: var(--color-orange) !important; }

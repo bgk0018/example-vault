@@ -1,0 +1,47 @@
+{
+  "command_timeout": 5,
+  "templates_folder": "templates",
+  "templates_pairs": [
+    [
+      "",
+      ""
+    ]
+  ],
+  "trigger_on_file_creation": true,
+  "auto_jump_to_cursor": true,
+  "enable_system_commands": false,
+  "shell_path": "",
+  "user_scripts_folder": "",
+  "enable_folder_templates": true,
+  "folder_templates": [
+    {
+      "folder": "journal/1-daily",
+      "template": "templates/f-daily.md"
+    },
+    {
+      "folder": "journal/2-weekly",
+      "template": "templates/f-weekly.md"
+    },
+    {
+      "folder": "journal/3-monthly",
+      "template": "templates/f-monthly.md"
+    },
+    {
+      "folder": "journal/4-quarterly",
+      "template": "templates/f-quarterly.md"
+    },
+    {
+      "folder": "journal/5-yearly",
+      "template": "templates/f-yearly.md"
+    }
+  ],
+  "syntax_highlighting": true,
+  "syntax_highlighting_mobile": false,
+  "enabled_templates_hotkeys": [
+    ""
+  ],
+  "startup_templates": [
+    "templates/startup-journal.md"
+  ],
+  "enable_ribbon_icon": true
+}

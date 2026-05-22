@@ -1,0 +1,44 @@
+{
+  "pluginList": [
+    "Fertion/Bases_Link_Structure",
+    "aitorllj93/obsidian-lovely-bases",
+    "edrickleong/obsidian-feed-bases",
+    "anareaty/pretty-properties",
+    "amatya-aditya/obsidian-rss-dashboard"
+  ],
+  "pluginSubListFrozenVersion": [
+    {
+      "repo": "Fertion/Bases_Link_Structure",
+      "version": ""
+    },
+    {
+      "repo": "aitorllj93/obsidian-lovely-bases",
+      "version": ""
+    },
+    {
+      "repo": "edrickleong/obsidian-feed-bases",
+      "version": "latest"
+    },
+    {
+      "repo": "anareaty/pretty-properties",
+      "version": "latest"
+    },
+    {
+      "repo": "amatya-aditya/obsidian-rss-dashboard",
+      "version": "latest"
+    }
+  ],
+  "themesList": [],
+  "updateAtStartup": true,
+  "updateThemesAtStartup": true,
+  "enableAfterInstall": true,
+  "loggingEnabled": false,
+  "loggingPath": "BRAT-log",
+  "loggingVerboseEnabled": false,
+  "debuggingMode": false,
+  "notificationsEnabled": true,
+  "globalTokenName": "",
+  "personalAccessToken": "",
+  "selectLatestPluginVersionByDefault": false,
+  "allowIncompatiblePlugins": false
+}

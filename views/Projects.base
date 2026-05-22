@@ -1,0 +1,89 @@
+formulas:
+  days_since_modified: (now() - file.mtime).days.round(0)
+  status: if(end-date && !end-date.isEmpty(), "🔴 Closing", if((now() - file.mtime).days > 30, "🟡 Stale", "🟢 Active"))
+properties:
+  formula.status:
+    displayName: Status
+  formula.days_since_modified:
+    displayName: Days Stale
+views:
+  - type: table
+    name: Category
+    filters:
+      and:
+        - file.hasTag("🚧")
+        - file.inFolder("projects")
+    groupBy:
+      property: parent
+      direction: ASC
+    order:
+      - file.name
+      - formula.status
+    sort:
+      - property: file.folder
+        direction: DESC
+      - property: parent
+        direction: ASC
+      - property: file.name
+        direction: ASC
+    columnSize:
+      file.name: 333
+      note.related: 476
+  - type: table
+    name: Age
+    filters:
+      and:
+        - file.hasTag("🚧")
+        - file.inFolder("projects")
+    order:
+      - file.name
+      - create-date
+      - formula.status
+    sort:
+      - property: create-date
+        direction: ASC
+  - type: table
+    name: Stale
+    filters:
+      and:
+        - file.hasTag("🚧")
+        - file.inFolder("projects")
+        - (now() - file.mtime).days > 30
+    order:
+      - file.name
+      - parent
+      - formula.status
+      - formula.days_since_modified
+    sort:
+      - property: formula.days_since_modified
+        direction: DESC
+  - type: table
+    name: Open Tasks by Project
+    filters:
+      and:
+        - file.hasTag("📋")
+        - file.inFolder("projects")
+        - status != "done"
+    groupBy:
+      property: projects
+      direction: ASC
+    order:
+      - file.name
+      - status
+      - due
+      - projects
+    sort:
+      - property: due
+        direction: ASC
+  - type: table
+    name: Ready to Close
+    filters:
+      and:
+        - file.hasTag("🚧")
+        - file.inFolder("projects")
+        - "!end-date.isEmpty()"
+    order:
+      - file.name
+      - end-date
+      - ended-as
+      - formula.status

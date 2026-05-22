@@ -1,0 +1,52 @@
+{
+  "skill_name": "obsidian-markdown",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Create a zettelkasten note about the concept of 'Deliberate Practice' sourced from the book 'Peak - Anders Ericsson'. It should reference a highlight with block ID ref-442891 from the highlights note, link to the Learning map, and include a flashcard section.",
+      "expected_output": "A valid .md file with correct frontmatter (emoji tags, wiki-linked dates, parent/related/referenced-in properties), wikilinks with display text, a footnote that embeds a block reference from highlights, and a Flashcards heading.",
+      "files": [],
+      "expectations": [
+        "Frontmatter uses wiki-linked date format for create-date: \"[[YYYY-MM-DD]]\"",
+        "Tags use emoji format in a YAML list: 📖 and ♣️",
+        "parent property references the book with wiki-link syntax: \"[[Peak - Anders Ericsson]]\"",
+        "related property links to the Learning map: \"[[Learning]]\"",
+        "referenced-in property links to the highlights note",
+        "Body uses wikilinks with display text for linking to other concepts",
+        "Footnote uses embed syntax to cite a ^ref- block ID from highlights",
+        "Contains # Flashcards heading",
+        "append_modified_update is set to true",
+        "No Templater syntax appears in the output (this is a rendered note, not a template)"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I have a map of content note and I need to add a new Dataview section that shows all people notes related to this map. Show me what the section should look like, using the same patterns as existing map sections.",
+      "expected_output": "A new section with a callout wrapper and a Dataview query block that queries #🙂 notes filtered by related/parent containing this.file.link, matching the established map template pattern.",
+      "files": [],
+      "expectations": [
+        "Uses a callout with collapse syntax (> [!type]- or > [!type]+)",
+        "Dataview query is inside a ```dataview fenced code block",
+        "Query uses TABLE WITHOUT ID format",
+        "Query uses FROM #🙂 to filter people notes",
+        "Query uses WHERE contains(related, this.file.link) or contains(parent, this.file.link)",
+        "Query includes SORT clause",
+        "The Dataview block is syntactically valid (proper field separators, no missing keywords)"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Create a daily journal note for 2025-05-21 with a habits tracker table inside a callout and navigation links to previous/next days.",
+      "expected_output": "A daily note with correct frontmatter (📅 tag, before/after navigation, parent linking to weekly), habits using Dataview inline fields inside a callout with a table.",
+      "files": [],
+      "expectations": [
+        "Frontmatter has tags: [📅]",
+        "before and after properties use wiki-linked dates for adjacent days",
+        "parent property links to the weekly note in wiki-link format",
+        "Habits section uses Dataview inline field syntax: (FieldName::value)",
+        "Inline fields are inside a callout block (> [!type])",
+        "No Templater syntax in the output — this is a rendered note"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "expectations": [
+    {
+      "eval_id": 1,
+      "text": "File is valid YAML",
+      "passed": true,
+      "evidence": "Output is syntactically valid YAML"
+    },
+    {
+      "eval_id": 1,
+      "text": "Filters select zettelkasten notes using file.hasTag or file.inFolder",
+      "passed": true,
+      "evidence": "Uses file.hasTag('📖') and file.inFolder('zettelkasten')"
+    },
+    {
+      "eval_id": 1,
+      "text": "Has a formulas section with a days_since_modified formula using duration .days",
+      "passed": true,
+      "evidence": "Formula: '(now() - file.mtime).days.round(0)' — correct duration math per skill"
+    },
+    {
+      "eval_id": 1,
+      "text": "Has a sort section with property and direction keys",
+      "passed": false,
+      "evidence": "No sort section produced. The skill does not document sort: at all — there is no guidance on how to add sorting beyond groupBy."
+    },
+    {
+      "eval_id": 1,
+      "text": "Has groupBy with property: related",
+      "passed": true,
+      "evidence": "groupBy: property: related, direction: ASC"
+    },
+    {
+      "eval_id": 1,
+      "text": "Includes columnSize settings for layout",
+      "passed": false,
+      "evidence": "No columnSize produced. The skill does not document columnSize at all."
+    },
+    {
+      "eval_id": 1,
+      "text": "Includes rowHeight setting",
+      "passed": false,
+      "evidence": "No rowHeight produced. The skill does not document rowHeight."
+    },
+    {
+      "eval_id": 1,
+      "text": "Formula display name is set via properties section",
+      "passed": true,
+      "evidence": "properties section sets displayName for formula.days_since_modified"
+    },
+    {
+      "eval_id": 2,
+      "text": "File is valid YAML",
+      "passed": true,
+      "evidence": "Output is syntactically valid YAML"
+    },
+    {
+      "eval_id": 2,
+      "text": "Filters select book notes using file.hasTag('📕')",
+      "passed": true,
+      "evidence": "Uses file.hasTag('📕') in filters"
+    },
+    {
+      "eval_id": 2,
+      "text": "Uses image() function for cover display",
+      "passed": false,
+      "evidence": "Used if(cover, cover, '') instead. The skill does not document the image() function at all. The real Books.base uses image(cover)."
+    },
+    {
+      "eval_id": 2,
+      "text": "View type is cards or facet-cards",
+      "passed": true,
+      "evidence": "Used type: cards. However, the real Books.base uses facet-cards which is not documented in the skill."
+    },
+    {
+      "eval_id": 2,
+      "text": "Has a sort section sorting by file.ctime DESC",
+      "passed": false,
+      "evidence": "No sort section produced. Skill does not document sort:."
+    },
+    {
+      "eval_id": 2,
+      "text": "Includes card-specific layout properties (layout, shape, or similar)",
+      "passed": false,
+      "evidence": "No layout properties produced. The skill does not document layout, shape, tilt, showContent, or any card-specific properties."
+    },
+    {
+      "eval_id": 2,
+      "text": "Order includes cover image, author, and file.name",
+      "passed": true,
+      "evidence": "Order includes formula.cover_image, file.name, authors"
+    },
+    {
+      "eval_id": 3,
+      "text": "File is valid YAML",
+      "passed": true,
+      "evidence": "Output is syntactically valid YAML"
+    },
+    {
+      "eval_id": 3,
+      "text": "Has separate views for 🌱, 🌿, and 🌳 maturity stages",
+      "passed": true,
+      "evidence": "Three separate table views with file.hasTag for each maturity tag"
+    },
+    {
+      "eval_id": 3,
+      "text": "Has a stale view filtering for notes not modified in 30+ days",
+      "passed": true,
+      "evidence": "Stale view has filter: (now() - file.mtime).days > 30"
+    },
+    {
+      "eval_id": 3,
+      "text": "Stale view uses duration math like (now() - file.mtime).days > 30",
+      "passed": true,
+      "evidence": "Correctly uses inline duration expression in filter"
+    },
+    {
+      "eval_id": 3,
+      "text": "Excludes archived notes using file.folder.contains('archive') or similar",
+      "passed": false,
+      "evidence": "Used file.folder != 'archive' instead of file.folder.contains('archive'). The skill does not document .contains() method on strings. The real Garden.base uses !file.folder.contains('archive') which correctly matches nested archive paths."
+    },
+    {
+      "eval_id": 3,
+      "text": "Has a days_since_modified formula",
+      "passed": true,
+      "evidence": "Formula defined: (now() - file.mtime).days.round(0)"
+    },
+    {
+      "eval_id": 3,
+      "text": "Stale view sorts by days_since_modified or file.mtime",
+      "passed": false,
+      "evidence": "No sort section produced. Skill does not document sort:."
+    },
+    {
+      "eval_id": 3,
+      "text": "Uses nested or/and filters where appropriate",
+      "passed": true,
+      "evidence": "Stale view correctly nests or: inside and: for tag matching"
+    }
+  ],
+  "summary": {
+    "passed": 15,
+    "failed": 8,
+    "total": 23,
+    "pass_rate": 0.65
+  },
+  "eval_feedback": {
+    "suggestions": [],
+    "overall": "Evals are well-targeted. The failures clearly expose skill documentation gaps rather than eval problems."
+  }
+}

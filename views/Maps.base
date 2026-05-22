@@ -1,0 +1,22 @@
+filters:
+  and:
+    - file.hasTag("🗺️")
+    - file.inFolder("maps")
+formulas:
+  backlinks: file.backlinks.length
+properties:
+  formula.backlinks:
+    displayName: Backlinks
+views:
+  - type: table
+    name: All Maps
+    order:
+      - file.name
+      - description
+      - formula.backlinks
+      - create-date
+    sort:
+      - property: formula.backlinks
+        direction: DESC
+      - property: file.name
+        direction: ASC

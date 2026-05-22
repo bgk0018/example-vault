@@ -1,0 +1,17 @@
+filters:
+  and:
+    - file.hasTag("🥕")
+    - file.inFolder("blog")
+    - file.ext == "md"
+views:
+  - type: table
+    name: All
+    order:
+      - file.name
+      - dg-publish
+      - dg-pinned
+      - dg-path
+      - create-date
+    sort:
+      - property: create-date
+        direction: DESC

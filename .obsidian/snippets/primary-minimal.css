@@ -1,0 +1,697 @@
+/* Light Mode Base Colors */
+.theme-light {
+  --color-creme-0: white !important;
+  --color-creme-1: hsl(34, 33%, 98%) !important;
+  --color-creme-2: hsl(35, 36%, 95%) !important;
+  --color-creme-3: hsl(35, 35%, 90%) !important;
+  --color-creme-4: hsl(34, 37%, 70%) !important;
+  --color-creme-5: hsl(34, 25%, 70%) !important;
+  --color-creme-6: hsl(31, 30%, 50%) !important;
+  --color-creme-7: hsl(31, 35%, 40%) !important;
+  --color-creme-8: hsl(31, 45%, 20%) !important;
+
+  --color-creme-gray-1: hsl(35, 20%, 94%) !important;
+  --color-creme-gray-2: hsl(35, 20%, 90%) !important;
+  --color-creme-fade: hsla(32, 8%, 67%, 0.5) !important;
+  --color-shadow: hsla(0, 0%, 0%, 0.4) !important;
+
+  --color-red: #c25757 !important;
+  --color-orange: #cf864a !important;
+  --color-yellow: #e1b151 !important;
+  --color-green: #8aac6c !important;
+  --color-cyan: #5ba8be !important;
+  --color-purple: #877db5 !important;
+  --color-pink: #bb77af !important;
+
+  /* NEW BROWN COLOR */
+  --color-blue: #856848 !important;
+  --color-red-rgb: 194, 87, 87 !important;
+  --color-orange-rgb: 207, 134, 74 !important;
+  --color-yellow-rgb: 225, 177, 81 !important;
+  --color-green-rgb: 138, 172, 108 !important;
+  --color-cyan-rgb: 91, 168, 190 !important;
+  --color-purple-rgb: 135, 125, 181 !important;
+  --color-pink-rgb: 187, 119, 175 !important;
+
+  /* NEW BROWN RGB */
+  --color-blue-rgb: 133, 104, 72 !important;
+}
+
+/* Dark Mode Base Colors */
+.theme-dark {
+  --color-creme-0: hsl(30, 20%, 10%) !important;
+  --color-creme-1: hsl(31, 20%, 10%) !important;
+  --color-creme-2: hsl(27, 17%, 12%) !important;
+  --color-creme-3: hsl(27, 20%, 17%) !important;
+  --color-creme-4: hsl(34, 24%, 30%) !important;
+  --color-creme-5: hsl(34, 36%, 30%) !important;
+  --color-creme-6: hsl(31, 30%, 50%) !important;
+  --color-creme-7: hsl(35, 27%, 55%) !important;
+  --color-creme-8: hsl(34, 50%, 70%) !important;
+
+  --color-creme-gray-1: hsl(35, 20%, 13%) !important;
+  --color-creme-gray-2: hsl(35, 20%, 17%) !important;
+  --color-creme-fade: hsla(32, 8%, 67%, 0.5) !important;
+  --color-shadow: hsla(33, 90%, 5%, 0.8) !important;
+
+  --color-red: #c25757 !important;
+  --color-orange: #cf864a !important;
+  --color-yellow: #e1b151 !important;
+  --color-green: #8aac6c !important;
+  --color-cyan: #5ba8be !important;
+  --color-purple: #877db5 !important;
+  --color-pink: #bb77af !important;
+
+  /* NEW BROWN COLOR */
+  --color-blue: #856848 !important;
+  --color-red-rgb: 194, 87, 87 !important;
+  --color-orange-rgb: 207, 134, 74 !important;
+  --color-yellow-rgb: 225, 177, 81 !important;
+  --color-green-rgb: 138, 172, 108 !important;
+  --color-cyan-rgb: 91, 168, 190 !important;
+  --color-purple-rgb: 135, 125, 181 !important;
+  --color-pink-rgb: 187, 119, 175 !important;
+
+  /* NEW BROWN RGB */
+  --color-blue-rgb: 133, 104, 72 !important;
+}
+
+/*
+ * --- Obsidian's Standard UI Color Variables ---
+ * These variables are used by Obsidian and Minimal. We map them
+ * to the new color palette defined above, effectively applying the theme.
+ * Added `!important` to ensure these take precedence.
+ */
+body {
+  /* Minimal's base HSL variables (Crucial for its internal HSL calculations) */
+  --base-h: 34 !important; /* Matches creme hue */
+  --base-s: 33% !important; /* Matches creme sat */
+  --base-l: 98% !important; /* Light mode base lightness, dark mode is adjusted in .theme-dark below */
+
+  /* PRIMARY ACCENT HSL (NEW BROWN) */
+  --accent-h: 29 !important;
+  --accent-s: 30% !important;
+  --accent-l: 48% !important;
+
+  /* Backgrounds */
+  --background-primary: var(--color-creme-1) !important;
+  --background-primary-alt: var(--color-creme-2) !important;
+  --background-secondary: var(--color-creme-2) !important;
+  --background-secondary-alt: var(--color-creme-3) !important;
+
+  /* UI Modifiers & Borders */
+  --ui1: var(--color-creme-4) !important;
+  --ui2: var(--color-creme-5) !important;
+  --ui3: var(--color-creme-6) !important;
+
+  --background-modifier-border: var(--color-creme-4) !important;
+  --background-modifier-border-focus: var(--color-blue) !important; /* Changed to new brown for better contrast */
+  --background-modifier-hover: var(--background-secondary-alt) !important;
+  --background-modifier-form-field: var(--background-secondary-alt) !important;
+  --background-modifier-cover: var(--color-creme-fade) !important;
+  --divider-color: var(--ui1) !important;
+  --frame-divider-color: var(--ui1) !important;
+
+  /* Text Colors */
+  --text-normal: var(--color-creme-8) !important;
+  --text-muted: var(--color-creme-7) !important;
+  --text-faint: var(--color-creme-4) !important;
+  --text-selection: var(--background-secondary-alt) !important;
+
+  /* Text Highlighting */
+  --text-highlight-bg: rgba(var(--color-orange-rgb), 0.2) !important;
+  --hl1: var(--text-selection) !important;
+  --hl2: var(--text-highlight-bg) !important;
+
+  /* Special Highlight Colors from Primary-like */
+  --highlight-italic-background: rgba(var(--color-purple-rgb), 0.2) !important;
+  --highlight-bold-background: rgba(var(--color-green-rgb), 0.2) !important;
+  --highlight-bold-italic-background: rgba(var(--color-red-rgb), 0.2) !important;
+
+  /* Titlebars */
+  --titlebar-background: var(--background-secondary) !important;
+  --titlebar-background-focused: var(--background-secondary) !important;
+  --titlebar-text-color-focused: var(--text-normal) !important;
+  --titlebar-text-color: var(--text-muted) !important;
+  --title-color-inactive: var(--text-muted) !important;
+  --title-color: var(--text-normal) !important;
+
+  /* Text Formatting (Minimal specific variables) */
+  --text-formatting: var(--text-faint) !important;
+  --italic-color: var(--color-cyan) !important;
+  --bold-color: var(--color-orange) !important;
+  --bold-italic-color: var(--color-green) !important;
+
+  /* Accent Colors (Mapping Minimal's variables to the new primary-like palette) */
+  --interactive-accent: var(--color-blue) !important;
+  --interactive-accent-hover: var(--color-blue) !important;
+  --ax1: var(--color-blue) !important;
+  --ax2: var(--color-blue) !important;
+  --ax3: var(--color-blue) !important;
+  --sp1: white !important;
+  --text-on-accent: var(--sp1) !important;
+
+  /* Checkboxes */
+  --checkbox-color: var(--color-blue) !important;
+  --checkbox-radius: 50% !important;
+  --checklist-done-decoration: none !important;
+  --checklist-done-color: var(--text-normal) !important;
+
+  /* Code Blocks */
+  --code-normal: var(--text-normal) !important;
+  --code-background: var(--background-secondary-alt) !important;
+  --text-code: var(--text-normal) !important;
+
+  /* Blockquotes */
+  --blockquote-accent-color-rgb: var(--color-purple-rgb) !important;
+  --blockquote-border-color: rgba(var(--blockquote-accent-color-rgb), 0.3) !important;
+  --blockquote-background-color: var(--background-primary-alt) !important;
+  --blockquote-color: var(--text-muted) !important;
+  --blockquote-border-thickness: 7px !important;
+  --blockquote-border-radius: 7px !important;
+  --blockquote-padding-top: 6px !important;
+  --blockquote-padding-bottom: 6px !important;
+  --blockquote-padding-left: 16px !important;
+  --blockquote-padding-right: 8px !important;
+  --blockquote-padding: var(--blockquote-padding-top) var(--blockquote-padding-right) var(--blockquote-padding-bottom) var(--blockquote-padding-left) !important;
+
+  /* Callouts */
+  --callout-bug: var(--color-red-rgb) !important;
+  --callout-default: var(--color-blue-rgb) !important;
+  --callout-error: var(--color-red-rgb) !important;
+  --callout-example: var(--color-green-rgb) !important;
+  --callout-fail: var(--color-red-rgb) !important;
+  --callout-important: var(--color-red-rgb) !important;
+  --callout-info: var(--color-cyan-rgb) !important;
+  --callout-question: var(--color-yellow-rgb) !important;
+  --callout-success: var(--color-green-rgb) !important;
+  --callout-summary: var(--color-cyan-rgb) !important;
+  --callout-tip: var(--color-cyan-rgb) !important;
+  --callout-todo: var(--color-blue-rgb) !important;
+  --callout-warning: var(--color-orange-rgb) !important;
+  --callout-quote: var(--color-purple-rgb) !important;
+  --callout-opacity: 0.01 !important;
+  --callout-title-opacity: 0.1 !important;
+  --callout-border-opacity: 1 !important;
+  --callout-border-width: 1px !important;
+  --callout-padding: 0 !important;
+  --callout-title-padding: 6px 12px !important;
+  --callout-content-padding: 0px 12px !important;
+  --callout-margin: 0 0 1em 0 !important;
+
+  /* Tables */
+  --table-row-alt-background: transparent !important;
+  --table-row-background-hover: var(--background-primary-alt) !important;
+  --table-text-size: 0.9em !important;
+  --table-header-size: 0.9em !important;
+  --table-column-min-width: 2.5em !important;
+  --table-border-width: 1px !important;
+  --table-border-color: var(--background-modifier-border) !important;
+  --table-selection: var(--text-selection) !important;
+
+  /* Buttons & Dropdowns */
+  --button-background: var(--color-creme-0) !important;
+  --button-background-hover: var(--background-primary-alt) !important;
+  --button-border: var(--background-modifier-border) !important;
+  --dropdown-background: var(--color-creme-0) !important;
+  --dropdown-background-hover: var(--background-primary-alt) !important;
+
+  /* Scrollbars */
+  --scrollbar-thumb-bg: var(--background-primary-alt) !important;
+  --scrollbar-active-thumb-bg: var(--color-creme-6) !important;
+  --scrollbar-width: 10px !important;
+
+  /* Graph View */
+  --graph-tag-color: rgba(var(--color-purple-rgb), 0.7) !important;
+  --graph-circle-color: var(--color-creme-6) !important;
+  --graph-line: var(--text-normal) !important;
+  --graph-node: var(--color-blue) !important;
+  --graph-node-focused: var(--color-orange) !important;
+  --graph-node-tag: var(--color-purple) !important;
+  --graph-node-attachment: var(--color-green) !important;
+  --graph-node-unresolved: var(--text-faint) !important;
+
+  /* Properties (Metadata) */
+  --metadata-label-background-active: var(--background-primary) !important;
+  --metadata-input-background-active: var(--background-primary) !important;
+  --metadata-gap: 0px !important;
+
+  /* Canvas */
+  --canvas-dot-pattern: var(--color-creme-4) !important; /* Set to a visible creme color */
+  --canvas-node-container: var(--color-creme-0) !important;
+  --canvas-card-menu: var(--interactive-normal) !important;
+  --canvas-control-group-background: var(--background-primary) !important;
+  --canvas-control-group-box-shadow: var(--shadow-color) !important;
+  --canvas-control-item: var(--background-secondary) !important;
+
+  /* Headings (Minimal's specific per-level variables) */
+  --h1-color: var(--text-normal) !important;
+  --h2-color: var(--text-normal) !important;
+  --h3-color: var(--text-normal) !important;
+  --h4-color: var(--text-normal) !important;
+  --h5-color: var(--text-normal) !important;
+  --h6-color: var(--text-normal) !important;
+  --heading-spacing: 1rem !important;
+  --heading-line: var(--background-modifier-border) !important;
+  --heading-line-spacing: var(--size-4-1) !important;
+
+  /* Icons */
+  --icon-color: var(--text-muted) !important;
+  --icon-color-hover: var(--text-normal) !important;
+  --icon-color-active: var(--text-normal) !important;
+  --icon-color-focused: var(--text-normal) !important;
+
+  /* Links */
+  --link-color: var(--color-blue) !important;
+  --link-color-hover: var(--color-blue) !important;
+  --link-unresolved-color: var(--text-faint) !important;
+  --link-unresolved-decoration-color: var(--text-faint) !important;
+  --link-external-color: var(--color-blue) !important;
+  --link-external-color-hover: var(--color-blue) !important;
+  --link-decoration: none !important;
+  --link-external-decoration: none !important;
+  --link-formatting-color: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.5) !important;
+
+  /* Kanban Plugin */
+  --kanban-border: var(--border-width) !important;
+  --kanban-item-background: var(--background-primary) !important;
+  --kanban-lane-background: var(--background-secondary) !important;
+  --kanban-text-normal: var(--text-normal) !important;
+
+  /* Image/Media */
+  --media-max-width: 750px !important;
+  --image-muted: 0.7 !important;
+  --image-radius: 4px !important;
+
+  /* Other overrides from Primary-like theme's 'body' section */
+  --file-top-margin: var(--size-4-4) !important;
+  --file-right-margin: var(--size-4-16) !important;
+  --file-bottom-margin: var(--size-4-8) !important;
+  --file-left-margin: calc(var(--file-right-margin) + var(--scrollbar-width)) !important;
+  --file-top-margin-mobile: 0px !important;
+  --file-right-margin-mobile: 10px !important;
+  --file-bottom-margin-mobile: 0 !important;
+  --file-left-margin-mobile: 20px !important;
+  --file-margins: var(--file-top-margin) var(--file-right-margin) var(--file-bottom-margin) var(--file-left-margin) !important;
+  --file-header-justify: left !important;
+
+  --hr-thickness: 1px !important;
+  --collapse-icon-color-collapsed: var(--text-faint) !important;
+  --vault-profile-color: var(--text-muted) !important;
+  --font-semibold: 700 !important;
+  --modal-border-color: var(--background-modifier-border) !important;
+  --input-shadow: 0 0 0 1px var(--background-modifier-border) !important;
+}
+
+/* Dark mode specific adjustments for base HSL lightness */
+.theme-dark {
+  --base-l: 10% !important; /* Adjust base lightness for dark mode */
+}
+
+
+/* --- Specific Element Styling Overrides from Primary-like Theme --- */
+/* These are specific element styles that don't necessarily use CSS variables
+   but define visual aspects. Added `!important` where appropriate to ensure override. */
+
+/* Sidebar Shadows */
+.mod-left-split {
+  box-shadow: 1px 5px 4px 0px var(--color-shadow) !important;
+  margin-right: 6px !important;
+}
+.mod-right-split {
+  box-shadow: -1px 5px 4px 0px var(--color-shadow) !important;
+  margin-left: 6px !important;
+}
+
+/* Sidebar Tab Headers (Hiding status icon as per Primary-like) */
+.mod-left-split .workspace-tab-header-status-container,
+.mod-right-split .workspace-tab-header-status-container {
+  display: none !important;
+}
+
+/* Scrollbar width in sidebars */
+.mod-left-split .markdown-preview-view::-webkit-scrollbar,
+.mod-right-split .markdown-preview-view::-webkit-scrollbar {
+  width: 0px !important;
+}
+
+/* Highlighting styles (copied directly from Primary-like) */
+.cm-highlight, mark {
+  padding: 0 2px !important;
+}
+mark {
+  border-radius: 4px !important;
+}
+.cm-highlight:not(
+  .cm-highlight + .cm-highlight,
+  .cm-highlight + .cm-widgetBuffer + span + .cm-widgetBuffer + .cm-highlight,
+  .cm-highlight + .cm-widgetBuffer + .cm-highlight
+) {
+  border-bottom-left-radius: 4px !important;
+  border-top-left-radius: 4px !important;
+}
+.cm-highlight:not(:has(
+  + .cm-highlight,
+  + .cm-widgetBuffer + span + .cm-widgetBuffer + .cm-highlight,
+  + .cm-widgetBuffer + span + .cm-widgetBuffer + .cm-widgetBuffer + span + .cm-widgetBuffer + .cm-widgetBuffer + span + .cm-widgetBuffer + .cm-highlight
+  )) {
+  border-bottom-right-radius: 4px !important;
+  border-top-right-radius: 4px !important;
+}
+.cm-hashtag-end.cm-highlight:has( + .cm-highlight) {
+  border-radius: 0 !important;
+}
+.cm-hashtag.cm-highlight {
+  font-size: var(--font-text-size) !important;
+  background-color: var(--tag-background) !important;
+  color: var(--tag-color) !important;
+}
+.cm-inline-code.cm-highlight {
+  font-size: var(--font-text-size) !important;
+  background-color: var(--code-background) !important;
+}
+
+/* Headings (from Primary-like, adding !important) */
+.markdown-source-view.mod-cm6 .HyperMD-header-1,
+.markdown-source-view.mod-cm6 .HyperMD-header-2,
+h1, h2, .inline-title {
+  border-bottom: 1px solid var(--heading-line) !important;
+  padding-bottom: var(--heading-line-spacing) !important;
+}
+
+/* Blockquote adjustments (from Primary-like, adding !important) */
+.cm-blockquote-border::before,
+blockquote blockquote {
+  --blockquote-border-thickness: 3px !important;
+}
+.HyperMD-quote .cm-formatting-quote + .cm-quote-1,
+.cm-blockquote-border {
+  padding-left: 8px !important;
+}
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote {
+  padding-right: var(--blockquote-padding-right) !important;
+}
+.cm-quote, .markdown-rendered blockquote {
+  font-size: 0.98rem !important;
+  font-weight: 400 !important;
+  opacity: 0.9 !important;
+}
+.cm-quote, blockquote {
+  --link-unresolved-color: rgba(var(--blockquote-accent-color-rgb), 0.8) !important;
+  --link-color-hover: rgba(var(--blockquote-accent-color-rgb), 0.8) !important;
+  --link-color: rgba(var(--blockquote-accent-color-rgb), 1) !important;
+}
+.is-live-preview .HyperMD-quote:not(:has(.cm-quote:not(.cm-formatting))):not(.cm-active),
+.is-live-preview .HyperMD-quote:not(:has(.cm-quote:not(.cm-formatting))):not(.cm-active) .cm-quote {
+  line-height: calc(1rem / 1.5) !important;
+}
+
+/* Popover (from Primary-like, adding !important) */
+.hover-popover {
+  --file-margins: 10px 15px 10px 25px !important;
+  background-color: var(--color-creme-0) !important;
+}
+
+/* Buttons (from Primary-like, adding !important) */
+.mod-sidedock {
+  --button-background: var(--background-primary) !important;
+  --button-background-hover: var(--background-secondary-alt) !important;
+}
+button:not(.clickable-icon) {
+  border: 0.5px solid var(--button-border) !important;
+  box-shadow: none !important;
+}
+button:not(.clickable-icon, .mod-cta, .mod-warning) {
+  background-color: var(--button-background) !important;
+}
+button:hover {
+  background-color: var(--button-background-hover) !important;
+}
+
+/* Flashing effect (from Primary-like, adding !important) */
+.is-flashing {
+  --tag-background: transparent !important;
+  --tag-border-color-hover: transparent !important;
+  padding-top: calc(var(--tag-padding-y) / 2) !important;
+  padding-bottom: calc(var(--tag-padding-y) / 2) !important;
+}
+
+/* Links markdown formatting (from Primary-like, adding !important) */
+.cm-s-obsidian span.cm-formatting-link,
+.cm-s-obsidian span.cm-formatting-link-string,
+.cm-s-obsidian span.cm-link-alias-pipe {
+  color: var(--link-formatting-color) !important;
+}
+
+/* Hide block ID (from Primary-like, adding !important) */
+.is-live-preview .cm-line:not(.cm-active, :hover) .cm-blockid {
+  font-size: 0 !important;
+}
+
+/* Inline footnotes (from Primary-like, adding !important) */
+.cm-inline-footnote,
+.cm-inline-footnote-end {
+  vertical-align: super !important;
+  font-size: var(--font-smaller) !important;
+  color: var(--text-muted) !important;
+}
+.cm-inline-footnote-end,
+.cm-inline-footnote-start,
+.cm-s-obsidian span.cm-formatting-link.cm-footref {
+  color: var(--text-faint) !important;
+}
+.is-live-preview .cm-line:not(.cm-active) .cm-inline-footnote-start,
+.is-live-preview .cm-line:not(.cm-active) .cm-inline-footnote-end {
+  font-size: 0 !important;
+}
+
+/* Comments (from Primary-like, adding !important) */
+.is-live-preview .cm-line:not(.cm-active) .cm-comment-start,
+.is-live-preview .cm-line:not(.cm-active) .cm-comment-end {
+  font-size: 0 !important;
+}
+
+/* Strikethrough (from Primary-like, adding !important) */
+.is-live-preview .cm-strikethrough, del {
+  opacity: 0.5 !important;
+}
+
+/* Scrollbars (from Primary-like, adding !important) */
+body:not(.native-scrollbars) ::-webkit-scrollbar {
+  width: var(--scrollbar-width) !important;
+}
+
+/* Graph (from Primary-like, adding !important) */
+.graph-view.color-fill-tag {
+  color: var(--graph-tag-color) !important;
+}
+.graph-view.color-circle {
+  color: var(--graph-circle-color) !important;
+}
+
+/* Properties (from Primary-like, adding !important) */
+.metadata-container.is-collapsed {
+  padding: 0 !important;
+}
+.mod-root .metadata-add-button {
+  opacity: 0.2 !important;
+  font-size: 0.7em !important;
+}
+.mod-root .metadata-property {
+  opacity: 0.9 !important;
+  font-size: 0.8em !important;
+}
+.long-description .metadata-input-longtext {
+  -webkit-line-clamp: 10 !important;
+  max-height: 400px !important;
+}
+.long-description .metadata-input-longtext:focus {
+  -webkit-line-clamp: unset !important;
+}
+body .metadata-input-longtext::-webkit-scrollbar {
+  width: 0px !important;
+}
+.metadata-property {
+  --tag-padding-y: 0.25em !important;
+  --tag-padding-x: 0.65em !important;
+}
+.metadata-property:not([data-property-key="tags"]) {
+  --pill-padding-x: var(--tag-padding-x) !important;
+  --pill-padding-y: var(--tag-padding-y) !important;
+  --pill-radius: var(--tag-radius) !important;
+  --pill-focus-width: 100% !important;
+  --pill-focus-left-adjust: 0 !important;
+  --pill-color: var(--text-muted) !important;
+  --pill-color-hover: var(--text-muted) !important;
+  --pill-background: var(--color-creme-gray-1) !important;
+  --pill-background-hover: var(--color-creme-gray-2) !important;
+  --pill-color-remove: var(--pill-color) !important;
+  --pill-color-remove-hover: var(--pill-color) !important;
+}
+
+/* Hide metadata heading (from Primary-like, adding !important) */
+.metadata-properties-heading {
+  opacity: 0.3 !important;
+  position: absolute !important;
+  left: -10px !important;
+}
+.is-mobile .metadata-properties-heading {
+  left: 0px !important;
+}
+.metadata-properties-heading:hover, .metadata-container:hover .collapse-indicator {
+  opacity: 1 !important;
+}
+.metadata-properties-title {
+  display: none !important;
+}
+
+/* Put properties before inline title (from Primary-like, adding !important) */
+.mod-header {
+  display: flex !important;
+  flex-direction: column !important;
+}
+.metadata-container {
+  order: -1 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Images and Media (from Primary-like, adding !important) */
+.internal-embed.image-embed {
+  text-align: center !important;
+}
+.markdown-source-view.mod-cm6 .cm-content > img {
+  margin: auto !important;
+}
+.cm-line:has(.image-embed),
+p:has(>.image-embed),
+.markdown-preview-sizer > div > p:has(>img) {
+  text-align: center !important;
+}
+
+/* Embeds (from Primary-like, adding !important) */
+.markdown-preview-section {
+  min-height: unset !important;
+}
+
+/* Active Line (from Primary-like, adding !important) */
+.cm-scroller:not(:has(.cm-cursor)) .cm-active {
+  background-color: var(--background-primary-alt) !important;
+}
+
+/* Narrow empty line (from Primary-like, adding !important) */
+.cm-line:has(>br:only-child) {
+  font-size: calc(1rem / 1.5) !important;
+}
+
+/* Horizontal line (from Primary-like, adding !important) */
+hr {
+  margin-block-start: 1em !important;
+  margin-block-end: 1em !important;
+}
+
+/* Hide empty block (from Primary-like, adding !important) */
+p:has(>span:only-child > br:only-child) {
+  font-size: 0 !important;
+}
+
+/* Tabs (from Primary-like, adding !important) */
+.workspace-tab-header-inner {
+  padding: 0px 5px !important;
+}
+
+/* Canvas (from Primary-like, with crucial changes for dot pattern and contrast) */
+.canvas-wrapper.is-dragging {
+  --canvas-dot-pattern: var(--color-creme-4) !important; /* Set to a visible creme color */
+}
+.canvas-node-container:has(.canvas-node-content.image-embed) {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+.canvas-node-container {
+  background-color: var(--color-creme-0) !important;
+  border-color: var(--color-blue) !important; /* Ensure node borders are brown */
+}
+.canvas-card-menu {
+  background-color: var(--interactive-normal) !important;
+  border: 1px solid var(--background-modifier-border) !important;
+}
+.canvas-control-group {
+  border-radius: var(--radius-s) !important;
+  background-color: var(--background-primary) !important;
+  box-shadow: var(--input-shadow) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+.canvas-control-item {
+  background-color: var(--background-secondary) !important;
+}
+.canvas-edges :not(.is-themed) path.canvas-display-path {
+  stroke: var(--color-blue) !important; /* Make canvas lines brown */
+}
+.canvas-edges :not(.is-themed) polyline.canvas-path-end {
+  stroke: var(--color-blue) !important; /* Make canvas arrowheads brown */
+  fill: var(--color-blue) !important; /* Make canvas arrowheads brown */
+}
+
+
+/* Mobile Layout adjustments (from Primary-like, adding !important) */
+@media (min-width:600px) {
+  body {
+    --file-right-margin-mobile: 30px !important;
+    --file-left-margin-mobile: 30px !important;
+  }
+}
+.is-mobile {
+  --file-margins: var(--file-top-margin-mobile) var(--file-right-margin-mobile) var(--file-bottom-margin-mobile) var(--file-left-margin-mobile) !important;
+  --metadata-label-width: 10em !important;
+  --media-max-width: 100% !important;
+  --font-ui-small: calc(var(--font-text-size) * 0.85) !important;
+  --font-ui-medium: calc(var(--font-text-size) * 0.9) !important;
+  --font-ui-large: calc(var(--font-text-size) * 1) !important;
+  --view-header-height: 46px !important;
+}
+.mobile-navbar-action {
+  opacity: 0.5 !important;
+}
+.mobile-navbar-action:active {
+  opacity: 0.8 !important;
+}
+.is-mobile .view-action {
+  opacity: 0.8 !important;
+}
+.is-mobile .view-header .view-actions > .mod-tappable:active {
+  opacity: 0.5 !important;
+}
+.is-mobile.is-phone .workspace-leaf-content:not([data-type="canvas"]) .view-header-left {
+  display: none !important;
+}
+.is-mobile .view-header {
+  padding-right: 5px !important;
+}
+.is-mobile .view-header-title-container {
+  height: var(--view-header-height) !important;
+}
+.is-mobile .view-actions {
+  padding: 0 !important;
+}
+.mobile-navbar {
+  padding-top: var(--size-4-1) !important;
+}
+.is-mobile .view-header-left {
+  flex: none !important;
+}
+
+/* CSSCLASSES - HIDE ELEMENTS (from Primary-like, adding !important) */
+.hide-inline-title .inline-title {
+  display: none !important;
+}
+.hide-backlinks .embedded-backlinks {
+  display: none !important;
+}
+.hide-properties {
+  --metadata-display-reading: none !important;
+  --metadata-display-editing: none !important;
+}
+

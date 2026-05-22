@@ -1,0 +1,22 @@
+filters:
+  and:
+    - file.hasTag("📕")
+    - file.folder != "templates"
+
+formulas:
+  cover_image: 'if(cover, cover, "")'
+
+properties:
+  formula.cover_image:
+    displayName: "Cover"
+
+views:
+  - type: cards
+    name: "Library"
+    order:
+      - formula.cover_image
+      - file.name
+      - authors
+    filters:
+      not:
+        - 'file.inFolder("templates")'

@@ -1,0 +1,54 @@
+{
+  "expectations": [
+    {
+      "text": "Eval 1: Chooses CLI over grep_search for vault-level discovery",
+      "passed": true,
+      "evidence": "CLI vs Windsurf table row 'Find connections' explicitly states 'only CLI understands the link graph' with 'No equivalent' for Windsurf tools"
+    },
+    {
+      "text": "Eval 1: Uses link analysis to show connections",
+      "passed": true,
+      "evidence": "Discover and map connections workflow provides 5-step sequence: search → read → backlinks → links → unresolved"
+    },
+    {
+      "text": "Eval 2: Uses obsidian read (not read_file) for daily note",
+      "passed": true,
+      "evidence": "Read and modify a daily note workflow uses 'obsidian read file=\"2026-05-21\"'. CLI vs table explains 'resolves wikilinks, aliases' advantage"
+    },
+    {
+      "text": "Eval 2: Uses obsidian append (not edit) to add content",
+      "passed": true,
+      "evidence": "Workflow explicitly states 'Use obsidian append/prepend rather than the edit tool — it ensures Obsidian picks up the change immediately and preserves sync history'"
+    },
+    {
+      "text": "Eval 3: Uses property:set for tag promotion",
+      "passed": true,
+      "evidence": "Dedicated 'Promote a garden note's maturity' workflow with exact command example"
+    },
+    {
+      "text": "Eval 4: Uses base:query with correct .base file path",
+      "passed": true,
+      "evidence": "Query a Base view workflow shows correct path format and includes 'Critical' callout about requiring vault-relative path with .base extension"
+    },
+    {
+      "text": "Eval 4: CLI vs reading .base file guidance present",
+      "passed": true,
+      "evidence": "CLI vs Windsurf table: 'base:query — only way to get computed/filtered results' vs 'Read .base file — only sees the YAML definition'"
+    },
+    {
+      "text": "Eval 5: Guidance on create vs templater:create-from-template",
+      "passed": true,
+      "evidence": "Create a note from a template workflow: 'Use templater:create-from-template when the note type has a Templater template (most note types do)... Use create with content= only for simple notes without template needs'"
+    }
+  ],
+  "summary": {
+    "passed": 8,
+    "failed": 0,
+    "total": 8,
+    "pass_rate": 1.0
+  },
+  "eval_feedback": {
+    "suggestions": [],
+    "overall": "All decision-guidance gaps from baseline are now addressed. The restructured skill correctly guides tool choice for every eval scenario."
+  }
+}

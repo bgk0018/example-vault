@@ -1,0 +1,54 @@
+formulas:
+  days_since_modified: '(now() - file.mtime).days.round(0)'
+
+properties:
+  formula.days_since_modified:
+    displayName: "Days Stale"
+
+views:
+  - type: table
+    name: "Seedling 🌱"
+    filters:
+      and:
+        - file.hasTag("🌱")
+        - 'file.folder != "archive"'
+    order:
+      - file.name
+      - related
+      - formula.days_since_modified
+
+  - type: table
+    name: "Growing 🌿"
+    filters:
+      and:
+        - file.hasTag("🌿")
+        - 'file.folder != "archive"'
+    order:
+      - file.name
+      - related
+      - formula.days_since_modified
+
+  - type: table
+    name: "Evergreen 🌳"
+    filters:
+      and:
+        - file.hasTag("🌳")
+        - 'file.folder != "archive"'
+    order:
+      - file.name
+      - related
+      - formula.days_since_modified
+
+  - type: table
+    name: "Stale"
+    filters:
+      and:
+        - or:
+            - file.hasTag("🌱")
+            - file.hasTag("🌿")
+        - 'file.folder != "archive"'
+        - '(now() - file.mtime).days > 30'
+    order:
+      - file.name
+      - file.tags
+      - formula.days_since_modified

@@ -1,0 +1,24 @@
+filters:
+  and:
+    - file.hasTag("📖")
+    - file.inFolder("zettelkasten")
+
+formulas:
+  days_since_modified: '(now() - file.mtime).days.round(0)'
+
+properties:
+  formula.days_since_modified:
+    displayName: "Days Since Modified"
+
+views:
+  - type: table
+    name: "By Map"
+    groupBy:
+      property: related
+      direction: ASC
+    order:
+      - file.name
+      - related
+      - referenced-in
+      - create-date
+      - formula.days_since_modified

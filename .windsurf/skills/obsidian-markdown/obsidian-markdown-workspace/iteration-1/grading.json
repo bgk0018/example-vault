@@ -1,0 +1,173 @@
+{
+  "expectations": [
+    {
+      "eval_id": 1,
+      "text": "Frontmatter uses wiki-linked date format for create-date: \"[[YYYY-MM-DD]]\"",
+      "passed": true,
+      "evidence": "create-date: \"[[2025-05-21]]\" in frontmatter"
+    },
+    {
+      "eval_id": 1,
+      "text": "Tags use emoji format in a YAML list: 📖 and ♣️",
+      "passed": true,
+      "evidence": "tags: [📖, ♣️] — used inline list form, both emoji tags present"
+    },
+    {
+      "eval_id": 1,
+      "text": "parent property references the book with wiki-link syntax: \"[[Peak - Anders Ericsson]]\"",
+      "passed": true,
+      "evidence": "parent: \"[[Peak - Anders Ericsson]]\" in frontmatter"
+    },
+    {
+      "eval_id": 1,
+      "text": "related property links to the Learning map: \"[[Learning]]\"",
+      "passed": true,
+      "evidence": "related: - \"[[Learning]]\" in frontmatter"
+    },
+    {
+      "eval_id": 1,
+      "text": "referenced-in property links to the highlights note",
+      "passed": true,
+      "evidence": "referenced-in: - \"[[Peak - Anders Ericsson Highlights]]\" in frontmatter"
+    },
+    {
+      "eval_id": 1,
+      "text": "Body uses wikilinks with display text for linking to other concepts",
+      "passed": true,
+      "evidence": "Multiple instances: [[Talent is Overrated - 202304261300|Talent is Overrated]], [[Flow - 202304261255|Flow]]"
+    },
+    {
+      "eval_id": 1,
+      "text": "Footnote uses embed syntax to cite a ^ref- block ID from highlights",
+      "passed": true,
+      "evidence": "[^1]: ![[Peak - Anders Ericsson Highlights#^ref-442891]]"
+    },
+    {
+      "eval_id": 1,
+      "text": "Contains # Flashcards heading",
+      "passed": true,
+      "evidence": "# Flashcards at end of file"
+    },
+    {
+      "eval_id": 1,
+      "text": "append_modified_update is set to true",
+      "passed": true,
+      "evidence": "append_modified_update: true in frontmatter"
+    },
+    {
+      "eval_id": 1,
+      "text": "No Templater syntax appears in the output (this is a rendered note, not a template)",
+      "passed": true,
+      "evidence": "No <%* %> or <% %> tokens found in output"
+    },
+    {
+      "eval_id": 2,
+      "text": "Uses a callout with collapse syntax (> [!type]- or > [!type]+)",
+      "passed": true,
+      "evidence": "> [!tip]- People Connected to This Topic"
+    },
+    {
+      "eval_id": 2,
+      "text": "Dataview query is inside a ```dataview fenced code block",
+      "passed": true,
+      "evidence": "```dataview block present with closing ```"
+    },
+    {
+      "eval_id": 2,
+      "text": "Query uses TABLE WITHOUT ID format",
+      "passed": true,
+      "evidence": "TABLE WITHOUT ID on first query line"
+    },
+    {
+      "eval_id": 2,
+      "text": "Query uses FROM #🙂 to filter people notes",
+      "passed": true,
+      "evidence": "FROM #🙂 in query"
+    },
+    {
+      "eval_id": 2,
+      "text": "Query uses WHERE contains(related, this.file.link) or contains(parent, this.file.link)",
+      "passed": true,
+      "evidence": "WHERE contains(related, this.file.link) or contains(parent, this.file.link) in query"
+    },
+    {
+      "eval_id": 2,
+      "text": "Query includes SORT clause",
+      "passed": true,
+      "evidence": "SORT file.name ASC"
+    },
+    {
+      "eval_id": 2,
+      "text": "The Dataview block is syntactically valid (proper field separators, no missing keywords)",
+      "passed": true,
+      "evidence": "Query follows valid DQL syntax: TABLE WITHOUT ID ... FROM ... WHERE ... SORT"
+    },
+    {
+      "eval_id": 3,
+      "text": "Frontmatter has tags: [📅]",
+      "passed": true,
+      "evidence": "tags: - 📅 in frontmatter (block list form)"
+    },
+    {
+      "eval_id": 3,
+      "text": "before and after properties use wiki-linked dates for adjacent days",
+      "passed": true,
+      "evidence": "before: \"[[2025-05-20]]\", after: \"[[2025-05-22]]\""
+    },
+    {
+      "eval_id": 3,
+      "text": "parent property links to the weekly note in wiki-link format",
+      "passed": true,
+      "evidence": "parent: \"[[2025-W21]]\""
+    },
+    {
+      "eval_id": 3,
+      "text": "Habits section uses Dataview inline field syntax: (FieldName::value)",
+      "passed": true,
+      "evidence": "(Network::0), (Reading::0), (Protein::0), (Weight::0) all present"
+    },
+    {
+      "eval_id": 3,
+      "text": "Inline fields are inside a callout block (> [!type])",
+      "passed": true,
+      "evidence": "All inline fields are inside > [!TIP]+ Habits callout"
+    },
+    {
+      "eval_id": 3,
+      "text": "Contains a ```tasks code block with query syntax",
+      "passed": true,
+      "evidence": "```tasks block present with not done, path includes, due before, group by"
+    },
+    {
+      "eval_id": 3,
+      "text": "Tasks query uses 'not done' and path-based filtering",
+      "passed": true,
+      "evidence": "'not done' and 'path includes projects/' both present"
+    },
+    {
+      "eval_id": 3,
+      "text": "No Templater syntax in the output — this is a rendered note",
+      "passed": true,
+      "evidence": "No <%* %> or <% %> tokens found"
+    }
+  ],
+  "summary": {
+    "passed": 25,
+    "failed": 0,
+    "total": 25,
+    "pass_rate": 1.0
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "Tags use emoji format in a YAML list: 📖 and ♣️",
+        "reason": "Eval 1 output used inline list [📖, ♣️] while the vault template uses the same form — both are valid per the skill. However, the assertion doesn't distinguish between inline and block list forms. Consider testing that the skill handles both forms correctly."
+      },
+      {
+        "assertion": "The Dataview block is syntactically valid",
+        "reason": "This assertion is hard to verify without running Dataview. The check here is structural (keywords present, commas in right places) but not a true syntax validation. Acceptable for inline testing."
+      }
+    ],
+    "overall": "All 25 expectations passed. The skill successfully guided production of valid OFM for all three note types (zettelkasten, map section, daily journal). The new sections on plugin code blocks, inline fields, task syntax, and block references all contributed to correct output."
+  }
+}

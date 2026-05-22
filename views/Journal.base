@@ -1,0 +1,55 @@
+filters:
+  and:
+    - file.hasTag("📅")
+    - file.inFolder("journal")
+views:
+  - type: feed
+    name: Daily
+    filters:
+      and:
+        - file.folder == "journal/1-daily"
+    order:
+      - file.name
+    sort:
+      - property: file.name
+        direction: DESC
+    showProperties: false
+    image: note.banner
+    colorizeFiles: false
+    cardSize: 430
+  - type: table
+    name: Weekly
+    filters:
+      and:
+        - file.folder == "journal/2-weekly"
+    order:
+      - file.name
+      - parent
+      - children
+    sort:
+      - property: file.name
+        direction: DESC
+  - type: table
+    name: Monthly
+    filters:
+      and:
+        - file.folder == "journal/3-monthly"
+    order:
+      - file.name
+      - parent
+      - children
+    sort:
+      - property: file.name
+        direction: DESC
+  - type: table
+    name: Quarterly
+    filters:
+      and:
+        - file.folder == "journal/4-quarterly"
+    order:
+      - file.name
+      - parent
+      - children
+    sort:
+      - property: file.name
+        direction: DESC

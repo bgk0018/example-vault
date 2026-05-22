@@ -1,0 +1,16 @@
+filters:
+  and:
+    - file.hasTag("📰")
+    - file.inFolder("references/articles")
+views:
+  - type: table
+    name: All Articles
+    order:
+      - file.name
+      - authors
+      - url
+      - published
+      - parent
+    sort:
+      - property: create-date
+        direction: DESC

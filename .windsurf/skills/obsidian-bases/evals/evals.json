@@ -1,0 +1,52 @@
+{
+  "skill_name": "obsidian-bases",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Create a .base file that shows all zettelkasten notes grouped by their `related` map, sorted by creation date descending, with a column showing days since last modified.",
+      "expected_output": "A valid .base file filtering for zettelkasten notes with groupBy on related, sort by create-date DESC, a days_since_modified formula, and appropriate columnSize/rowHeight settings.",
+      "files": [],
+      "expectations": [
+        "File is valid YAML",
+        "Filters select zettelkasten notes using file.hasTag or file.inFolder",
+        "Has a formulas section with a days_since_modified formula using duration .days",
+        "Has a sort section with property and direction keys",
+        "Has groupBy with property: related",
+        "Includes columnSize settings for layout",
+        "Includes rowHeight setting",
+        "Formula display name is set via properties section"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Create a .base file for books with a cards view that displays cover images, author, and title, sorted by most recently added.",
+      "expected_output": "A valid .base file filtering for book notes with a cards-style view using image() function for covers, sorted by file.ctime DESC, with card layout properties.",
+      "files": [],
+      "expectations": [
+        "File is valid YAML",
+        "Filters select book notes using file.hasTag('📕')",
+        "Uses image() function for cover display",
+        "View type is cards or facet-cards",
+        "Has a sort section sorting by file.ctime DESC",
+        "Includes card-specific layout properties (layout, shape, or similar)",
+        "Order includes cover image, author, and file.name"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Create a .base file that shows garden notes (🌱, 🌿, 🌳) with views for each maturity stage, a 'stale' view for notes not modified in 30+ days, and exclude archived notes.",
+      "expected_output": "A valid .base file with multiple views (one per maturity tag plus a stale view), using nested or/and filters, .contains() to exclude archive folder, inline duration comparison in stale filter, and sort by formula.",
+      "files": [],
+      "expectations": [
+        "File is valid YAML",
+        "Has separate views for 🌱, 🌿, and 🌳 maturity stages",
+        "Has a stale view filtering for notes not modified in 30+ days",
+        "Stale view uses duration math like (now() - file.mtime).days > 30",
+        "Excludes archived notes using file.folder.contains('archive') or similar",
+        "Has a days_since_modified formula",
+        "Stale view sorts by days_since_modified or file.mtime",
+        "Uses nested or/and filters where appropriate"
+      ]
+    }
+  ]
+}

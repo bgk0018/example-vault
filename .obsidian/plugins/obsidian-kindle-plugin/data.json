@@ -1,0 +1,12 @@
+{
+  "amazonRegion": "global",
+  "highlightsFolder": "references/highlights",
+  "lastSyncMode": "my-clippings",
+  "isLoggedIn": true,
+  "syncOnBoot": false,
+  "downloadBookMetadata": true,
+  "lastSyncDate": "2025-09-09T19:30:07.656Z",
+  "fileNameTemplate": "{{title}} - {{author}} Highlights",
+  "fileTemplate": "---\ntags: \n  - ✂️\ncreate-date: {{ date }}\nparent: \"[[{{title}} - {{author}}]]\"\nrelated:\n  - \"[[Highlights]]\"\ndg-publish: true\nappend_modified_update: true\nmodified-dates:\n---\n\n{{highlights}}\n",
+  "highlightTemplate": "{% if note == \".h1\" %}\n# {{ text }}\n{% elif note == \".h2\" %}\n## {{ text }}\n{% elif note == \".h3\" %}\n### {{ text }}\n{% elif note == \".h4\" %}\n#### {{ text }}\n{% elif note == \".h5\" %}\n##### {{ text }}\n{% elif note == \".h6\" %}\n###### {{ text }}\n{% else %}\n>[!QUOTE]\n>{{ text }} ([{{ location }}]({{ appLink }}))\n\n{% if note %}{{ note }}{% endif %}\n{% endif %}\n\n---\n"
+}

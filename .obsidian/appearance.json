@@ -1,0 +1,11 @@
+{
+  "cssTheme": "Primary",
+  "enabledCssSnippets": [
+    "mermaid-2",
+    "mermaid-primary",
+    "supercharged-links-gen"
+  ],
+  "showRibbon": false,
+  "showViewHeader": true,
+  "accentColor": ""
+}

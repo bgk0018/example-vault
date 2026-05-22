@@ -1,0 +1,4 @@
+.callout[data-callout="inbox"] {
+    --callout-color: var(--callout-example);
+    --callout-icon: mails;
+}

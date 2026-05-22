@@ -1,0 +1,29 @@
+filters:
+  and:
+    - file.hasTag("📌")
+    - file.inFolder("references/locations")
+views:
+  - type: map
+    name: Map
+    order:
+      - file.name
+      - coordinates
+    mapHeight: 300
+    center: "[32.60174, -99.88715]"
+    coordinates: note.location
+    markerIcon: note.icon
+    markerColor: note.color
+    minZoom: 0
+  - type: table
+    name: List
+    order:
+      - file.name
+      - address
+      - related
+      - lat
+      - lng
+    sort:
+      - property: file.name
+        direction: ASC
+    columnSize:
+      note.address: 273

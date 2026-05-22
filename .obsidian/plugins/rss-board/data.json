@@ -1,0 +1,68 @@
+{
+  "feeds": [],
+  "viewStyle": "card",
+  "refreshInterval": 30,
+  "maxItems": 100,
+  "cardWidth": 300,
+  "cardHeight": 360,
+  "sidebarCollapsed": false,
+  "availableTags": [
+    {
+      "name": "Important",
+      "color": "#e74c3c"
+    },
+    {
+      "name": "Read Later",
+      "color": "#3498db"
+    },
+    {
+      "name": "Favorite",
+      "color": "#f1c40f"
+    },
+    {
+      "name": "YouTube",
+      "color": "#ff0000"
+    },
+    {
+      "name": "Podcast",
+      "color": "#8e44ad"
+    },
+    {
+      "name": "Saved",
+      "color": "#16a085"
+    }
+  ],
+  "collapsedFolders": [],
+  "folders": [
+    {
+      "name": "Videos",
+      "subfolders": []
+    },
+    {
+      "name": "Podcasts",
+      "subfolders": []
+    }
+  ],
+  "viewLocation": "main",
+  "readerViewLocation": "main",
+  "useWebViewer": true,
+  "media": {
+    "defaultYouTubeFolder": "Videos",
+    "defaultYouTubeTag": "youtube",
+    "defaultPodcastFolder": "Podcasts",
+    "defaultPodcastTag": "podcast",
+    "autoDetectMediaType": true,
+    "openInSplitView": true
+  },
+  "articleSaving": {
+    "defaultTemplate": "# {{title}}\n\n{{content}}\n\n[Source]({{link}})",
+    "defaultFolder": "RSS Articles",
+    "addSavedTag": true,
+    "includeFrontmatter": true,
+    "frontmatterTemplate": "---\ntitle: \"{{title}}\"\ndate: {{date}}\ntags: [{{tags}}]\nsource: \"{{source}}\"\nlink: {{link}}\n---\n\n"
+  },
+  "display": {
+    "showCoverImage": true,
+    "showSummary": true
+  }
+}

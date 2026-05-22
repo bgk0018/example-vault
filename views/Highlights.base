@@ -1,0 +1,26 @@
+filters:
+  and:
+    - file.hasTag("✂️")
+    - file.inFolder("references/highlights")
+views:
+  - type: table
+    name: By Source
+    groupBy:
+      property: parent
+      direction: ASC
+    order:
+      - file.name
+      - parent
+      - create-date
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: Recent
+    order:
+      - file.name
+      - parent
+      - create-date
+    sort:
+      - property: create-date
+        direction: DESC

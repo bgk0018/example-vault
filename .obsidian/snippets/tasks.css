@@ -1,0 +1,44 @@
+/* I like tags to appear in gray so they won't grab too much attention */
+.tasks-list-text a.tag {
+    color: gray;
+}
+
+/* Set internal links to gray too instead of Obsidian's default */
+.tasks-backlink a.internal-link {
+    color: gray;
+}
+
+/* Paint the recurrence rule in gray so it will be less distracting */
+.task-recurring {
+        color: gray;
+}
+
+
+/* This seems to be needed for the task description to word-wrap correctly if they're too long */
+span.tasks-list-text {
+        width: auto;
+}
+
+
+/* A special color (bluish) for the 'due' component if it's for today */
+.task-due[data-task-due="today"] span {
+    background: #d2e8fa;
+    border-radius: 10px;
+    padding: 2px 8px;
+}
+/* A special color (reddish) for overdue due dates */
+.task-list-item[data-task=""] .task-due[data-task-due^="past-"] span {
+    background: #ffbfcc;
+    border-radius: 10px;
+    padding: 2px 8px;
+}
+
+/* Tag colors */
+a.tag[data-tag-name="#t/incall"] {
+    box-shadow: 0 0 5px green;
+        margin: 2px;
+}
+a.tag[data-tag-name="#t/evening"] {
+    box-shadow: 0 0 5px cornflowerblue;
+        margin: 2px;
+}

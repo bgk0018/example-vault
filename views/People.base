@@ -1,0 +1,30 @@
+filters:
+  and:
+    - file.hasTag("🙂")
+    - file.inFolder("references/people")
+formulas:
+  backlinks: file.backlinks.length
+properties:
+  formula.backlinks:
+    displayName: Backlinks
+views:
+  - type: table
+    name: All People
+    order:
+      - file.name
+      - name
+      - maps
+      - formula.backlinks
+    sort:
+      - property: name
+        direction: ASC
+  - type: table
+    name: Most Connected
+    order:
+      - file.name
+      - name
+      - maps
+      - formula.backlinks
+    sort:
+      - property: formula.backlinks
+        direction: DESC

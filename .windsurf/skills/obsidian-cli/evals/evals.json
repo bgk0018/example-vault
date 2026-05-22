@@ -1,0 +1,98 @@
+{
+  "skill_name": "obsidian-cli",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I want to find all the notes related to 'attention' in my vault and see how they're connected",
+      "expected_output": "Uses CLI search and backlinks/links to map connections, not just grep_search",
+      "files": [],
+      "expectations": [
+        "Chooses obsidian search or obsidian backlinks over grep_search for vault-level discovery",
+        "Uses link analysis commands (backlinks, links) to show connections between notes",
+        "Provides a coherent map of how the notes relate, not just a list of files"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Can you read my daily note from today and add a line about a meeting I had with Sarah?",
+      "expected_output": "Reads today's daily note via CLI, then appends content correctly",
+      "files": [],
+      "expectations": [
+        "Computes today's date and uses it to target the daily note",
+        "Uses obsidian read to get current contents (not read_file)",
+        "Uses obsidian append to add the meeting line (not edit tool)",
+        "Content is appended, not prepended or overwritten"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "I need to promote my seedling note 'A Book in an Hour' from 🌱 to 🌿",
+      "expected_output": "Uses property:set to change the tag, understands the garden maturity model",
+      "files": [],
+      "expectations": [
+        "Uses obsidian property:set to change the tags property",
+        "Correctly targets the file by name",
+        "Sets the new tag value to 🌿 (not appending, replacing)"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "What are my stale projects? I want to review which ones need attention.",
+      "expected_output": "Queries the Projects.base for stale projects view",
+      "files": [],
+      "expectations": [
+        "Uses obsidian base:query with the correct .base file path",
+        "Targets the Stale view in the Projects base",
+        "Uses format=md or format=paths for readable output"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Create a new zettelkasten note about how spaced repetition reinforces neural pathways, linked to the Learning map",
+      "expected_output": "Creates a properly structured zettelkasten note with correct naming, frontmatter, and placement",
+      "files": [],
+      "expectations": [
+        "Uses obsidian create or templater:create-from-template",
+        "Places the note in zettelkasten/ folder",
+        "Uses the YYYYMMDDHHmm timestamp naming convention",
+        "Includes proper frontmatter with tags, create-date, related linking to Learning map"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "I want to create a recurring weekly task with a reminder and a time estimate using the CLI",
+      "expected_output": "Uses tasknotes:capture with recurrence, reminders, and estimate parameters",
+      "files": [],
+      "expectations": [
+        "Uses obsidian tasknotes:capture",
+        "Includes recurrence= parameter with an iCal RRULE",
+        "Includes recurrence-anchor= parameter",
+        "Includes reminders= parameter with correct spec format",
+        "Includes estimate= parameter with minutes value"
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "How do I open my homepage from the CLI?",
+      "expected_output": "References the homepage and homepage:read commands",
+      "files": [],
+      "expectations": [
+        "Mentions obsidian homepage command to open the homepage",
+        "Mentions obsidian homepage:read command to read contents",
+        "Does not confuse with obsidian open or other commands"
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "I want to see all my hotkeys in JSON format, including commands that don't have hotkeys assigned",
+      "expected_output": "Uses hotkeys command with format=json and all flags",
+      "files": [],
+      "expectations": [
+        "Uses obsidian hotkeys command",
+        "Includes format=json parameter",
+        "Includes all flag to show commands without hotkeys",
+        "Does not use commands or hotkey (singular) for this task"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "iteration": 2,
+  "focus": "Documentation completeness — all commands and parameters from obsidian help",
+  "expectations": [
+    {
+      "text": "Eval 6: Uses tasknotes:capture with recurrence parameter",
+      "passed": true,
+      "evidence": "tasknotes:capture section now documents recurrence= with iCal RRULE format"
+    },
+    {
+      "text": "Eval 6: Includes recurrence-anchor parameter",
+      "passed": true,
+      "evidence": "recurrence-anchor= documented with scheduled|completion values"
+    },
+    {
+      "text": "Eval 6: Includes reminders parameter with correct format",
+      "passed": true,
+      "evidence": "reminders= documented with example format: due:-PT1H;scheduled:-PT30M;at:2026-04-02T09:00"
+    },
+    {
+      "text": "Eval 6: Includes estimate parameter",
+      "passed": true,
+      "evidence": "estimate= documented as 'Time estimate in minutes'"
+    },
+    {
+      "text": "Eval 7: homepage command is documented",
+      "passed": true,
+      "evidence": "New 'Homepage plugin' section added with homepage and homepage:read commands"
+    },
+    {
+      "text": "Eval 7: homepage:read command is documented",
+      "passed": true,
+      "evidence": "homepage:read documented as 'Read and return the homepage note contents'"
+    },
+    {
+      "text": "Eval 8: hotkeys command has format parameter",
+      "passed": true,
+      "evidence": "hotkeys row in parameter table shows format=json|tsv|csv"
+    },
+    {
+      "text": "Eval 8: hotkeys command has all flag",
+      "passed": true,
+      "evidence": "hotkeys row documents 'all' flag with note: 'includes commands without hotkeys'"
+    }
+  ],
+  "summary": {
+    "passed": 8,
+    "failed": 0,
+    "total": 8,
+    "pass_rate": 1.0
+  },
+  "changes_made": {
+    "commands_added": ["homepage", "homepage:read"],
+    "parameters_added": {
+      "aliases": ["verbose", "active", "total"],
+      "backlinks": ["total", "format (in table)"],
+      "base:create": ["newtab", "content"],
+      "deadends": ["all"],
+      "hotkeys": ["total", "verbose", "format", "all"],
+      "orphans": ["all"],
+      "plugin:disable": ["filter"],
+      "plugin:enable": ["filter"],
+      "plugins": ["format"],
+      "plugins:enabled": ["filter", "versions", "format"],
+      "recents": ["total"],
+      "search": ["total"],
+      "tab:open": ["group", "view"],
+      "tags": ["total", "active"],
+      "tasks": ["total", "active"],
+      "tasknotes:capture": ["details", "status", "scheduled", "tags", "contexts", "projects", "recurrence", "recurrence-anchor", "reminders", "estimate"],
+      "vaults": ["total"],
+      "wordcount": ["characters"]
+    },
+    "parameter_tables_added": [
+      "Read", "Create", "Delete", "Open", "Properties (vault-wide)", "Outline",
+      "Tags", "Tasks (list)", "Tasks (single)", "Search", "Link analysis",
+      "Bases", "Templater", "History & recovery", "Commands & hotkeys",
+      "Plugin management", "Themes & CSS snippets", "App & vault management"
+    ],
+    "other_improvements": [
+      "Added vault= global option to SKILL.md syntax essentials",
+      "Added dev:dom css= and inner params to plugin-dev.md",
+      "Added parameter table to plugin-dev.md for all dev commands",
+      "Updated commands.md header to state completeness claim"
+    ]
+  }
+}

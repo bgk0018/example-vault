@@ -1,0 +1,38 @@
+filters:
+  and:
+    - file.hasTag("📕")
+    - file.folder != "templates"
+formulas:
+  Covered: image(cover)
+properties:
+  note.author:
+    displayName: authors
+  formula.Covered:
+    displayName: Cover
+views:
+  - type: facet-cards
+    name: Cards
+    order:
+      - recommended-by
+      - authors
+      - file.name
+      - formula.Covered
+    sort:
+      - property: recommended-by
+        direction: ASC
+      - property: file.ctime
+        direction: DESC
+      - property: cover
+        direction: ASC
+      - property: authors
+        direction: ASC
+    columnSize:
+      formula.Covered: 127
+      file.name: 566
+      note.authors: 367
+      note.recommended-by: 227
+    rowHeight: tall
+    layout: polaroid
+    shape: square
+    tilt: none
+    showContent: false

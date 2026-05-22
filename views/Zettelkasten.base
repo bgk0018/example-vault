@@ -1,0 +1,39 @@
+filters:
+  and:
+    - file.inFolder("zettelkasten")
+    - file.ext == "md"
+    - or:
+        - file.hasTag("📖")
+        - file.hasTag("❓")
+formulas:
+  type_label: if(file.tags.contains("❓"), "❓ Question", "📖 Concept")
+properties:
+  formula.type_label:
+    displayName: Type
+views:
+  - type: table
+    name: By Map
+    groupBy:
+      property: related
+      direction: ASC
+    order:
+      - file.name
+      - formula.type_label
+      - referenced-in
+      - create-date
+    sort:
+      - property: file.name
+        direction: ASC
+    columnSize:
+      file.name: 366
+  - type: table
+    name: Recent
+    order:
+      - file.name
+      - formula.type_label
+      - related
+      - referenced-in
+      - create-date
+    sort:
+      - property: create-date
+        direction: DESC
