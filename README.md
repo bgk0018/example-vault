@@ -73,19 +73,19 @@ flowchart TD
 
 ## Folder Map
 
-| Folder | Purpose |
-|--------|---------|
-| `inbox/` | GTD capture bucket — raw material lands here before processing |
-| `references/` | Personal library — books, articles, highlights, people, locations |
-| `zettelkasten/` | Atomic concept notes (📖) and question notes (❓) |
-| `garden/` | Original work — ideas, drafts, talks (🌱🌿🌳🍃) |
-| `maps/` | Maps of Content (🗺️) — topic indexes that aggregate related notes |
-| `projects/` | Active project folders with tasks, meetings, sessions |
-| `journal/` | Periodic notes — daily, weekly, monthly, quarterly, yearly |
-| `blog/` | Digital Garden — published content |
-| `archive/` | Completed/inactive projects, organized by year |
-| `templates/` | Templater templates — source of truth for note structure |
-| `views/` | Bases dashboards and Dataview queries |
+| Folder | Purpose | Guide |
+|--------|---------|-------|
+| `inbox/` | GTD capture bucket — raw material lands here before processing | [[inbox/README\|README]] |
+| `references/` | Personal library — books, articles, highlights, people, locations | [[references/README\|README]] |
+| `zettelkasten/` | Atomic concept notes (📖) and question notes (❓) | [[zettelkasten/README\|README]] |
+| `garden/` | Original work — ideas, drafts, talks (🌱🌿🌳🍃) | [[garden/README\|README]] |
+| `maps/` | Maps of Content (🗺️) — topic indexes that aggregate related notes | [[maps/README\|README]] |
+| `projects/` | Active project folders with tasks, meetings, sessions | [[projects/README\|README]] |
+| `journal/` | Periodic notes — daily, weekly, monthly, quarterly, yearly | [[journal/README\|README]] |
+| `blog/` | Digital Garden — published content | [[blog/README\|README]] |
+| `archive/` | Completed/inactive projects, organized by year | [[archive/README\|README]] |
+| `templates/` | Templater templates — source of truth for note structure | [[templates/README\|README]] |
+| `views/` | Bases dashboards and Dataview queries | [[views/README\|README]] |
 
 ---
 
