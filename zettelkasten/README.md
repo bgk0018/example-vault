@@ -29,22 +29,31 @@ aliases:
   - Title Without Timestamp
 tags: [📖]  # or [❓]
 create-date: "[[YYYY-MM-DD]]"
-parent:           # hierarchical parent (source book, map)
-related:          # maps and peer notes
+parent:           # Idea Compass North — origins, causes, higher-order category
+related:          # Idea Compass West — similar ideas, analogs, peer notes, maps
 referenced-in:    # source material this was derived from
-challenges:       # notes that contradict this idea (Idea Compass East)
+challenges:       # Idea Compass East — competing ideas, limitations, opposites
 prompted-by:      # (❓ only) person or note that prompted the question
 dg-publish: true
 modified-dates:
 append_modified_update: true
 ```
 
-## Key Properties
+## Key Properties & the Idea Compass
 
-- **`parent:`** — Points to the source (e.g., the book this concept came from)
-- **`related:`** — Connects to Maps of Content and peer notes. This is how maps discover notes.
+Three linking properties map directly to the [Idea Compass](https://zettelkasten.de/posts/creative-technique-within-zettelkasten-framework/) (Fei-Ling Tseng / Sascha Fast). Place the current note at the center and ask:
+
+| Direction | Question | Property |
+|-----------|----------|----------|
+| **North** | Where does this idea come from? Origins, causes, higher-order categories. | `parent:` |
+| **West** | What is similar? Analogs, echoes, related disciplines. | `related:` |
+| **East** | What competes with or contradicts this idea? | `challenges:` |
+| **South** | Where does this idea lead? What does it nurture? | *(implicit — notes whose `parent:` points back here; discovered via backlinks)* |
+
+- **`parent:`** — The upstream source or category this concept belongs to (North)
+- **`related:`** — Maps of Content, peer notes, and analogs (West). This is how maps discover notes.
+- **`challenges:`** — Notes that contradict or complicate this idea (East)
 - **`referenced-in:`** — The specific reference note or highlight file the idea was derived from
-- **`challenges:`** — Links to notes that contradict or complicate this idea (Idea Compass "East" direction)
 - **`supersedes:`** — Points to an older zettel this note replaces when your understanding fundamentally changes
 
 ## Body Structure
@@ -71,18 +80,18 @@ append_modified_update: true
 
 ## Tending States (visible in `Garden.base`)
 
-| State | What it means | Action needed |
-|-------|--------------|---------------|
-| Disconnected | Empty `related:` and no `parent:` | Connect to maps and sources |
-| Unchallenged | Has `referenced-in:` but no `challenges:` | Find contradicting ideas |
-| Parentless | No `parent:` set | Assign a hierarchical parent |
+| State | Compass gap | What it means | Action needed |
+|-------|-------------|--------------|---------------|
+| Disconnected | No North, no West | Empty `parent:` and `related:` — the note floats in isolation | Find its origin (North) and connect to maps/peers (West) |
+| Unchallenged | No East | Has sources but no `challenges:` — the idea has never been tested | Find competing or contradicting ideas (East) |
+| Parentless | No North | No `parent:` set — the note has no upstream origin | Assign a hierarchical parent — the source, category, or higher-order idea it came from (North) |
 
 ## Example Notes in This Vault
 
-- **Progressive Overload** — Well-linked model note with citations, parent, related, challenges
-- **Central Governor Theory** — Well-linked, challenges Progressive Overload (Idea Compass East)
-- **Sleep and Recovery** — Disconnected (needs `related:` and `parent:`)
-- **Protein Timing** — Unchallenged (needs `challenges:` links)
-- **Muscle Memory** — No parent
-- **Periodization** — Fully orphaned (worst case for tending)
-- **Does Cold Exposure Improve Recovery** — ❓ question note, open inquiry
+- **Progressive Overload** — Model note. All four compass directions populated: North (Endure), West (Exercise Science map), East (Central Governor Theory challenges it), South (Central Governor Theory's body links back).
+- **Central Governor Theory** — Model note. Bidirectional East with Progressive Overload — each challenges the other. Shares the same North (Endure) and West (Exercise Science).
+- **Sleep and Recovery** — Disconnected: missing North (no `parent:` despite having `referenced-in: Why We Sleep`) and West (no `related:` to any map). No East either. Tending should fill all three.
+- **Protein Timing** — Unchallenged: has North (Hypertrophy article) and West (Nutrition map), but no East. What competes with or complicates this idea?
+- **Muscle Memory** — Parentless: has West (Exercise Science) but no North. Where does this concept originate? Which source book or article?
+- **Periodization** — Fully orphaned: no North, no West, no East, no `referenced-in`. Worst-case tending scenario — every compass direction needs filling.
+- **Does Cold Exposure Improve Recovery** — ❓ question note. Has West (Exercise Science) and `prompted-by` (Sleep and Recovery). No North or East yet — the inquiry is open.
