@@ -85,17 +85,17 @@ flowchart TD
 
 | Folder | Purpose | Guide |
 |--------|---------|-------|
-| `inbox/` | GTD capture bucket — raw material lands here before processing | [[inbox/README\|README]] |
-| `references/` | Personal library — books, articles, highlights, people, locations | [[references/README\|README]] |
-| `zettelkasten/` | Atomic concept notes (📖) and question notes (❓) | [[zettelkasten/README\|README]] |
-| `garden/` | Original work — ideas, drafts, talks (🌱🌿🌳🍃) | [[garden/README\|README]] |
-| `maps/` | Maps of Content (🗺️) — topic indexes that aggregate related notes | [[maps/README\|README]] |
-| `projects/` | Active project folders with tasks, meetings, sessions | [[projects/README\|README]] |
-| `journal/` | Periodic notes — daily, weekly, monthly, quarterly, yearly | [[journal/README\|README]] |
-| `blog/` | Digital Garden — published content | [[blog/README\|README]] |
-| `archive/` | Completed/inactive projects, organized by year | [[archive/README\|README]] |
-| `templates/` | Templater templates — source of truth for note structure | [[templates/README\|README]] |
-| `views/` | Bases dashboards and Dataview queries | [[views/README\|README]] |
+| `inbox/` | GTD capture bucket — raw material lands here before processing | [README](inbox/README.md) |
+| `references/` | Personal library — books, articles, highlights, people, locations | [README](references/README.md) |
+| `zettelkasten/` | Atomic concept notes (📖) and question notes (❓) | [README](zettelkasten/README.md) |
+| `garden/` | Original work — ideas, drafts, talks (🌱🌿🌳🍃) | [README](garden/README.md) |
+| `maps/` | Maps of Content (🗺️) — topic indexes that aggregate related notes | [README](maps/README.md) |
+| `projects/` | Active project folders with tasks, meetings, sessions | [README](projects/README.md) |
+| `journal/` | Periodic notes — daily, weekly, monthly, quarterly, yearly | [README](journal/README.md) |
+| `blog/` | Digital Garden — published content | [README](blog/README.md) |
+| `archive/` | Completed/inactive projects, organized by year | [README](archive/README.md) |
+| `templates/` | Templater templates — source of truth for note structure | [README](templates/README.md) |
+| `views/` | Bases dashboards and Dataview queries | [README](views/README.md) |
 
 ---
 
