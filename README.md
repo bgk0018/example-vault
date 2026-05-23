@@ -92,7 +92,7 @@ flowchart TD
 | `zettelkasten/` | Atomic concept notes (📖) and question notes (❓) | [README](zettelkasten/README.md) |
 | `garden/` | Original work — ideas, drafts, talks (🌱🌿🌳🍃) | [README](garden/README.md) |
 | `maps/` | Maps of Content (🗺️) — topic indexes that aggregate related notes | [README](maps/README.md) |
-| `areas/` | Areas of Responsibility (🛒) — ongoing commitments (career, health, family) | — |
+| `areas/` | Areas of Responsibility (🛒) — ongoing commitments (career, health, family) | [README](areas/README.md) |
 | `projects/` | Active project folders with tasks, meetings, sessions | [README](projects/README.md) |
 | `journal/` | Periodic notes — daily, weekly, monthly, quarterly, yearly | [README](journal/README.md) |
 | `blog/` | Digital Garden — published content | [README](blog/README.md) |

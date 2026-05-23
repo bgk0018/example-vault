@@ -271,13 +271,13 @@
   "enableMdbaseSpec": false,
   "autoCreateDefaultBasesFiles": true,
   "commandFileMapping": {
-    "open-calendar-view": "views/tasks/Mini Calendar.base",
-    "open-kanban-view": "views/tasks/Kanban.base",
-    "open-tasks-view": "views/tasks/Tasks.base",
-    "open-advanced-calendar-view": "views/tasks/Calendar.base",
-    "open-agenda-view": "views/tasks/Agenda.base",
-    "pomodoro-stats-base": "views/tasks/Pomodoro.base",
-    "relationships": "views/tasks/Widget.base"
+    "open-calendar-view": "projects/Mini Calendar.base",
+    "open-kanban-view": "projects/Kanban.base",
+    "open-tasks-view": "projects/Tasks.base",
+    "open-advanced-calendar-view": "projects/Calendar.base",
+    "open-agenda-view": "projects/Agenda.base",
+    "pomodoro-stats-base": "projects/Pomodoro.base",
+    "relationships": "projects/Widget.base"
   },
   "maintainDueDateOffsetInRecurring": false,
   "resetCheckboxesOnRecurrence": false,
