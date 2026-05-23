@@ -12,15 +12,17 @@ This vault's design draws on several foundational thinkers and systems:
 
 | Source | Work | What it contributes |
 |--------|------|-------------------|
-| **David Allen** | *Getting Things Done* (GTD) | Capture → Clarify → Organize → Review → Engage. Weekly Review. Natural Planning Model for projects. |
-| **Tiago Forte** | *Building a Second Brain* (BASB) | PARA (Projects, Areas, Resources, Archive). CODE (Capture, Organize, Distill, Express). Intermediate packets. |
-| **Sönke Ahrens** | *How to Take Smart Notes* | Zettelkasten method — rewrite ideas in your own words, link to what you know. Separate your ideas from others'. |
-| **Niklas Luhmann** | Original slip-box method | Atomicity, linking as thinking, emergence over planning. |
-| **Nick Milo** | *Linking Your Thinking* (LYT) | Maps of Content — navigational layers that sit above notes, providing context without hierarchy. |
-| **James Clear** | *Atomic Habits* | Habit tracking in daily notes. "You don't rise to the level of your goals; you fall to the level of your systems." |
-| **Stephen Covey** | *The 7 Habits of Highly Effective People* | "Begin with the end in mind" (Habit 2) — every project defines its Objective before work starts. |
-| **Maggie Appleton / Andy Matuschak** | Digital Garden philosophy | Learning in public. Evergreen notes. Ideas published at varying maturity stages. |
-| **Cal Newport** | *Deep Work* | Attention management. Time tracking to see where focus actually goes. |
+| **David Allen** | [*Getting Things Done*](https://gettingthingsdone.com/) (GTD) | Capture → Clarify → Organize → Review → Engage. Weekly Review. Natural Planning Model for projects. |
+| **Tiago Forte** | [*Building a Second Brain*](https://www.buildingasecondbrain.com/) (BASB) | PARA (Projects, Areas, Resources, Archive). CODE (Capture, Organize, Distill, Express). Intermediate packets. |
+| **Sönke Ahrens** | [*How to Take Smart Notes*](https://takesmartnotes.com/) | Zettelkasten method — rewrite ideas in your own words, link to what you know. Separate your ideas from others'. |
+| **Niklas Luhmann** | [Original slip-box method](https://niklas-luhmann-archiv.de/) | Atomicity, linking as thinking, emergence over planning. See the [zettelkasten.de overview](https://zettelkasten.de/overview/). |
+| **Fei-Ling Tseng / Sascha Fast** | [Idea Compass](https://zettelkasten.de/posts/creative-technique-within-zettelkasten-framework/) | Four-direction thinking prompt for linking notes: North (origins → `parent:`), West (analogs → `related:`), East (opposites → `challenges:`), South (downstream → backlinks on `parent:`). |
+| **Nick Milo** | [*Linking Your Thinking*](https://www.linkingyourthinking.com/) (LYT) | Maps of Content — navigational layers that sit above notes, providing context without hierarchy. |
+| **James Clear** | [*Atomic Habits*](https://jamesclear.com/atomic-habits) | Habit tracking in daily notes. "You don't rise to the level of your goals; you fall to the level of your systems." |
+| **Stephen Covey** | [*The 7 Habits of Highly Effective People*](https://www.franklincovey.com/the-7-habits/) | "Begin with the end in mind" (Habit 2) — every project defines its Objective before work starts. |
+| **Mike Caufield** | [*The Garden and the Stream*](https://hapgood.us/2015/10/17/the-garden-and-the-stream-a-technopastoral/) | The foundational garden-vs-stream distinction — gardens accumulate knowledge in an explorable space; streams are fleeting timelines. |
+| **Maggie Appleton / Andy Matuschak** | [Digital Garden philosophy](https://maggieappleton.com/garden-history) | Learning in public. Evergreen notes. Six patterns of gardening. The 🌱→🌿→🌳 maturity system. |
+| **Cal Newport** | [*Deep Work*](https://calnewport.com/deep-work-rules-for-focused-success-in-a-distracted-world/) | Attention management. Time tracking to see where focus actually goes. |
 
 ---
 
