@@ -80,7 +80,7 @@ dg-publish: true
 - **Naming:** Plain descriptive name (no date suffix)
 - **Template:** `f-map.md`
 
-### � Area (`areas/AreaName/`)
+### 🛒 Area (`areas/AreaName/`)
 ```yaml
 banner: "[[f-map-20250108173714088.webp]]"
 tags: [🛒]
@@ -107,7 +107,7 @@ related:
 ```
 - **Template:** `f-area-relationship.md`
 
-### �🚧 Project (`projects/Name Project/`)
+### 🚧 Project (`projects/Name Project/`)
 ```yaml
 banner: "[[image.webp]]"
 tags: [🚧]

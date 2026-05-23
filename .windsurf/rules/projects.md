@@ -10,7 +10,7 @@ GTD + PARA hybrid. Every project has an Objective, Metrics, Brainstorm, Executio
 
 **The three-part project test:** Does it have a (1) finite outcome, (2) multiple steps, and (3) foreseeable time horizon? If YES to all three → it belongs here. If it's an ongoing responsibility with no defined end → `areas/` (see `areas.md`). If it's a single action → daily note task. If it's a concept collection → `zettelkasten/` or `references/`.
 
-**Areas** are ongoing responsibilities in `areas/` (`�`). Set `parent:` on the project to the relevant area file. **Someday/Maybe** items are `🌱` garden notes, not `📋` tasks — activate via `/open-project`.
+**Areas** are ongoing responsibilities in `areas/` (`🛒`). Set `parent:` on the project to the relevant area file. **Someday/Maybe** items are `🌱` garden notes, not `📋` tasks — activate via `/open-project`.
 
 ## Do Not
 - Create project files without a subfolder — every project gets its own folder
@@ -216,7 +216,7 @@ Link TaskNote files in two places:
 Inline `- [ ]` tasks are **only** for recurring reminders in project files — not for discrete action items. The canonical example is the "Determine next action" reminder seeded by project templates:
 
 ```markdown
-- [ ] #📋 [[ProjectName Project]]: Determine next action � every month 📅 YYYY-MM-DD
+- [ ] #📋 [[ProjectName Project]]: Determine next action 🔁 every month 📅 YYYY-MM-DD
 ```
 
 - Always prefix with `#📋` tag and `[[Project Name]]:`

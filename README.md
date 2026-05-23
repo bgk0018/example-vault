@@ -106,8 +106,8 @@ flowchart TD
 | Tag | Type                      | Folder                      |
 | --- | ------------------------- | --------------------------- |
 | 🗺️ | Map of Content            | `maps/`                     |
-| �   | Area of Responsibility    | `areas/`                    |
-| �📖 | Literature / Concept Note | `zettelkasten/`             |
+| 🛒  | Area of Responsibility    | `areas/`                    |
+| 📖  | Literature / Concept Note | `zettelkasten/`             |
 | ❓   | Question / Inquiry        | `zettelkasten/`             |
 | 🌱  | Idea (seedling)           | `garden/`                   |
 | 🌿  | Idea (growing)            | `garden/`                   |

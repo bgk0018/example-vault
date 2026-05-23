@@ -37,8 +37,8 @@ Tags represent note types. Authoritative source: `[[Current Tags - 202303181855]
 | Tag | Type | Folder |
 |-----|------|--------|
 | 🗺️ | Map of Content | `maps/` |
-| � | Area of Responsibility | `areas/` |
-| �📖 | Literature / Concept Note | `zettelkasten/` |
+| 🛒 | Area of Responsibility | `areas/` |
+| 📖 | Literature / Concept Note | `zettelkasten/` |
 | 🌱 | Idea / Creation (seedling) | `garden/` |
 | 🌿 | Idea / Creation (growing) | `garden/` |
 | 🌳 | Idea / Creation (evergreen) | `garden/` |
