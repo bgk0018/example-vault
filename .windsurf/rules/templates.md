@@ -40,12 +40,14 @@ templates/
 | `f-yearly.md` | Yearly review | 📅 | `journal/5-yearly/` |
 | `f-lit.md` | Literature note | 📖 | `zettelkasten/` |
 | `f-map.md` | Map of Content | 🗺️ | `maps/` |
+| `f-area.md` | Area of Responsibility | 🛒 | `areas/Name/` |
+| `f-area-relationship.md` | Relationship sub-area | 🛒 | `areas/Parent/Name/` |
 | `f-project.md` | Project | 🚧 | `projects/Name Project/` |
 | `f-book-project.md` | Book project | 🚧 | `projects/Name/` |
-| `f-career-project.md` | Career project | 🚧 | `projects/Name Career/` |
+| `f-career-project.md` | ~~Career project~~ (DEPRECATED → use `f-area-relationship.md`) | 🚧 | `projects/Name Career/` |
 | `f-meeting.md` | Meeting note | 👥 | `projects/[selected]/` |
 | `f-session.md` | Session note | 🧙 | `projects/[selected]/` |
-| `f-one-on-one.md` | One-on-one | 👥 | `projects/Name Career Project/` |
+| `f-one-on-one.md` | One-on-one | 👥 | `projects/` or `areas/` (in career folder) |
 | `f-person.md` | Person reference | 🙂 | `references/people/` |
 | `f-media.md` | Media reference | 🎥 | (current folder) |
 | `f-fleeting.md` | Fleeting note | 🍃 | (current folder) |

@@ -9,7 +9,8 @@ Guide the user through opening a new project using **David Allen's Natural Plann
 
 Determine if the user already has a project file or needs to create one:
 
-- **New project** — the user will create it in Obsidian using the `f-project.md` template (or a variant like `f-book-project.md`, `f-career-project.md`). The template creates the folder, seeds starter tasks, and sets up the body structure.
+- **New project** — the user will create it in Obsidian using the `f-project.md` template (or a variant like `f-book-project.md`, `f-sales-project.md`). The template creates the folder, seeds starter tasks, and sets up the body structure.
+- **New area** — if the work is an ongoing responsibility (no finite outcome), use `f-area.md` or `f-area-relationship.md` instead. Areas live in `areas/`, not `projects/`.
 - **Existing project with empty sections** — the user has a project file but Objective/Metrics/Brainstorm are placeholder text. Read the project file to orient.
 
 ```bash
@@ -43,7 +44,8 @@ Ask open-ended questions to help the user articulate the project's purpose. Do N
 - "Why does this matter to you right now?"
 - "What would happen if you didn't do this project?"
 - "Who benefits from this work?"
-- "Is this truly a project (defined outcome) or an ongoing area of interest (map)?"
+- "Is this truly a project (defined outcome) or an ongoing area of responsibility (`areas/`)?"
+- "Does it pass the three-part test: (1) finite outcome, (2) multiple steps, (3) foreseeable time horizon?"
 
 Wait for the user to articulate their objective. When they're ready, they write it into the `# Objective` section. Offer to help refine the wording but never replace it.
 
@@ -93,11 +95,11 @@ obsidian move file="Task Title" to="projects/ProjectName Project/tasks/"
 
 Set the project's metadata connections:
 
-- **`parent:`** — identify the Area (Map of Content) this project belongs to. Search for existing maps:
+- **`parent:`** — identify the Area of Responsibility this project belongs to. Search for existing areas:
   ```bash
-  obsidian search query="[area topic]" limit=10
+  obsidian base:query file="areas/Areas.base" view="All Areas" format=md
   ```
-  If the right map doesn't exist, note it as a phantom link — the map can be created later.
+  Every project should roll up under an area. If the right area doesn't exist, create it via `f-area.md` or note it as a phantom link.
 
 - **`related:`** — link to Maps of Content, related projects, or zettelkasten notes that connect to this project's domain.
 

@@ -103,6 +103,9 @@ Speaking/publishing content adds `📫` to tags.
 [Optional links to source material]
 ```
 
+## Co-located Views
+- `Garden.base` — the tending queue. Lives in `garden/`.
+
 ## Templates
 - Ideas (seedling): `templates/f-idea.md` — creates a `🌱` note
 - Informal original work: `templates/f-fleeting.md`
@@ -142,7 +145,7 @@ These commands surface structural issues — disconnected notes, broken links, a
 ### Gardening session startup sequence
 
 1. `obsidian read file="YYYY-MM-DD"` — read today's daily note (compute date from current date)
-2. `obsidian base:query file="views/Garden.base" view="Seedling 🌱" format=paths` — check tending queue
+2. `obsidian base:query file="garden/Garden.base" view="Seedling 🌱" format=paths` — check tending queue
 3. `obsidian unresolved counts` — surface gaps worth filling
 4. `obsidian orphans` — find disconnected notes worth linking
 

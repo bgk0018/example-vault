@@ -62,7 +62,7 @@ capture → catalog → distill → connect → publish
 
 This pipeline is not strictly linear — you can create a zettelkasten note directly without an inbox step, or publish a map before all its notes are complete. But the general flow is: **capture → catalog → distill → connect → publish**.
 
-Projects operate in parallel: they generate meetings, tasks, and working notes that may feed into the pipeline (e.g., a project insight becomes a zettelkasten note). When a project ends, triage its contents into the appropriate folders and archive the rest.
+Projects and Areas operate in parallel: they generate meetings, tasks, and working notes that may feed into the pipeline (e.g., a project insight becomes a zettelkasten note). Areas provide the ongoing context in which projects exist — a project's `parent:` typically points to an area file. When a project ends, triage its contents into the appropriate folders and archive the rest.
 
 ## Linking Properties Compared
 
@@ -70,7 +70,7 @@ Three context properties connect notes to other notes. They serve different purp
 
 | Property | Relationship | Direction | Use When | Example |
 |----------|-------------|-----------|----------|---------|
-| `parent:` | **Hierarchical** — "belongs to" | Child → Parent (up the tree) | A note is structurally *part of* another note. One parent only. | Meeting → Project, Daily → Weekly, Zettel → Source Book |
+| `parent:` | **Hierarchical** — "belongs to" | Child → Parent (up the tree) | A note is structurally *part of* another note. One parent only. | Meeting → Project or Area, Daily → Weekly, Zettel → Source Book, Project → Area |
 | `related:` | **Associative** — "is connected to" | Peer ↔ Peer (lateral) | A note is thematically connected to a map, concept, or sibling note. Multiple values allowed. Maps discover notes via this field. | Zettel → Map of Content, Zettel → related Zettel |
 | `maps:` | **Explicit MOC tag** — "appears on this map" | Note → Map | A note should appear on a specific map's Dataview queries. Used on reference notes and meetings where `related:` is already occupied by non-map links. | Person → `[[Psychology]]`, Article → `[[Machine Learning]]` |
 

@@ -34,5 +34,5 @@ authors:
 
 # Concepts
 ```dataview
-TABLE WITHOUT ID link(file.link, alias[0]) as "Name", "Weight: "+ length(file.inlinks) as "Weight" FROM #📖 WHERE contains(referenced-in, link("{{title}} - {{author}}")) SORT length(file.inlinks) DESC
+TABLE WITHOUT ID link(file.link, aliases[0]) as "Name", "Weight: "+ length(file.inlinks) as "Weight" FROM #📖 WHERE contains(referenced-in, link("{{title}} - {{author}}")) SORT length(file.inlinks) DESC
 ```

@@ -16,7 +16,7 @@ obsidian files folder="inbox" ext=md
 If `Inbox.base` exists, query it for a sorted view:
 
 ```bash
-obsidian base:query file="views/Inbox.base" format=md
+obsidian base:query file="inbox/Inbox.base" format=md
 ```
 
 Report: "[N] items in the inbox. Let's process them one at a time."

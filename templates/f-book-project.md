@@ -29,11 +29,21 @@ Read and take notes on the book so that I can add it to my note collection and g
 # Brainstorm
 
 
+# Process
+
+For each chapter:
+1. **Read** — Read the chapter, note key words and ideas
+2. **Write** — Write a chapter review in my own words, composing those ideas together
+3. **Highlight** — Revisit the chapter and highlight concepts related to what I wrote
+4. **Reference** — Generate the highlights document and reference them in the book report
+5. **Distill** — When the book report is complete, process everything into zettelkasten notes
+
 # Metrics
 
 - [ ] Read Book
-- [ ] Write Notes
-- [ ] Create From It
+- [ ] Write Notes (chapter-by-chapter book report)
+- [ ] Generate Highlights
+- [ ] Create From It (zettelkasten notes with provenance)
 
 # Execution
 

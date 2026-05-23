@@ -1,9 +1,8 @@
 <%*  
 	let name = (await tp.system.prompt("Name"));  
-	let project = name + " Career Project"  
 	let uniqueId = moment().format("YYYYMMDDHHmm");  
 	let filename = name + " One on One - " + uniqueId;
-	let folder = "projects/" + project;
+	let folder = "areas/Career Development/" + name;
 	await tp.file.rename(filename);
 	await tp.file.move(folder + "/" + filename);
 -%>
@@ -11,7 +10,7 @@
 banner: "[[f-one-on-one.webp]]"
 tags: [👥, one-on-one]
 create-date: "[[<% tp.date.now() %>]]"
-project: "[[<% project %>]]"  
+project: "[[<% name %>]]"  
 attendees: "[[<% name %>]]"
 modified-dates:
 append_modified_update: true

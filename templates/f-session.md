@@ -6,15 +6,16 @@
     // Using dataview
     const dv = this.app.plugins.plugins["dataview"].api;
 
-    // Filter for project files
-    let projects = dv.pages("#🚧").file.sort(n => n.name);
-    let suggestions = projects.name;
-    let values = projects.name;
+    // Filter for projects and areas
+    let targets = dv.pages("#🚧 or #🛒").file.sort(n => n.name);
+    let suggestions = targets.name;
+    let values = targets.name;
     const projectName = await tp.system.suggester(suggestions,values);
 
-	await tp.file.rename(Filename);  
-    const suffix = ' Project'
-	const directoryPath = "projects/" + projectName.slice(0, -suffix.length)
+	await tp.file.rename(Filename);
+    // Determine folder: areas/ for 🛒, projects/ for 🚧
+    const targetPage = dv.page(projectName);
+    const directoryPath = targetPage ? targetPage.file.folder : "projects/" + projectName
 	if (!tp.file.exists(directoryPath)) {
 		await this.app.vault.createFolder(directoryPath)
 	}
@@ -45,5 +46,5 @@ append_modified_update: true
 ## Related
 
 ```dataview
-TABLE WITHOUT ID link(file.link, aliases[0]) as "Sessions", create-date as "Date" FROM "projects" WHERE parent = link("<% projectName %>") and contains(tags, "🧙") SORT create-date DESC
+TABLE WITHOUT ID link(file.link, aliases[0]) as "Sessions", create-date as "Date" WHERE parent = link("<% projectName %>") and contains(tags, "🧙") SORT create-date DESC
 ```

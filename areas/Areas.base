@@ -1,0 +1,24 @@
+filters:
+  and:
+    - file.hasTag("🛒")
+    - file.inFolder("areas")
+formulas:
+  projects: file.backlinks.filter(l => l.hasTag("🚧")).length
+  subareas: file.backlinks.filter(l => l.hasTag("🛒")).length
+properties:
+  formula.projects:
+    displayName: Projects
+  formula.subareas:
+    displayName: Sub-areas
+views:
+  - type: table
+    name: All Areas
+    order:
+      - file.name
+      - description
+      - formula.projects
+      - formula.subareas
+      - create-date
+    sort:
+      - property: file.name
+        direction: ASC

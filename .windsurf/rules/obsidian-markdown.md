@@ -5,6 +5,7 @@ globs:
   - garden/**/*.md
   - references/**/*.md
   - maps/**/*.md
+  - areas/**/*.md
   - blog/**/*.md
   - projects/**/*.md
   - journal/**/*.md

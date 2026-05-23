@@ -70,17 +70,31 @@ Key principles: emergent (not imposed), entry points (not containers), queryable
 
 ---
 
+## Areas
+
+Areas implement **Tiago Forte's** PARA concept of **Areas of Responsibility** — ongoing commitments with no natural end date. Forte's key distinction: projects end, areas don't. "Health" is an area; "Run a marathon" is a project within it. "Career Development" is an area; "Get promoted to Senior Engineer" is a project within it.
+
+**David Allen** describes the same concept at the **20,000-foot horizon** in *Getting Things Done* (ch. 9, "Horizons of Focus"): areas of focus and accountability that frame your projects. Allen's weekly review checks not just project next actions but whether your areas of responsibility are covered.
+
+The **three-part project test** gates what belongs in `projects/` vs `areas/`: Does it have a (1) finite outcome, (2) multiple steps, and (3) foreseeable time horizon? If all three → project. If it's an ongoing responsibility → area.
+
+Area files double as navigational indexes (similar to Maps of Content) with Dataview queries that aggregate their children — projects, meetings, concepts, and references. This reflects the **vertical slice** principle: everything a domain needs to function lives together.
+
+Key principles: ongoing (not finite), accountability (not just interest), contains projects, reviewed at a different cadence than projects (horizon scan vs staleness check).
+
+---
+
 ## Projects
 
-This folder implements a hybrid of **David Allen's** *Getting Things Done* (GTD) and **Tiago Forte's** *Building a Second Brain* (PARA) methodologies, with the vault's Maps of Content serving as PARA's Areas of Responsibility.
+This folder implements a hybrid of **David Allen's** *Getting Things Done* (GTD) and **Tiago Forte's** *Building a Second Brain* (PARA) methodologies. Projects are **finite outcomes** — they pass the three-part test (finite + multi-step + time-bounded). Areas of Responsibility live separately in `areas/`.
 
-From **GTD** comes the discipline of *externalizing commitments*. Allen's central insight is that your mind is for having ideas, not holding them — every open loop needs a trusted place outside your head. Allen's **Natural Planning Model** (*Getting Things Done*, ch. 3) maps directly to the project file's body structure: Purpose → Objective, Outcome Visioning → Metrics, Brainstorming → Brainstorm, Organizing → Execution, Next Actions → TaskNotes.
+From **GTD** comes the discipline of *externalizing commitments*. Allen's central insight is that your mind is for having ideas, not holding them — every open loop needs a trusted place outside your head. Allen defines a project as *any outcome requiring more than one action step*. Allen's **Natural Planning Model** (*Getting Things Done*, ch. 3) maps directly to the project file's body structure: Purpose → Objective, Outcome Visioning → Metrics, Brainstorming → Brainstorm, Organizing → Execution, Next Actions → TaskNotes.
 
-From **PARA** comes the organizational structure. Forte defines a project as "a series of tasks linked to a goal, with a deadline." The `projects/` folder holds only **active** work.
+From **PARA** comes the organizational structure. Forte defines a project as "a series of tasks linked to a goal, with a deadline." The `projects/` folder holds only **active** work with a defined finish line.
 
 As **Stephen Covey** writes in *The 7 Habits of Highly Effective People* (Habit 2: "Begin with the end in mind"), the Objective section forces you to define done before you start.
 
-Key principles: project = outcome + tasks, capture at the source, regular review, next actions (not vague intentions), knowledge extraction, Socratic LLM companion.
+Key principles: project = finite outcome + tasks, capture at the source, regular review, next actions (not vague intentions), knowledge extraction, Socratic LLM companion.
 
 ---
 
@@ -106,13 +120,13 @@ Key principles: source of truth, friction reduction, convention propagation.
 
 ---
 
-## Views
+## Views (dissolving into vertical slices)
 
-The views folder is the vault's **control room** — a collection of dashboards, queries, and widgets that surface information from across the vault without duplicating it.
+The views folder was the vault's **control room** — dashboards, queries, and widgets surfacing information from across the vault. It is being dissolved: each `.base` and query file moves to the domain folder it serves, following the **vertical slice** principle — everything a domain needs to function lives together.
 
-This reflects a core principle of both **Tiago Forte's** PARA system and **David Allen's** GTD: your trusted system must give you the *right view at the right time*.
+This reflects a core principle of both **Tiago Forte's** PARA system and **David Allen's** GTD: your trusted system must give you the *right view at the right time*. Co-locating views with content means you find the dashboard by opening the domain folder, not by remembering a separate `views/` location.
 
-Key principles: configuration (not content), single source of truth, embedded by design.
+Key principles: configuration (not content), co-located with domain, embedded by design.
 
 ---
 

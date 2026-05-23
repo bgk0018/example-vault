@@ -10,6 +10,7 @@ modified-dates:
   - "[[2026-04-15]]"
 related:
   - "[[Nutrition]]"
+  - "[[Health & Fitness]]"
 tags:
   - 🗺️
 ---

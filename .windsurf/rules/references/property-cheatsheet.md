@@ -80,7 +80,34 @@ dg-publish: true
 - **Naming:** Plain descriptive name (no date suffix)
 - **Template:** `f-map.md`
 
-### 🚧 Project (`projects/Name Project/`)
+### � Area (`areas/AreaName/`)
+```yaml
+banner: "[[f-map-20250108173714088.webp]]"
+tags: [🛒]
+create-date: "[[YYYY-MM-DD]]"
+description:
+modified-dates:
+append_modified_update: true
+related:
+```
+- **Naming:** Plain descriptive name (no date suffix): `Career Development.md`
+- **Template:** `f-area.md`
+- **Body:** Accountability dashboard only (Summary, Sub-areas, Projects, Meetings & Notes, Related Maps). NOT a knowledge index — that's `maps/`.
+
+### 🛒 Sub-area / Relationship (`areas/ParentArea/Name/`)
+```yaml
+banner: "[[pexels-catcaryn-938165.webp]]"
+tags: [🛒]
+create-date: "[[YYYY-MM-DD]]"
+aliases: ["Person Career"]
+parent: "[[Career Development]]"
+modified-dates:
+append_modified_update: true
+related:
+```
+- **Template:** `f-area-relationship.md`
+
+### �🚧 Project (`projects/Name Project/`)
 ```yaml
 banner: "[[image.webp]]"
 tags: [🚧]
@@ -88,14 +115,14 @@ create-date: "[[YYYY-MM-DD]]"
 start-date: "[[YYYY-MM-DD]]"
 end-date:
 ended-as:
-parent:              # Area map (e.g., [[Technology]])
+parent:              # Area (e.g., [[Technology]])
 modified-dates:
 append_modified_update: true
 related:
 ```
 - **Template:** `f-project.md`
 
-### 👥 Meeting (`projects/Name Project/`)
+### 👥 Meeting (`projects/Name Project/` or `areas/AreaName/`)
 ```yaml
 tags: [👥]
 banner: "[[f-meeting.webp]]"

@@ -34,7 +34,7 @@ append_modified_update: true
 >- Weight: Weighing myself to track muscle gain (hopefully)
 
 > [!EXAMPLE]- Review  
-> ![[views/Habits]]
+> ![[Habits]]
 
 # Journal
 

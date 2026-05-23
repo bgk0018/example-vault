@@ -62,7 +62,7 @@ Use `total` on any list command to get a count instead of full results.
 
 ## Key gotchas
 
-- **`base:query` needs full path:** `file="views/Garden.base"` not `file="Garden"`
+- **`base:query` needs full path:** `file="garden/Garden.base"` not `file="Garden"`. Each `.base` file lives in its domain folder (not `views/`)
 - **`property:set type=list` replaces the entire list** — it does not append. Use comma-separated values: `value="alpha,beta,gamma"`
 - **`create` doesn't open the note** — add `open` or `newtab` flag to open in the UI
 - **`move`/`rename` updates backlinks** — always prefer CLI over filesystem operations for moves

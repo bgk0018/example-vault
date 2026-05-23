@@ -17,6 +17,7 @@ Walk the **Note Placement Decision Tree** (Global Conventions) to determine type
 | A single concept in your own words | Zettelkasten | 📖 | `zettelkasten/` | `f-lit.md` |
 | An open question or inquiry | Question | ❓ | `zettelkasten/` | `f-question.md` |
 | Tied to an active project (meeting, task, doc) | Project note | 👥/📋/🍃 | `projects/[project]/` | `f-meeting.md`, `f-session.md` |
+| Ongoing responsibility (no end date) | Area | 🛒 | `areas/[area]/` | `f-area.md`, `f-area-relationship.md` |
 | Original work, no active project | Garden idea | 🌱 | `garden/` | `f-idea.md` |
 | Informal original work (context-bound) | Informal | 🍃 | `garden/` | `f-fleeting.md` |
 | Topic index aggregating notes | Map of Content | 🗺️ | `maps/` | `f-map.md` |
@@ -38,6 +39,7 @@ When a note changes type or location, update these properties:
 | `inbox/` → `zettelkasten/` | Add `tags: [📖]`, `referenced-in`, rename to `Title - YYYYMMDDHHmm.md` |
 | `inbox/` → `garden/` | Add `tags: [🌱]`, rename to `Title - YYYYMMDDHHmm.md` |
 | `garden/` → `blog/articles/` | Change `tags` to `[🥕]`, set `dg-publish: true`, add `dg-path`, `title` |
+| `projects/` → `areas/` | Change `tags` to `[🛒]`, remove `end-date`/`start-date`, set `parent:` to area |
 | `projects/` → `archive/YYYY/projects/` | Set `end-date`, `ended-as` on project file first |
 | `projects/` → `garden/` | Change `tags` to `[🌱]` or `[🍃]`, remove `projects:` |
 | `projects/` → `zettelkasten/` | Change `tags` to `[📖]`, add `referenced-in`, rename |
@@ -53,7 +55,7 @@ Use the Idea Compass directions to decide which property to use:
 
 | Direction | Question | Property | Example |
 |---|---|---|---|
-| **North** (upstream) | What does this belong to? | `parent:` | Zettel → Source Book, Meeting → Project |
+| **North** (upstream) | What does this belong to? | `parent:` | Zettel → Source Book, Meeting → Project, Project → Area |
 | **West** (similar) | What reinforces this? | `related:` | Zettel → Map, Zettel → related Zettel |
 | **East** (opposing) | What challenges this? | `challenges:` | Zettel → counterargument note |
 | — | Should this appear on a map? | `maps:` | Person → `[[Psychology]]` (when `related:` is occupied) |
@@ -67,6 +69,11 @@ Use the Idea Compass directions to decide which property to use:
 **Decision: `parent:` vs `related:`**
 - `parent:` = singular, hierarchical ("belongs to")
 - `related:` = plural, associative ("connected to")
+
+**Knowledge vs Action:**
+- Zettelkasten notes, ideas, references → `related:` points to **maps** (`🗺️`), not areas
+- Projects, meetings, tasks → `parent:` points to **areas** (`🛒`), not maps
+- Maps and areas are connected via the map's `related:` property → area auto-discovers via Dataview
 
 ## Promote Maturity (Garden Notes)
 

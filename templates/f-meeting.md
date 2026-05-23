@@ -6,15 +6,18 @@
     // Using dataview
     const dv = this.app.plugins.plugins["dataview"].api;
 
-    // Filter for project files
-    let projects = dv.pages("#🚧").file.sort(n => n.name);
-    let suggestions = projects.name;
-    let values = projects.name;
+    // Filter for projects and areas
+    let targets = dv.pages("#🚧 or #🛒").file.sort(n => n.name);
+    let suggestions = targets.name;
+    let values = targets.name;
     const projectName = await tp.system.suggester(suggestions,values);
 
-	await tp.file.rename(Filename);  
-    const suffix = ' Project'
-	const directoryPath = "projects/" + projectName
+	await tp.file.rename(Filename);
+    // Determine folder: areas/ for 🛒, projects/ for 🚧
+    const targetPage = dv.page(projectName);
+    const isArea = targetPage && targetPage.tags && targetPage.tags.includes("🛒");
+    const baseFolder = isArea ? "areas" : "projects";
+    const directoryPath = targetPage ? targetPage.file.folder : baseFolder + "/" + projectName
 	if (!tp.file.exists(directoryPath)) {
 		await this.app.vault.createFolder(directoryPath)
 	}
@@ -49,5 +52,5 @@ maps:
 ## Related
 
 ```dataview
-TABLE WITHOUT ID link(file.link, aliases[0]) as "Meetings", create-date as "Date" FROM "projects" WHERE parent = link("<% projectName %>") and contains(tags, "👥") SORT create-date DESC
+TABLE WITHOUT ID link(file.link, aliases[0]) as "Meetings", create-date as "Date" WHERE parent = link("<% projectName %>") and contains(tags, "👥") SORT create-date DESC
 ```

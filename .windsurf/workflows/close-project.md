@@ -5,6 +5,8 @@ description: Close a project with a guided ceremony — capture results, extract
 
 A guided closing ceremony based on **PARA's archive triage** (*Building a Second Brain*) and **GTD's completion processing** (*Getting Things Done*). The LLM facilitates reflection and knowledge extraction — the user decides what to keep, plant, or archive.
 
+> **Areas don't close.** This workflow is for finite projects (`🚧` in `projects/`), not ongoing areas (`🛒` in `areas/`). If a sub-responsibility within an area ends, close the sub-area or remove it — don't close the parent area.
+
 ## Before Starting
 
 Read the project file and get an overview of its contents:
@@ -37,7 +39,9 @@ The user writes the Result. The LLM may help refine wording but never writes it 
 
 ## 2. Knowledge extraction
 
-Walk through the project's files and help the user triage each one. For each file, decide its destination:
+**Fast path:** If the project folder contains only the project file and template-generated tasks (no meetings, no working documents, no original content), skip the file-by-file walk. Note "No extractable knowledge — shell project" and proceed to step 3.
+
+**Full path:** Walk through the project's files and help the user triage each one. For each file, decide its destination:
 
 | File type | If reusable | If context-bound |
 |-----------|-------------|-------------------|
@@ -156,5 +160,6 @@ This connects to the **Session Retrospective** in `global-conventions.md`. Prese
 - **Extract knowledge before archiving** — insights trapped in a project folder are lost knowledge
 - **The LLM facilitates; the user decides** — never move files or mark tasks without approval
 - **Paused ≠ abandoned** — if the idea has life left, create a `🌱` seedling for it
+- **Areas don't close** — only finite projects close. If an ongoing responsibility ends, remove the sub-area; don't archive the parent area
 - **Archive preserves structure** — the original folder layout stays intact for future reference
 - **Retrospective feeds the system** — every closure is a chance to improve the vault's workflows and rules

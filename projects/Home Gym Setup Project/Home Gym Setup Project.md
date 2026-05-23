@@ -9,7 +9,7 @@ modified-dates:
   - "[[2026-02-10]]"
   - "[[2026-03-01]]"
   - "[[2026-05-22]]"
-parent: "[[Exercise Science]]"
+parent: "[[Health & Fitness]]"
 related:
   - "[[Exercise Science]]"
 start-date: "[[2026-02-10]]"

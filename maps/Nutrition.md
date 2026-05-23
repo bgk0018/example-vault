@@ -10,6 +10,7 @@ modified-dates:
   - "[[2026-05-05]]"
 related:
   - "[[Exercise Science]]"
+  - "[[Health & Fitness]]"
 tags:
   - 🗺️
 ---

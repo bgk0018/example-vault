@@ -53,7 +53,26 @@ Read `.windsurf/rules/maps.md`, then check all `.md` files:
 - [ ] Body has the standard sections: `## Summary`, `## Exploration`, `## Projects`, `## Concepts`, `## Notes`, `## References`, `## Other`
 - [ ] Each section has a dataview query that filters by `contains(related, this.file.link)`
 
-### 4. `projects/`
+### 4. `areas/`
+Read `.windsurf/rules/areas.md`, then check each area subfolder:
+
+**Structural checks:**
+- [ ] Each top-level area has an area file (e.g., `AreaName/AreaName.md`)
+- [ ] Area files have: `tags: [🛒]`, `create-date`, `append_modified_update: true`
+- [ ] Area files do NOT have `end-date:` or `start-date:` (areas don't end)
+- [ ] Area file body has accountability dashboard sections: `## Summary`, `## Sub-areas`, `## Projects`, `## Meetings & Notes`, `## Related Maps`
+- [ ] Area files do NOT have knowledge-aggregation sections (Exploration, Concepts, References, Other) — those belong on maps
+- [ ] Each section has a dataview query filtering by `contains(parent, this.file.link)` (Related Maps queries `FROM "maps"`)
+- [ ] Sub-areas have `parent:` pointing to the parent area file
+- [ ] Meeting/one-on-one notes within areas have: `tags: [👥]`, `parent` or `project` linking to the area/sub-area
+- [ ] `Areas.base` exists in `areas/` root
+
+**Health checks:**
+- [ ] `description:` is filled on area files (not empty)
+- [ ] No `🚧` tags remain on files inside `areas/` (they should be `🛒`)
+- [ ] No orphan sub-folders without an area file
+
+### 5. `projects/`
 Read `.windsurf/rules/projects.md`, then check each project subfolder:
 
 **Structural checks:**
@@ -68,11 +87,12 @@ Read `.windsurf/rules/projects.md`, then check each project subfolder:
 **Health checks:**
 - [ ] Objective section is filled (not placeholder text like "What value will I have...")
 - [ ] Metrics section is filled (not placeholder text like "How will I know...")
-- [ ] `parent:` links to an existing Map of Content (`🗺️` note in `maps/`)
+- [ ] `parent:` links to an existing Area (`🛒` note in `areas/`) — flag orphan projects
+- [ ] Passes the three-part test (finite + multi-step + time-bounded) — flag ongoing responsibilities that should be areas
 - [ ] Has at least one open `📋` task (`status: todo` or `status: in-progress`) — flag stalled projects
 - [ ] Active projects have `modified-dates` entries within 30 days — flag stale projects
 
-### 5. `references/`
+### 6. `references/`
 Read `.windsurf/rules/references.md`, then check each subfolder:
 
 **`references/people/`**
@@ -101,22 +121,28 @@ Read `.windsurf/rules/references.md`, then check each subfolder:
 **`references/tosort/`**
 - [ ] Flag all files here — they need to be sorted into proper subfolders
 
-### 6. `blog/`
+### 7. `blog/`
 Read `.windsurf/rules/blog.md`, then check files:
 - [ ] Index pages (`Home.md`, `Articles.md`, `Highlights.md`, `Maps of Content.md`) have: `tags: [🥕]`, `dg-publish: true`, `dg-pinned: true`
 - [ ] `Home.md` has `dg-home: true`
 - [ ] Article folders follow `YYYY-MM-DD - Title/` naming convention
 
-### 7. `garden/`
+### 8. `garden/`
 Read `.windsurf/rules/garden.md`, then check all `.md` files:
 - [ ] Frontmatter has: `tags` (should be `🌱`, `🌿`, `🌳`, `🍃`, or similar), `create-date`, `append_modified_update: true`
 - [ ] File naming follows `Title - YYYYMMDDHHmm.md` pattern (flag older files that don't match but don't require fixes)
 
-### 8. `views/`
-Read `.windsurf/rules/views.md`:
-- [ ] Only `.base` and query `.md` files exist here — flag any content notes that don't belong
+### 9. Co-located `.base` files (formerly `views/`)
+The `views/` folder has been dissolved. Each `.base` file now lives in its domain folder:
+- [ ] `projects/Projects.base`, `projects/Tasks.base`, `projects/tasks/*.base` exist
+- [ ] `garden/Garden.base` exists
+- [ ] `journal/Journal.base`, `journal/Habits.md` exist
+- [ ] `references/Books.base`, `references/Articles.base`, `references/Highlights.base`, `references/People.base`, `references/Locations.base`, `references/References.base` exist
+- [ ] `blog/Blog.base`, `zettelkasten/Zettelkasten.base`, `inbox/Inbox.base`, `maps/Maps.base` exist
+- [ ] `areas/Areas.base` exists
+- [ ] No stray `.base` files remain in a `views/` folder (it should not exist)
 
-### 9. Root-level files
+### 10. Root-level files
 - [ ] Flag any `.md` or `.base` files at the vault root — they should be filed into appropriate folders
 
 ## Reporting Format

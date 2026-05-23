@@ -6,7 +6,7 @@ The projects folder implements a hybrid of **David Allen's GTD** and **Tiago For
 
 From GTD: externalize commitments, define next actions, review regularly. Allen's **Natural Planning Model** maps to the project file structure: Purpose → Objective, Outcome Visioning → Metrics, Brainstorming → Brainstorm, Organizing → Execution, Next Actions → Tasks.
 
-From PARA: projects have defined outcomes and deadlines. Areas of Responsibility are represented by Maps of Content (via `parent:`).
+From PARA: projects have defined outcomes and deadlines. **The three-part project test:** Does it have a (1) finite outcome, (2) multiple steps, and (3) foreseeable time horizon? If YES → it belongs here. If it's an ongoing responsibility → `areas/`. Areas of Responsibility live in `areas/` and projects roll up under them via `parent:`.
 
 From Covey: "Begin with the end in mind" — every project defines its Objective before work starts.
 
@@ -37,7 +37,7 @@ projects/
 
 | Tag | Type | Frontmatter |
 |-----|------|-------------|
-| 🚧 | Project | `start-date`, `end-date`, `ended-as`, `parent:` (area map) |
+| 🚧 | Project | `start-date`, `end-date`, `ended-as`, `parent:` (area in `areas/`) |
 | 📋 | Task | `status`, `due`, `scheduled`, `priority`, `projects:` |
 | 👥 | Meeting | `parent:` (project), `attendees:`, `maps:` |
 | 🧙 | Session | `parent:` (project), `attendees:` |
@@ -52,7 +52,7 @@ projects/
 
 | View | What it shows |
 |------|--------------|
-| Category | All projects grouped by `parent:` (area map) |
+| Category | All projects grouped by `parent:` (area) |
 | Age | Projects sorted by creation date |
 | Stale | Projects not modified in 30+ days (🟡) |
 | Open Tasks by Project | All open tasks grouped by project |

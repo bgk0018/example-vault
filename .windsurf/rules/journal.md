@@ -46,6 +46,10 @@ day → week → month → quarter → year
 - `parent:` links upward; `children:` links downward
 - `before:`/`after:` link to previous/next sibling at the same level
 
+## Co-located Views
+- `Journal.base` — journal views (daily feed, weekly/monthly/quarterly tables). Lives in `journal/`.
+- `Habits.md` — habit tracking charts embedded in daily notes via `![[Habits]]`. Lives in `journal/`.
+
 ## Gardening Sessions in Daily Notes
 
 When a gardening session occurs (via the `/garden` workflow), a `## Gardening:` section is appended to that day's daily note using `obsidian append`. This section is **not** part of the `f-daily.md` template — it only appears on days when gardening happens.

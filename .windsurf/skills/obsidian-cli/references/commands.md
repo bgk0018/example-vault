@@ -264,8 +264,8 @@ obsidian unresolved format=json                             # JSON output
 ```bash
 obsidian bases                                              # list all base files
 obsidian base:views file="Garden"                           # list views in a base
-obsidian base:query file="views/Garden.base" view="Seedling 🌱" format=paths
-obsidian base:query file="views/Garden.base" view="Seedling 🌱" format=md
+obsidian base:query file="garden/Garden.base" view="Seedling 🌱" format=paths
+obsidian base:query file="garden/Garden.base" view="Seedling 🌱" format=md
 obsidian base:create file="Projects" name="New Item"        # create item in base
 obsidian base:create file="Projects" name="New Item" content="# Hello"  # with content
 obsidian base:create file="Projects" view="Active" open     # create and open
@@ -279,7 +279,7 @@ obsidian base:create file="Projects" name="New Item" newtab # open in new tab
 | `base:query` | `file=` / `path=`, `view=`, `format=json\|csv\|tsv\|md\|paths` | Query a base and return results |
 | `base:create` | `file=` / `path=`, `view=`, `name=`, `content=`, `open`, `newtab` | Create a new item in a base |
 
-**IMPORTANT:** `base:query` requires the vault-relative path with `.base` extension (e.g., `file="views/Garden.base"`). Using a wikilink-style name may silently return incorrect/unfiltered results.
+**IMPORTANT:** `base:query` requires the vault-relative path with `.base` extension (e.g., `file="garden/Garden.base"`). Each `.base` file lives in its domain folder (not `views/`). Using a wikilink-style name may silently return incorrect/unfiltered results.
 
 **Output formats for `base:query`:**
 

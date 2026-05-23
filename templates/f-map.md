@@ -13,6 +13,7 @@ create-date: "[[<% tp.date.now() %>]]"
 modified-dates:
 append_modified_update: true
 description:
+related:
 dg-publish: true
 ---
 

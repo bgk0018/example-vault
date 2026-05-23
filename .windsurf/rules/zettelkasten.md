@@ -114,6 +114,9 @@ prompted-by: "[[Note or Person]]"
 
 **During tending**, ❓ notes are natural gardening candidates — they surface gaps worth filling. The garden workflow should periodically review open ❓ notes and ask: "Do we know enough now to answer this?"
 
+## Co-located Views
+- `Zettelkasten.base` — zettelkasten notes grouped by related map. Lives in `zettelkasten/`.
+
 ## Handling Duplicates and Overlaps
 
 Before creating a new zettelkasten note, check whether the concept already exists:

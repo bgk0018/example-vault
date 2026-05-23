@@ -8,12 +8,15 @@ Active project folders containing objectives, execution tracking, meetings, sess
 
 GTD + PARA hybrid. Every project has an Objective, Metrics, Brainstorm, Execution, and Result. The LLM is a **Socratic companion** — asks questions, never auto-fills sections. For philosophical grounding, see `references/ethos.md#projects`.
 
-**Areas** are Maps of Content (`🗺️`). Set `parent:` on the project to the relevant Area map. **Someday/Maybe** items are `🌱` garden notes, not `📋` tasks — activate via `/open-project`.
+**The three-part project test:** Does it have a (1) finite outcome, (2) multiple steps, and (3) foreseeable time horizon? If YES to all three → it belongs here. If it's an ongoing responsibility with no defined end → `areas/` (see `areas.md`). If it's a single action → daily note task. If it's a concept collection → `zettelkasten/` or `references/`.
+
+**Areas** are ongoing responsibilities in `areas/` (`�`). Set `parent:` on the project to the relevant area file. **Someday/Maybe** items are `🌱` garden notes, not `📋` tasks — activate via `/open-project`.
 
 ## Do Not
 - Create project files without a subfolder — every project gets its own folder
 - Leave Objective/Metrics as placeholder text — these drive the project's purpose
 - Remove `tasks` or `dataview` query blocks from project files
+- Place ongoing responsibilities here — career management, family, health belong in `areas/`
 - Place reference material here — that belongs in `references/`
 - Use `parent:` on one-on-one notes — use `project:` instead (this is intentional)
 - Use `parent:` on task notes — use `projects:` (plural) instead
@@ -23,7 +26,8 @@ GTD + PARA hybrid. Every project has an Objective, Metrics, Brainstorm, Executio
 ## Do
 - Give every project its own subfolder matching the project file name
 - **Fill Objective and Metrics before meaningful work begins** — use `/open-project` for Socratic facilitation
-- Set `parent:` to a Map of Content (Area) on the main project file
+- Apply the three-part project test before creating a new project folder
+- Set `parent:` to an Area file (`areas/`) on the main project file
 - Set `parent:` on meeting and session notes to link back to the project
 - Use `start-date:` when creating a new project
 - Set `end-date:` and `ended-as:` before archiving — use `/close-project`
@@ -62,7 +66,7 @@ projects/
 ```
 - Folder name matches the main project file name (e.g., `Delivery Lead Project/`)
 - Career projects use: `PersonName Career Project/`
-- Book projects use: `BookName/` with a `BookName Book Project.md` inside
+- Book projects use: `BookName/` with a `BookName Book Project.md` inside. Book projects follow a 5-step chapter-by-chapter process: **Read** (note key words/ideas) → **Write** (chapter review in own words) → **Highlight** (revisit and highlight related concepts) → **Reference** (generate highlights document, link to book report) → **Distill** (process into zettelkasten notes with provenance). See `templates/f-book-project.md` for the full process and metrics.
 
 ## Main Project File
 
@@ -248,9 +252,9 @@ obsidian property:set name="status" value="done" file="Task Title"  # mark TaskN
 Use `base:query` to check project status via the Projects Base. **Important:** use the vault-relative path with `.base` extension.
 
 ```bash
-obsidian base:query file="views/Projects.base" view="Stale" format=md           # stale projects
-obsidian base:query file="views/Projects.base" view="Open Tasks by Project" format=md  # open tasks
-obsidian base:query file="views/Projects.base" view="Ready to Close" format=md  # ready to archive
+obsidian base:query file="projects/Projects.base" view="Stale" format=md           # stale projects
+obsidian base:query file="projects/Projects.base" view="Open Tasks by Project" format=md  # open tasks
+obsidian base:query file="projects/Projects.base" view="Ready to Close" format=md  # ready to archive
 ```
 
 ### Create project notes from templates

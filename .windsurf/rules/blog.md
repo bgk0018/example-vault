@@ -62,6 +62,9 @@ tags: [🥕]
 - Live in `blog/articles/` in date-prefixed subfolders: `YYYY-MM-DD - Title/`
 - Each article folder contains the article `.md` and any supporting assets
 
+## Co-located Views
+- `Blog.base` — Digital Garden publishing dashboard. Lives in `blog/`.
+
 ## Publishing Control
 - `dg-publish: true` — note is published to the Digital Garden
 - `dg-publish: false` — note is private (default for most vault notes)

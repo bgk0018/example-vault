@@ -4,12 +4,14 @@ globs: maps/**
 ---
 # Maps of Content (MOCs)
 
-Navigational index notes that aggregate related notes via dataview queries. Emergent (not imposed), entry points (not containers), published by default. For philosophical grounding, see `references/ethos.md#maps-of-content`.
+Navigational index notes that aggregate related notes via dataview queries. Maps are the **canonical knowledge navigation layer** — zettelkasten notes, ideas, and references link here via `related:`. Maps are NOT containers for ongoing responsibilities (that's `areas/`). Emergent (not imposed), entry points (not containers), published by default. For philosophical grounding, see `references/ethos.md#maps-of-content`.
 
 ## Do Not
 - Remove or restructure the standardized sections without asking
 - Place content notes inside `maps/` — maps are index/navigation notes only
 - Break the dataview query patterns — they rely on the `related` and `parent` field conventions
+- Create maps for Areas of Responsibility — ongoing responsibilities (career, family, health) belong in `areas/` with the `🛒` tag, not here
+- Put action items (projects, meetings, tasks) on maps — those belong on area files
 - Manually list notes in the body — use dataview queries instead
 
 ## Do
@@ -79,9 +81,14 @@ Every map follows this standardized layout:
 ```
 
 ## How Notes Connect to Maps
-- Notes link to a map by including the map in their `related:` or `parent:` frontmatter field
-- The map's dataview queries automatically pick up notes that reference it via either field
+- Zettelkasten notes (`📖`), ideas (`🌱`), and references link to maps via `related:` — maps are the canonical target for knowledge connections
+- Projects and meetings link to areas via `parent:` — NOT to maps
+- The map's dataview queries automatically pick up notes that reference it via `related:` or `parent:`
 - Notes do NOT need to live inside a `maps/` subfolder — they stay in their own folders
+
+## How Maps Connect to Areas
+- If a map is conceptually tied to an area of responsibility, add the area to the map's `related:` property (e.g., `related: "[[Politics]]"` on `Trump Presidency.md`)
+- The area's "Related Maps" Dataview query auto-discovers maps that reference it — no manual linking needed on the area side
 
 ## Template
 - `templates/f-map.md`
@@ -99,4 +106,5 @@ Maps are emergent — they crystallize when you notice a cluster of notes formin
 - There are fewer than 3 related notes — use `related:` links between notes directly until the cluster grows
 - The topic is covered by an existing map — add notes to it via `related:` instead of creating a duplicate
 - It's really a project (has a defined outcome and end date) — use `projects/` instead
+- It's really an area of responsibility (ongoing, no end date) — use `areas/` instead
 

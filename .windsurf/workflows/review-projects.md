@@ -99,12 +99,21 @@ Ask:
 
 ## 5. Area horizon scan
 
-Group active projects by their `parent:` (Area map) using `Projects.base` → Category view.
+Areas are ongoing responsibilities — they don't go stale the way projects do. Review them at a different cadence (monthly or quarterly, not weekly).
+
+### Surface area health
+
+```bash
+obsidian base:query file="areas/Areas.base" view="All Areas" format=md
+obsidian base:query file="projects/Projects.base" view="Category" format=md
+```
 
 **Questions to ask:**
-- "Are any Areas getting too many active projects? Could some be deferred?"
-- "Are any Areas completely empty — no active projects? Is that intentional?"
-- "Are there phantom `parent:` links (maps that don't exist yet)? Should any be created?"
+- "Are any areas getting too many active projects? Could some be deferred?"
+- "Are any areas completely empty — no active projects? Is that intentional, or has something stalled?"
+- "Are there orphan projects with no `parent:` pointing to an area? Should they be assigned?"
+- "Do any sub-areas (career relationships, recurring responsibilities) need attention?"
+- "Has any area's scope changed? Does `description:` still reflect your accountability?"
 
 This step implements Allen's **Horizons of Focus** (*Getting Things Done*, ch. 9) at the 20,000-foot (Areas of Responsibility) level.
 
@@ -131,4 +140,5 @@ If no weekly note exists for the current week, append to the daily note instead 
 - **Stale ≠ dead** — a stale project may just need attention, not closure
 - **The LLM surfaces; the user decides** — present health signals as questions, not judgments
 - **Harvest knowledge along the way** — review is an opportunity to plant into the garden
-- **Areas frame the review** — grouping by `parent:` map reveals imbalances
+- **Areas frame the review** — grouping by `parent:` area reveals imbalances
+- **Areas have a different cadence** — review areas monthly/quarterly, projects weekly

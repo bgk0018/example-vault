@@ -54,6 +54,10 @@ Each major reference type has its own focused rule file loaded by glob:
 
 For property details per type, see `references/property-cheatsheet.md`.
 
+## Co-located Views
+Domain `.base` files live in `references/` (vertical slice):
+- `Books.base`, `Articles.base`, `Highlights.base`, `People.base`, `Locations.base`, `References.base`
+
 ## `references/tosort/`
 Flag all files here — they need to be sorted into proper subfolders.
 

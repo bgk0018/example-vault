@@ -13,7 +13,7 @@ tags: []
 
 A personal knowledge management vault built on [Obsidian](https://obsidian.md), combining Zettelkasten, GTD, PARA, and Digital Garden methodologies into a unified system for capturing, organizing, connecting, and publishing knowledge.
 
-This is an example vault. It contains the full structural scaffolding (plugins, templates, views, workflows) and realistic example content using **exercise science and health research** as the domain. The example notes demonstrate every lifecycle state a note can be in — from raw inbox captures to completed archived projects.
+This is an example vault. It contains the full structural scaffolding (plugins, templates, workflows) and realistic example content using **exercise science and health research** as the domain. The example notes demonstrate every lifecycle state a note can be in — from raw inbox captures to completed archived projects.
 
 ---
 
@@ -70,7 +70,8 @@ flowchart TD
     R --> Z["zettelkasten/<br>distill"]
     Z --> MG["maps/ & garden/<br>connect"]
     MG --> B["blog/<br>publish"]
-    P["projects/"] -.->|"insights feed in<br>at any stage"| I
+    A["areas/"] -.->|"ongoing context"| P["projects/"]
+    P -.->|"insights feed in<br>at any stage"| I
     P -.-> R
     P -.-> Z
     P -.-> MG
@@ -78,7 +79,7 @@ flowchart TD
     class B orange-node
 ```
 
-**Projects** operate in parallel, feeding insights into this pipeline at any stage.
+**Projects** and **Areas** operate in parallel. Areas are ongoing responsibilities that provide context for projects. Both feed insights into the pipeline at any stage.
 
 ---
 
@@ -91,12 +92,12 @@ flowchart TD
 | `zettelkasten/` | Atomic concept notes (📖) and question notes (❓) | [README](zettelkasten/README.md) |
 | `garden/` | Original work — ideas, drafts, talks (🌱🌿🌳🍃) | [README](garden/README.md) |
 | `maps/` | Maps of Content (🗺️) — topic indexes that aggregate related notes | [README](maps/README.md) |
+| `areas/` | Areas of Responsibility (🛒) — ongoing commitments (career, health, family) | — |
 | `projects/` | Active project folders with tasks, meetings, sessions | [README](projects/README.md) |
 | `journal/` | Periodic notes — daily, weekly, monthly, quarterly, yearly | [README](journal/README.md) |
 | `blog/` | Digital Garden — published content | [README](blog/README.md) |
 | `archive/` | Completed/inactive projects, organized by year | [README](archive/README.md) |
 | `templates/` | Templater templates — source of truth for note structure | [README](templates/README.md) |
-| `views/` | Bases dashboards and Dataview queries | [README](views/README.md) |
 
 ---
 
@@ -105,7 +106,8 @@ flowchart TD
 | Tag | Type | Folder |
 |-----|------|--------|
 | 🗺️ | Map of Content | `maps/` |
-| 📖 | Literature / Concept Note | `zettelkasten/` |
+| � | Area of Responsibility | `areas/` |
+| �📖 | Literature / Concept Note | `zettelkasten/` |
 | ❓ | Question / Inquiry | `zettelkasten/` |
 | 🌱 | Idea (seedling) | `garden/` |
 | 🌿 | Idea (growing) | `garden/` |
@@ -113,8 +115,8 @@ flowchart TD
 | 🍃 | Informal Original Work | `garden/` |
 | 🚧 | Project | `projects/` |
 | 📋 | Task | `projects/<project>/tasks/` |
-| 👥 | Meeting | `projects/<project>/` |
-| 🧙 | Session (RPG/creative) | `projects/<project>/` |
+| 👥 | Meeting | `projects/` or `areas/` |
+| 🧙 | Session (RPG/creative) | `projects/` or `areas/` |
 | 📅 | Journal | `journal/` |
 | 📕 | Book | `references/books/` |
 | 📰 | Article | `references/articles/` |
@@ -174,7 +176,8 @@ This vault ships with example content in the **exercise science** domain to demo
 
 ### What You'll Find
 
-- **2 Maps of Content** — Exercise Science, Nutrition (showing Dataview aggregation)
+- **1 Area of Responsibility** — Health & Fitness (ongoing commitment with projects rolling up under it)
+- **2 Maps of Content** — Exercise Science, Nutrition (showing Dataview aggregation, linked to the area)
 - **2 Books + 1 Highlight file** — *Endure*, *Why We Sleep* with cited highlights
 - **1 Article reference** — The Science of Muscle Hypertrophy
 - **1 Video reference** (🎥) — Science of Endurance (demonstrates `YYYY-MM-DD VIDEO` naming, transcript, Concepts query)
@@ -211,7 +214,7 @@ This vault ships with example content in the **exercise science** domain to demo
 
 1. **Open this folder as a vault in Obsidian** — File → Open vault → select this `example/` folder
 2. **Trust the plugins** — Obsidian will ask to enable community plugins on first launch
-3. **Explore the views** — Open `views/Garden.base` or `views/Projects.base` to see the dashboard system
+3. **Explore the views** — Open `garden/Garden.base` or `projects/Projects.base` to see the dashboard system (views are co-located with their domain folders)
 4. **Try a workflow** — Open the command palette and run `/process-inbox` to process the inbox items
 5. **Create a note** — Use Templater (Ctrl/Cmd+T) to create a new note from any template
 6. **Read the folder READMEs** — Each folder contains a `README.md` explaining its purpose and conventions

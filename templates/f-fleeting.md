@@ -6,7 +6,7 @@
 -%>
 ---
 banner: "[[f-fleeting-20250108172947397.webp]]"
-aliases: [<% name %>]
+aliases: ["<% name %>"]
 tags: [🍃]
 create-date: "[[<% tp.date.now() %>]]"
 parent:

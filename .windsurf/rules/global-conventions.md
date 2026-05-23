@@ -37,14 +37,15 @@ Tags represent note types. Authoritative source: `[[Current Tags - 202303181855]
 | Tag | Type | Folder |
 |-----|------|--------|
 | 🗺️ | Map of Content | `maps/` |
-| 📖 | Literature / Concept Note | `zettelkasten/` |
+| � | Area of Responsibility | `areas/` |
+| �📖 | Literature / Concept Note | `zettelkasten/` |
 | 🌱 | Idea / Creation (seedling) | `garden/` |
 | 🌿 | Idea / Creation (growing) | `garden/` |
 | 🌳 | Idea / Creation (evergreen) | `garden/` |
 | ❓ | Question / Inquiry | `zettelkasten/` |
 | 📥 | Inbox | `inbox/` (future) |
 | 🍃 | Informal Original Work | `garden/` |
-| 👥 | Meeting | `projects/` (in project folder) |
+| 👥 | Meeting | `projects/` or `areas/` (in project or area folder) |
 | ⏱️ | Temporal Note | varies |
 | ✂️ | Highlights / Clippings | `references/highlights/` |
 | 📰 | Article | `references/articles/` |
@@ -63,7 +64,7 @@ Tags represent note types. Authoritative source: `[[Current Tags - 202303181855]
 | 🥕 | Garden / Blog Note | `blog/` |
 | 🍽️ | Recipe | `references/recipes/` |
 | ♣️ | Spaced Repetition (secondary tag) | `zettelkasten/` (on notes with `# Flashcards` section) |
-| 🧙 | RPG / Session | `projects/` or RPG folders |
+| 🧙 | RPG / Session | `projects/` or `areas/` |
 
 ## Global Property Reference
 
@@ -133,17 +134,21 @@ When creating or filing a note, walk this tree from top to bottom:
    - Is it highlights/clippings from a source? → `references/highlights/`
 3. **Is it a single concept distilled in your own words from a source?** → `zettelkasten/` (📖)
 4. **Is it a question or line of inquiry prompted by another note?** → `zettelkasten/` (❓)
-5. **Is it tied to a project with a defined outcome?**
+5. **Is it an ongoing responsibility with no defined end?** (career management, family, health, recurring role duties)
+   - The area file itself → `areas/AreaName/`
+   - Meeting, one-on-one, or session tied to the area → inside the area's folder
+   - Task for the area → inside the area's `tasks/` subfolder
+6. **Is it tied to a project with a defined outcome?** (finite + multi-step + time-bounded)
    - Meeting, session, one-on-one → inside the project's folder in `projects/`
    - Task → inside the project's `tasks/` subfolder
    - The project file itself → `projects/ProjectName Project/`
-6. **Is it your original work** (idea, draft, brainstorm, talk, fiction, code snippet)?
+7. **Is it your original work** (idea, draft, brainstorm, talk, fiction, code snippet)?
    - If it belongs to an active project → keep it in that project's folder
    - If it's orphaned or project-free → `garden/`
-7. **Is it a topic index that aggregates other notes?** → `maps/`
-8. **Is it a periodic time entry** (daily, weekly, monthly, quarterly, yearly)? → `journal/`
-9. **Is it polished and ready for public publication?** → `blog/articles/`
-10. **Still unsure?** → `inbox/` (process it later during review)
+8. **Is it a topic index that aggregates other notes?** → `maps/`
+9. **Is it a periodic time entry** (daily, weekly, monthly, quarterly, yearly)? → `journal/`
+10. **Is it polished and ready for public publication?** → `blog/articles/`
+11. **Still unsure?** → `inbox/` (process it later during review)
 
 ### Two Knowledge Systems
 
@@ -151,11 +156,11 @@ When creating or filing a note, walk this tree from top to bottom:
 
 ### Information Flow
 
-`capture → catalog → distill → connect → publish` (inbox → references → zettelkasten → maps/garden → blog). Projects operate in parallel and feed insights into this pipeline. See `references/conventions-detail.md#information-flow` for the full stage table.
+`capture → catalog → distill → connect → publish` (inbox → references → zettelkasten → maps/garden → blog). Projects and Areas operate in parallel and feed insights into this pipeline. Areas provide the ongoing context in which projects exist. See `references/conventions-detail.md#information-flow` for the full stage table.
 
 ### Linking Properties Quick Reference
 
-- **`parent:`** — singular, hierarchical ("belongs to"). Meeting → Project, Zettel → Source Book.
+- **`parent:`** — singular, hierarchical ("belongs to"). Meeting → Project or Area, Zettel → Source Book, Project → Area.
 - **`related:`** — plural, associative ("connected to"). Maps discover notes via this field. Default for zettelkasten and creations.
 - **`maps:`** — explicit MOC association. Use when `related:` is occupied by non-map links (people, articles, highlights).
 - **`challenges:`** — Idea Compass East. Genuine intellectual tension, not just different topics. LLM suggests; user decides.
@@ -186,6 +191,23 @@ Co-locate assets with the notes that use them. Banners → `templates/banners/`.
 - `f-*` templates create folders and move files; `p-*` templates add properties
 - When creating notes, follow the structure defined by the relevant template
 - Folder-specific rules reference templates — defer to the template for exact frontmatter and body structure
+
+## LLM Tooling Alignment
+
+The vault must be fully navigable by a human without LLM assistance. The LLM is a **pair worker**, not a dependency.
+
+**Principle:** The LLM uses the same navigation paths and tools the human uses — templates, Bases, Dataview queries, CLI commands, and workflows. If a human would find a note by opening a Map and following links, the LLM finds it by reading the Map and following wikilinks. If a human would check tasks via a Base view, the LLM queries that same Base via CLI.
+
+**Do Not:**
+- Generate ad-hoc scripts to do vault work — create reusable templates, Bases, Dataview queries, or CLI commands instead
+- Build workflows that only an LLM can execute — every workflow should describe steps a human could also follow
+- Become a bottleneck — if the user must invoke the LLM to find, navigate, or manage their notes, the system has failed
+
+**Do:**
+- Codify human processes as `.windsurf/workflows/` that both human and LLM can follow
+- Use existing vault infrastructure (Bases for queries, Dataview for aggregation, CLI for operations)
+- When a new capability is needed, build it as a reusable vault artifact (template, Base view, Dataview query) rather than a one-off command
+- Handle "toiling" work (bulk search, discovery, cross-referencing) so the human can focus on thinking and deciding
 
 ## Session Retrospective
 
