@@ -103,29 +103,29 @@ flowchart TD
 
 ## Tag System
 
-| Tag | Type | Folder |
-|-----|------|--------|
-| 🗺️ | Map of Content | `maps/` |
-| � | Area of Responsibility | `areas/` |
-| �📖 | Literature / Concept Note | `zettelkasten/` |
-| ❓ | Question / Inquiry | `zettelkasten/` |
-| 🌱 | Idea (seedling) | `garden/` |
-| 🌿 | Idea (growing) | `garden/` |
-| 🌳 | Idea (evergreen) | `garden/` |
-| 🍃 | Informal Original Work | `garden/` |
-| 🚧 | Project | `projects/` |
-| 📋 | Task | `projects/<project>/tasks/` |
-| 👥 | Meeting | `projects/` or `areas/` |
-| 🧙 | Session (RPG/creative) | `projects/` or `areas/` |
-| 📅 | Journal | `journal/` |
-| 📕 | Book | `references/books/` |
-| 📰 | Article | `references/articles/` |
-| ✂️ | Highlights / Clippings | `references/highlights/` |
-| 🙂 | Person | `references/people/` |
-| 📌 | Location | `references/locations/` |
-| 🎥 | Video | `references/videos/` |
-| 🎓 | Course | `references/classes/` |
-| 🥕 | Blog Article | `blog/` |
+| Tag | Type                      | Folder                      |
+| --- | ------------------------- | --------------------------- |
+| 🗺️ | Map of Content            | `maps/`                     |
+| �   | Area of Responsibility    | `areas/`                    |
+| �📖 | Literature / Concept Note | `zettelkasten/`             |
+| ❓   | Question / Inquiry        | `zettelkasten/`             |
+| 🌱  | Idea (seedling)           | `garden/`                   |
+| 🌿  | Idea (growing)            | `garden/`                   |
+| 🌳  | Idea (evergreen)          | `garden/`                   |
+| 🍃  | Informal Original Work    | `garden/`                   |
+| 🚧  | Project                   | `projects/`                 |
+| 📋  | Task                      | `projects/<project>/tasks/` |
+| 👥  | Meeting                   | `projects/` or `areas/`     |
+| 🧙  | Session (RPG/creative)    | `projects/` or `areas/`     |
+| 📅  | Journal                   | `journal/`                  |
+| 📕  | Book                      | `references/books/`         |
+| 📰  | Article                   | `references/articles/`      |
+| ✂️  | Highlights / Clippings    | `references/highlights/`    |
+| 🙂  | Person                    | `references/people/`        |
+| 📌  | Location                  | `references/locations/`     |
+| 🎥  | Video                     | `references/videos/`        |
+| 🎓  | Course                    | `references/classes/`       |
+| 🥕  | Blog Article              | `blog/`                     |
 
 ---
 
@@ -194,19 +194,19 @@ This vault ships with example content in the **exercise science** domain to demo
 
 ### Lifecycle States Demonstrated
 
-| State | Example | What to do |
-|-------|---------|-----------|
-| Raw capture in inbox | `inbox/Interesting article on zone 2 training.md` | Run `/process-inbox` |
-| Active project with open tasks | Marathon Training Project | Work tasks, attend meetings |
-| Stale project (60+ days) | Home Gym Setup Project | Run `/review-projects` |
-| Completed archived project | Strength Training Research | Already closed via `/close-project` |
-| Disconnected zettelkasten note | Sleep and Recovery | Run `/garden tend` — add `related:` and `parent:` |
-| Unchallenged zettelkasten note | Protein Timing | Run `/garden tend` — find `challenges:` links |
-| Orphaned zettelkasten note | Periodization | Run `/garden tend` — connect everything |
-| Stale seedling | Training Program Design Framework | Run `/garden tend` — develop or accept dormancy |
-| Growing creation ready for promotion | The Case for Sleep as a Performance Enhancer | Run `/garden tend` — promote to 🌳? |
-| Mature creation ready for harvest | Why Most Fitness Advice Is Wrong | Run `/garden harvest` — publish to blog? |
-| Published blog article | The Central Governor Theory Changed How I Think About Training | Already harvested — shows the end state of `/garden harvest` |
+| State                                | Example                                                        | What to do                                                   |
+| ------------------------------------ | -------------------------------------------------------------- | ------------------------------------------------------------ |
+| Raw capture in inbox                 | `inbox/Interesting article on zone 2 training.md`              | Run `/process-inbox`                                         |
+| Active project with open tasks       | Marathon Training Project                                      | Work tasks, attend meetings                                  |
+| Stale project (60+ days)             | Home Gym Setup Project                                         | Run `/review-projects`                                       |
+| Completed archived project           | Strength Training Research                                     | Already closed via `/close-project`                          |
+| Disconnected zettelkasten note       | Sleep and Recovery                                             | Run `/garden tend` — add `related:` and `parent:`            |
+| Unchallenged zettelkasten note       | Protein Timing                                                 | Run `/garden tend` — find `challenges:` links                |
+| Orphaned zettelkasten note           | Periodization                                                  | Run `/garden tend` — connect everything                      |
+| Stale seedling                       | Training Program Design Framework                              | Run `/garden tend` — develop or accept dormancy              |
+| Growing creation ready for promotion | The Case for Sleep as a Performance Enhancer                   | Run `/garden tend` — promote to 🌳?                          |
+| Mature creation ready for harvest    | Why Most Fitness Advice Is Wrong                               | Run `/garden harvest` — publish to blog?                     |
+| Published blog article               | The Central Governor Theory Changed How I Think About Training | Already harvested — shows the end state of `/garden harvest` |
 
 ---
 
