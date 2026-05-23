@@ -1,10 +1,19 @@
 # Garden
 
-The garden is the vault's **nursery and workshop bench** — a place for original thinking that doesn't yet have a home in a project or a zettelkasten note. It bridges the gap between fleeting inspiration and structured output.
+The garden is the vault's **creative ground** — a place for original thinking that grows through maturity stages. It is where *your* ideas live, develop, and eventually reach publication or remain as private evergreens.
 
 ## Philosophy
 
-This folder draws on Tiago Forte's concept of "intermediate packets" — reusable units of creative work that have value on their own, independent of any project. It also reflects the zettelkasten principle of separating **your ideas** from **other people's ideas**: references hold what others said, the zettelkasten holds your distilled understanding, and the garden holds your *original* output.
+This folder draws on **Mike Caufield's** [garden-vs-stream](https://hapgood.us/2015/10/17/the-garden-and-the-stream-a-technopastoral/) distinction and **Maggie Appleton's** [digital garden ethos](https://maggieappleton.com/garden-history). Where streams (feeds, timelines, chat) are fleeting and chronological, a garden accumulates knowledge over time in an explorable, richly linked space. Appleton identifies six defining patterns:
+
+1. **Topography over Timelines** — notes are connected by theme, not sorted by date
+2. **Continuous Growth** — nothing is ever "done"; notes evolve alongside your thinking
+3. **Imperfection & Learning in Public** — ideas are shared as seedlings, with maturity indicators signaling epistemic status
+4. **Playful, Personal, Experimental** — gardens are idiosyncratic, not cookie-cutter
+5. **Intercropping & Content Diversity** — mix of formats, not just linear prose
+6. **Independent Ownership** — you own the space, built on portable formats (markdown)
+
+The garden and the zettelkasten have a symbiotic relationship: **zettelkasten = soil, garden = plants**. Garden notes draw from zettelkasten concepts as supporting evidence (promotion from 🌱 to 🌿 requires citing at least one 📖 note). References hold what others said, the zettelkasten holds your distilled understanding, and the garden holds your *original* output.
 
 ## Maturity Pipeline
 

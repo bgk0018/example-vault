@@ -1,6 +1,13 @@
 # Zettelkasten
 
-The zettelkasten is the vault's **soil** — a collection of atomic concept notes, each capturing one idea rewritten in your own words. This is where lasting understanding lives. As Sönke Ahrens describes in *How to Take Smart Notes*, the process flows from source → highlights → literature notes. The zettelkasten note is where you stop paraphrasing and start *thinking*.
+The zettelkasten is the vault's **soil** — a permanent archive of atomic concept notes, each capturing one idea rewritten in your own words. This is where lasting understanding lives.
+
+The method originates with sociologist Niklas Luhmann and is built on two core principles from [zettelkasten.de](https://zettelkasten.de/overview/):
+
+- **Principle of Atomicity** — put things that belong together into a single note, give it an identity, but limit its content to that single topic.
+- **Principle of Connectivity** — set links between notes. Search alone is not enough. Connections compound over time into a web of knowledge that extends your mind and memory.
+
+The zettelkasten guards against the **Collector's Fallacy**: bookmarking, highlighting, and annotating is not learning. You must *interpret your sources* and rely on your own thoughts to get the maximum benefit. The process flows from source → highlights → literature notes → atomic zettel. The zettel is where you stop paraphrasing and start *thinking*.
 
 ## Note Types
 
@@ -38,17 +45,23 @@ append_modified_update: true
 - **`related:`** — Connects to Maps of Content and peer notes. This is how maps discover notes.
 - **`referenced-in:`** — The specific reference note or highlight file the idea was derived from
 - **`challenges:`** — Links to notes that contradict or complicate this idea (Idea Compass "East" direction)
+- **`supersedes:`** — Points to an older zettel this note replaces when your understanding fundamentally changes
 
 ## Body Structure
 
 ```markdown
-# Title
+# Content
 
-[Your explanation of the concept in your own words]
+[Your explanation of the concept in your own words — one idea per note]
 
-## References
+![[Optional Excalidraw Diagram]]
 
-[^1]: ![[Source Highlights#^ref-123456]]
+# References
+
+[[Source Highlights#^ref-NNNN]]
+
+# Flashcards
+[Optional spaced-repetition content]
 ```
 
 ## Associated Workflows
