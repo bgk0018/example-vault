@@ -13,6 +13,7 @@ modified-dates:
   - "[[2025-09-01]]"
   - "[[2025-10-15]]"
   - "[[2025-12-15]]"
+  - "[[2026-05-22]]"
 append_modified_update: true
 related:
   - "[[Exercise Science]]"
@@ -36,22 +37,7 @@ Read *Endure* by Alex Hutchinson and take notes so that I can add the key concep
 - [x] Write Notes
 - [x] Create From It
 
-# Execution
-
-> [!TODO]+
-> ```tasks
-> 	not done
-> 	description includes [[Strength Training Research Book Project]]
-> 	sort by due
-> 	short mode
-> ```
-
 ---
-- [x] #📋 [[Strength Training Research Book Project]]: Read Book 🔁 every day 📅 2025-08-15 ✅ 2025-09-30
-- [x] #📋 [[Strength Training Research Book Project]]: Write Notes 🔁 every week 📅 2025-10-01 ✅ 2025-12-01
-- [x] #📋 [[Strength Training Research Book Project]]: Determine next action 🔁 every month 📅 2025-08-15 ✅ 2025-12-15
----
-
 # Result
 
 Successfully read *Endure* and extracted key concepts into the zettelkasten. The two most important ideas — [[Progressive Overload - 202604151030|Progressive Overload]] and [[Central Governor Theory - 202604201415|Central Governor Theory]] — now live as well-linked 📖 notes with proper citations back to the [[Endure - Alex Hutchinson Highlights|highlights]].

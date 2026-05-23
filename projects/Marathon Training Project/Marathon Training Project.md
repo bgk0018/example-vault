@@ -1,23 +1,24 @@
 ---
 aliases: []
+append_modified_update: true
 banner: "[[pexels-catcaryn-938165.webp]]"
-tags:
-  - 🚧
 create-date: "[[2026-05-01]]"
-start-date: "[[2026-05-01]]"
 end-date:
 ended-as:
-parent: "[[Exercise Science]]"
 modified-dates:
   - "[[2026-05-01]]"
   - "[[2026-05-15]]"
   - "[[2026-05-20]]"
   - "[[2026-05-22]]"
-append_modified_update: true
+parent: "[[Exercise Science]]"
 related:
   - "[[Exercise Science]]"
   - "[[Nutrition]]"
+start-date: "[[2026-05-01]]"
+tags:
+  - 🚧
 ---
+
 # Objective
 
 Complete a sub-4:00 marathon by training systematically over 16 weeks, using heart rate zone training and progressive overload principles to build endurance safely.
@@ -49,11 +50,6 @@ Complete a sub-4:00 marathon by training systematically over 16 weeks, using hea
 - [[projects/Marathon Training Project/tasks/Schedule VO2max test]]
 
 ---
-- [ ] #📋 [[Marathon Training Project]]: Determine next action 🔁 every month 📅 2026-06-01
-- [x] #📋 [[Marathon Training Project]]: Create objective 📅 2026-05-01 ✅ 2026-05-01
-- [x] #📋 [[Marathon Training Project]]: Create brainstorm 📅 2026-05-01 ✅ 2026-05-01
-- [x] #📋 [[Marathon Training Project]]: Create metrics 📅 2026-05-01 ✅ 2026-05-01
----
 
 ```dataview
 TABLE WITHOUT ID link(file.link, aliases[0]) as "Meetings", create-date as "Date" FROM "projects" WHERE parent = link("Marathon Training Project") and contains(tags, "👥") SORT create-date DESC
@@ -62,4 +58,3 @@ TABLE WITHOUT ID link(file.link, aliases[0]) as "Meetings", create-date as "Date
 # Result
 
 > What was the result of this work?
-
