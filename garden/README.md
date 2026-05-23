@@ -17,6 +17,18 @@ The garden and the zettelkasten have a symbiotic relationship: **zettelkasten = 
 
 ## Maturity Pipeline
 
+```mermaid
+flowchart TD
+    Z["📖 Zettelkasten<br>(soil)"] -.->|"cites as<br>evidence"| S
+
+    S["🌱 Seedling<br>rough idea"] -->|"clear thesis +<br>cites 📖 + headings"| G["🌿 Growing<br>has substance"]
+    G -->|"coherent argument +<br>counterarguments +<br>polished"| E["🌳 Evergreen<br>mature"]
+    E -->|harvest| B["🥕 blog/articles/<br>dg-publish: true"]
+    E -->|keep| K["stays in garden/<br>dg-publish: false"]
+    class S,G,E,K green-node
+    class B orange-node
+```
+
 Notes grow through flat maturity tags:
 
 | Tag | Stage | Description |

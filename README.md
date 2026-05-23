@@ -33,15 +33,38 @@ The vault operates two complementary knowledge systems:
 - **Zettelkasten = Soil** (📖) — Atomic concept notes, rewritten in your own words, linked to sources and peers. Updated in place as understanding deepens. These are the *distilled ideas* from what you read.
 - **Garden = Plants** (🌱→🌿→🌳) — Original work that grows through maturity stages. Seedlings are rough ideas; growing notes have real substance; evergreen notes are mature and complete. These are *your creations*.
 
-The gardening cycle: `🌱 Plant → 🌿 Tend → 🌳 Harvest or Keep → 🌱 Plant`
+```mermaid
+flowchart TD
+    subgraph Soil["Zettelkasten — Soil"]
+        R["references/<br>📕 📰 ✂️"] -->|distill| Z["📖 Atomic Notes<br>❓ Questions"]
+    end
+    subgraph Plants["Garden — Plants"]
+        Z -->|"cites 📖 as<br>evidence"| S["� Seedling"]
+        S -->|develop| G["🌿 Growing"]
+        G -->|mature| E["🌳 Evergreen"]
+    end
+    E -->|harvest| B["🥕 blog/"]
+    E -->|keep| K["stays in garden/"]
+    class S,G,E,K green-node
+    class B orange-node
+```
 
 ---
 
 ## Information Flow
 
-```
-capture → catalog → distill → connect → publish
- inbox  → references → zettelkasten → maps/garden → blog
+```mermaid
+flowchart TD
+    I["inbox/<br>capture"] --> R["references/<br>catalog"]
+    R --> Z["zettelkasten/<br>distill"]
+    Z --> MG["maps/ & garden/<br>connect"]
+    MG --> B["blog/<br>publish"]
+    P["projects/"] -.->|"insights feed in<br>at any stage"| I
+    P -.-> R
+    P -.-> Z
+    P -.-> MG
+    class MG green-node
+    class B orange-node
 ```
 
 **Projects** operate in parallel, feeding insights into this pipeline at any stage.

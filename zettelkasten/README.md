@@ -43,6 +43,23 @@ append_modified_update: true
 
 Three linking properties map directly to the [Idea Compass](https://zettelkasten.de/posts/creative-technique-within-zettelkasten-framework/) (Fei-Ling Tseng / Sascha Fast). Place the current note at the center and ask:
 
+```mermaid
+block-beta
+    columns 3
+    space N["North<br>parent:<br>Origins, causes"] space
+    W["West<br>related:<br>Analogs, echoes"]:1 X["📖 Note"]:1 E["East<br>challenges:<br>Opposites, limits"]:1
+    space S["South<br>(backlinks)<br>Downstream ideas"] space
+
+    N --> X
+    W --> X
+    E --> X
+    X --> S
+
+    class N green-node
+    class E red-node
+    class S orange-node
+```
+
 | Direction | Question | Property |
 |-----------|----------|----------|
 | **North** | Where does this idea come from? Origins, causes, higher-order categories. | `parent:` |
