@@ -1,3 +1,13 @@
+---
+aliases: []
+append_modified_update: true
+create-date: "[[2026-05-22]]"
+modified-dates:
+  - "[[2026-05-22]]"
+related:
+tags: []
+---
+
 # Knowledge Vault — An Obsidian Knowledge Management System
 
 A personal knowledge management vault built on [Obsidian](https://obsidian.md), combining Zettelkasten, GTD, PARA, and Digital Garden methodologies into a unified system for capturing, organizing, connecting, and publishing knowledge.
@@ -39,7 +49,7 @@ flowchart TD
         R["references/<br>📕 📰 ✂️"] -->|distill| Z["📖 Atomic Notes<br>❓ Questions"]
     end
     subgraph Plants["Garden — Plants"]
-        Z -->|"cites 📖 as<br>evidence"| S["� Seedling"]
+        Z -->|"cites 📖 as<br>evidence"| S["s🌱 Seedling"]
         S -->|develop| G["🌿 Growing"]
         G -->|mature| E["🌳 Evergreen"]
     end
@@ -161,7 +171,7 @@ All workflows follow the principle: **the LLM suggests, the user decides**. Noth
 
 This vault ships with example content in the **exercise science** domain to demonstrate every note type and lifecycle state:
 
-### What you'll find
+### What You'll Find
 
 - **2 Maps of Content** — Exercise Science, Nutrition (showing Dataview aggregation)
 - **2 Books + 1 Highlight file** — *Endure*, *Why We Sleep* with cited highlights
@@ -178,7 +188,7 @@ This vault ships with example content in the **exercise science** domain to demo
 - **1 Blog article** (🥕) — Published article with co-located image asset, `dg-path:`, footnote citations
 - **Blog index pages** — Home, Articles, Highlights, Maps of Content (with Dataview queries)
 
-### Lifecycle states demonstrated
+### Lifecycle States Demonstrated
 
 | State | Example | What to do |
 |-------|---------|-----------|
