@@ -5,6 +5,3 @@
 # OS files
 .DS_Store
 Thumbs.db
-
-# Vault rules sync artifacts
-vault-rules/.sync.tmp
