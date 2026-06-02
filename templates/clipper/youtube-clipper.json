@@ -1,0 +1,63 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "YouTube",
+	"behavior": "create",
+	"noteContentFormat": "# {{title}}\n\n## Concepts\n```dataview\nTABLE WITHOUT ID \n    link(file.link, default(aliases[0], file.name)) as \"Name\",\n    \"Weight: \" + default(length(file.inlinks), 0) as \"Weight\"\nFROM #📖 \nWHERE contains(referenced-in, this.file.link)\nSORT default(length(file.inlinks), 0) DESC\n```\n\n>[!summary]- Description\n> {{schema:description}}\n\n\n## Transcript\n{{selectorHtml:.ytd-transcript-segment-list-renderer|first|replace:\"&nbsp;\":\" \"|join|markdown}}",
+	"properties": [
+		{
+			"name": "tags",
+			"value": "🎥",
+			"type": "multitext"
+		},
+		{
+			"name": "create-date",
+			"value": "[[{{date|date:\\\"YYYY-MM-DD\\\"}}]]",
+			"type": "text"
+		},
+		{
+			"name": "title",
+			"value": "{{title}}",
+			"type": "text"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "author",
+			"value": "{{author|split:\\\", \\\"|wikilink|join}}",
+			"type": "multitext"
+		},
+		{
+			"name": "published",
+			"value": "[[{{schema:uploadDate|date:\\\"YYYY-MM-DD\\\"}}]]",
+			"type": "text"
+		},
+		{
+			"name": "cssClasses",
+			"value": "cards, cards-cols-4",
+			"type": "multitext"
+		},
+		{
+			"name": "dg-publish",
+			"value": "true",
+			"type": "checkbox"
+		},
+		{
+			"name": "modified-dates",
+			"value": "",
+			"type": "multitext"
+		},
+		{
+			"name": "maps",
+			"value": "",
+			"type": "multitext"
+		}
+	],
+	"triggers": [
+		"https://www.youtube.com/watch"
+	],
+	"noteNameFormat": "{{schema:@VideoObject:uploadDate|date:\"YYYY-MM-DD\"}} VIDEO {{schema:@VideoObject:author}} - {{schema:@VideoObject:name|safe_name|replace:\"\\#\":\"\",\"\\!\":\"\"|trim}}",
+	"path": "read-it-later"
+}

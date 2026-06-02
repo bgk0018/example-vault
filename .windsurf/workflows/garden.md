@@ -63,7 +63,6 @@ Suggest specific metadata links with rationale:
 - `parent:` — hierarchical parent if applicable
 - `challenges:` — notes this contradicts or complicates (Idea Compass East)
 - `referenced-in:` — source material (book, article, highlight) the idea was derived from (📖 notes only)
-- `maps:` — MOCs this should appear on
 
 **Never apply these automatically.** Present them as recommendations with reasoning.
 

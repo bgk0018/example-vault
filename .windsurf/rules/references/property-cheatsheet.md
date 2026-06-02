@@ -31,7 +31,6 @@ prompted-by:        # ❓ notes: person/note that prompted the question
 supersedes:
 modified-dates: ["[[YYYY-MM-DD]]"]
 append_modified_update: true
-maps:
 ```
 - **Naming:** `Title - YYYYMMDDHHmm.md`
 - **Template:** `f-lit.md` / `f-question.md`
@@ -92,7 +91,7 @@ related:
 ```
 - **Naming:** Plain descriptive name (no date suffix): `Career Development.md`
 - **Template:** `f-area.md`
-- **Body:** Accountability dashboard only (Summary, Sub-areas, Projects, Meetings & Notes, Related Maps). NOT a knowledge index — that's `maps/`.
+- **Body:** Accountability dashboard only (Objective, Metrics, Projects, Meetings & Notes, Related Maps). NOT a knowledge index — that's `maps/`.
 
 ### 🛒 Sub-area / Relationship (`areas/ParentArea/Name/`)
 ```yaml
@@ -129,7 +128,7 @@ banner: "[[f-meeting.webp]]"
 create-date: "[[YYYY-MM-DD]]"
 parent: "[[ProjectName Project]]"
 attendees: ["[[Person Name]]"]
-maps:
+related:
 modified-dates:
 append_modified_update: true
 ```
@@ -196,7 +195,6 @@ source: kindle       # kindle | readwise | web
 parent: "[[Book or Article]]"
 related: "[[Highlights]]"
 dg-publish: true
-maps: []
 create-date: "[[YYYY-MM-DD]]"
 modified-dates:
 append_modified_update: true
@@ -208,7 +206,6 @@ banner: "[[f-person-20250109114009371.webp]]"
 tags: [🙂]
 name: Full Name
 create-date: "[[YYYY-MM-DD]]"
-maps: []
 modified-dates:
 append_modified_update: true
 ```
@@ -224,7 +221,7 @@ published: "[[YYYY-MM-DD]]"
 cssClasses: [cards, cards-cols-4]
 dg-publish: false
 create-date: "[[YYYY-MM-DD]]"
-maps:
+related:
 parent:
 modified-dates:
 append_modified_update: true

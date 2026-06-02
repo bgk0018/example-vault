@@ -84,9 +84,8 @@ obsidian read file="[moved note name]"
 
 After processing all items, review what was created and suggest connections:
 
-- `related:` links to Maps of Content
+- `related:` links to Maps of Content and other connected notes
 - `parent:` links to source material (for highlights/zettelkasten)
-- `maps:` for reference notes
 
 Present connections as recommendations, not automatic changes.
 

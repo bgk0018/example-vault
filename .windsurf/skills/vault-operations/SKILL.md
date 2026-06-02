@@ -58,17 +58,11 @@ Use the Idea Compass directions to decide which property to use:
 | **North** (upstream) | What does this belong to? | `parent:` | Zettel → Source Book, Meeting → Project, Project → Area |
 | **West** (similar) | What reinforces this? | `related:` | Zettel → Map, Zettel → related Zettel |
 | **East** (opposing) | What challenges this? | `challenges:` | Zettel → counterargument note |
-| — | Should this appear on a map? | `maps:` | Person → `[[Psychology]]` (when `related:` is occupied) |
 | — | Where did this come from? | `referenced-in:` | Zettel → Highlight or Book |
 
-**Decision: `related:` vs `maps:`**
-- Note's primary associative links *are* maps → use `related:`
-- Note uses `related:` for non-map connections AND should appear on a map → add `maps:` too
-- Reference notes (people, articles, highlights) → default to `maps:`
-
 **Decision: `parent:` vs `related:`**
-- `parent:` = singular, hierarchical ("belongs to")
-- `related:` = plural, associative ("connected to")
+- `parent:` = singular, hierarchical ("belongs to"). If a note is structurally a child of a single Map of Content, set the map as `parent:`.
+- `related:` = plural, associative ("connected to"). Use for all lateral connections — Maps of Content, peer notes, people, articles, etc. There is no separate property for map links.
 
 **Knowledge vs Action:**
 - Zettelkasten notes, ideas, references → `related:` points to **maps** (`🗺️`), not areas

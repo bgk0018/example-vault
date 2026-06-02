@@ -54,7 +54,6 @@ supersedes:
 modified-dates:
   - "[[YYYY-MM-DD]]"
 append_modified_update: true
-maps:
 ```
 
 ## Body Structure

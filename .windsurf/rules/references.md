@@ -17,7 +17,7 @@ External source material — not original work. Bibliographic anchors for proven
 ## Do
 - Use the correct subfolder and tag for each reference type
 - Link highlights to their source via `parent:`
-- Use `maps:` to associate references with Maps of Content
+- Use `related:` to associate references with Maps of Content and other connected notes
 - Preserve `>[!QUOTE]` callout format with `^ref-` block IDs in highlights
 - Link `authors:` and `attendees:` to person notes in `references/people/`
 

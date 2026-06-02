@@ -50,8 +50,10 @@ Read `.windsurf/rules/zettelkasten.md`, then check all `.md` files:
 Read `.windsurf/rules/maps.md`, then check all `.md` files:
 - [ ] File name is a plain descriptive name (no date suffix)
 - [ ] Frontmatter has: `tags: [🗺️]`, `create-date`, `dg-publish`, `append_modified_update: true`
-- [ ] Body has the standard sections: `## Summary`, `## Exploration`, `## Projects`, `## Concepts`, `## Notes`, `## References`, `## Other`
-- [ ] Each section has a dataview query that filters by `contains(related, this.file.link)`
+- [ ] Body has the standard sections: `## Summary`, `## Areas`, `## Exploration`, `## Projects`, `## Concepts`, `## Notes`, `## References`, `## Other`
+- [ ] `## Areas` section has a dataview query filtering `FROM #🛒` with `contains(related, this.file.link)`
+- [ ] `## Other` catch-all excludes `🛒` tag (`AND !contains(file.tags, "🛒")`)
+- [ ] Each other section has a dataview query that filters by `contains(related, this.file.link)`
 
 ### 4. `areas/`
 Read `.windsurf/rules/areas.md`, then check each area subfolder:
@@ -60,10 +62,11 @@ Read `.windsurf/rules/areas.md`, then check each area subfolder:
 - [ ] Each top-level area has an area file (e.g., `AreaName/AreaName.md`)
 - [ ] Area files have: `tags: [🛒]`, `create-date`, `append_modified_update: true`
 - [ ] Area files do NOT have `end-date:` or `start-date:` (areas don't end)
-- [ ] Area file body has accountability dashboard sections: `## Summary`, `## Sub-areas`, `## Projects`, `## Meetings & Notes`, `## Related Maps`
+- [ ] Area file body has accountability dashboard sections: `## Objective`, `## Metrics`, `## Projects`, `## Meetings & Notes`, `## Related Maps`
+- [ ] Area files do NOT have old `## Summary` or `## Sub-areas` sections (replaced by Objective/Metrics)
 - [ ] Area files do NOT have knowledge-aggregation sections (Exploration, Concepts, References, Other) — those belong on maps
 - [ ] Each section has a dataview query filtering by `contains(parent, this.file.link)` (Related Maps queries `FROM "maps"`)
-- [ ] Sub-areas have `parent:` pointing to the parent area file
+- [ ] Areas are flat — no topic nesting. Sole exception: person-management relationship folders
 - [ ] Meeting/one-on-one notes within areas have: `tags: [👥]`, `parent` or `project` linking to the area/sub-area
 - [ ] `Areas.base` exists in `areas/` root
 

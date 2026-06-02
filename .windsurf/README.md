@@ -35,7 +35,7 @@ Rules are always-on context that the LLM loads based on which files are being ed
 | `blog.md` | Blog/Digital Garden |
 | `archive.md` | Archive conventions |
 | `templates.md` | Template conventions |
-| `views.md` | Views conventions |
+| `obsidian-cli.md` | CLI-first tool priority |
 | `bases.md` | Pointer to Bases skill |
 | `canvas.md` | Pointer to Canvas skill |
 | `obsidian-markdown.md` | Pointer to Markdown skill |

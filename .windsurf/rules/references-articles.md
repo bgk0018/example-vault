@@ -23,7 +23,7 @@ published: "[[YYYY-MM-DD]]"
 cssClasses: [cards, cards-cols-4]
 dg-publish: false
 modified-dates:
-maps:
+related:
 parent:
 ```
 

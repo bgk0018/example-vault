@@ -66,23 +66,19 @@ Projects and Areas operate in parallel: they generate meetings, tasks, and worki
 
 ## Linking Properties Compared
 
-Three context properties connect notes to other notes. They serve different purposes:
+Two context properties connect notes to other notes. They serve different purposes:
 
 | Property | Relationship | Direction | Use When | Example |
-|----------|-------------|-----------|----------|---------|
-| `parent:` | **Hierarchical** — "belongs to" | Child → Parent (up the tree) | A note is structurally *part of* another note. One parent only. | Meeting → Project or Area, Daily → Weekly, Zettel → Source Book, Project → Area |
-| `related:` | **Associative** — "is connected to" | Peer ↔ Peer (lateral) | A note is thematically connected to a map, concept, or sibling note. Multiple values allowed. Maps discover notes via this field. | Zettel → Map of Content, Zettel → related Zettel |
-| `maps:` | **Explicit MOC tag** — "appears on this map" | Note → Map | A note should appear on a specific map's Dataview queries. Used on reference notes and meetings where `related:` is already occupied by non-map links. | Person → `[[Psychology]]`, Article → `[[Machine Learning]]` |
-
-**When to use `related:` vs. `maps:`:**
-- If the note's primary associative links *are* maps → use `related:` (this is the common case for zettelkasten notes and creations)
-- If the note already uses `related:` for non-map connections and you also want it to appear on a map → add `maps:` as well
-- Some note types (people, articles, highlights) default to `maps:` because their `related:` field typically points to a parent highlight or source, not a map
+|----------|-------------|-----------|----------|--------|
+| `parent:` | **Hierarchical** — "belongs to" | Child → Parent (up the tree) | A note is structurally *part of* another note. One parent only. | Meeting → Project or Area, Daily → Weekly, Zettel → Source Book, Project → Area, Note → single Map of Content |
+| `related:` | **Associative** — "is connected to" | Peer ↔ Peer (lateral) | A note is thematically connected to maps, concepts, or sibling notes. Multiple values allowed. Maps discover notes via this field. | Zettel → Map of Content, Zettel → related Zettel, Article → Map, Person → Map |
 
 **When to use `parent:` vs. `related:`:**
 - `parent:` is singular and hierarchical — it answers "what does this belong to?"
 - `related:` is plural and associative — it answers "what is this connected to?"
 - A zettelkasten note's `parent:` might be the book it came from, while its `related:` points to the maps it contributes to
+- If a note is structurally a child of a single Map of Content, set the map as `parent:`
+- `related:` holds all lateral connections — Maps of Content, peer notes, people, articles, etc. There is no separate property for map links
 
 ## `challenges:` Guidance
 
@@ -118,7 +114,7 @@ Aliases make notes discoverable via Obsidian's link auto-suggest. Good aliases e
 
 Both wikilinks in the body and properties in the frontmatter create connections, but they serve different purposes:
 
-- **Frontmatter properties** (`parent:`, `related:`, `maps:`, `challenges:`, `referenced-in:`) are **structured, queryable metadata**. Dataview queries read these fields to build tables, lists, and aggregations. If a connection should be discoverable by a query (e.g., "show all notes related to this map"), it must be in the frontmatter.
+- **Frontmatter properties** (`parent:`, `related:`, `challenges:`, `referenced-in:`) are **structured, queryable metadata**. Dataview queries read these fields to build tables, lists, and aggregations. If a connection should be discoverable by a query (e.g., "show all notes related to this map"), it must be in the frontmatter.
 - **Inline wikilinks** (`[[Note Name]]` in the body) are **contextual references** — they explain *how* two notes relate within a sentence. The graph view picks these up, but Dataview queries generally do not (unless specifically coded to parse file content).
 
 **Rule of thumb:**

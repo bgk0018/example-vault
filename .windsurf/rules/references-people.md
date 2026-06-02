@@ -18,7 +18,7 @@ create-date: "[[YYYY-MM-DD]]"
 name: Full Name
 append_modified_update: true
 modified-dates:
-maps: []
+related:
 ```
 
 ### Body

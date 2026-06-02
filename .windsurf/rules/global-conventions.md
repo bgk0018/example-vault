@@ -92,7 +92,6 @@ All frontmatter values that are dates use wiki-linked format: `"[[YYYY-MM-DD]]"`
 |----------|--------|----------|-------------|
 | `parent:` | `"[[Note Name]]"` | Recommended | The hierarchical parent of this note. Points up the note tree — e.g., a zettelkasten note's parent is the source book, a meeting's parent is the project. |
 | `related:` | YAML list of `"[[Note Name]]"` | Recommended | Links to Maps of Content or thematically related notes. This is how maps discover notes via Dataview queries. |
-| `maps:` | YAML list of `"[[Note Name]]"` | Optional | Explicit association to Maps of Content. Some note types use this instead of or alongside `related`. Commonly appears on reference notes (people, articles, highlights, classes) and meeting notes. |
 | `referenced-in:` | YAML list of `"[[Note Name]]"` | Optional | Source material this note was derived from — the reference note or highlight whose ideas were rewritten here. Used primarily in zettelkasten notes. |
 | `prompted-by:` | `"[[Note Name]]"` | Optional | Person or conversation that prompted the creation of this note. Used primarily in zettelkasten notes. |
 | `challenges:` | `"[[Note Name]]"` or YAML list | Optional | Links to notes that challenge or contradict this note's idea. Supports the Idea Compass "East" direction. See **`challenges:` Guidance** below. |
@@ -160,9 +159,8 @@ When creating or filing a note, walk this tree from top to bottom:
 
 ### Linking Properties Quick Reference
 
-- **`parent:`** — singular, hierarchical ("belongs to"). Meeting → Project or Area, Zettel → Source Book, Project → Area.
-- **`related:`** — plural, associative ("connected to"). Maps discover notes via this field. Default for zettelkasten and creations.
-- **`maps:`** — explicit MOC association. Use when `related:` is occupied by non-map links (people, articles, highlights).
+- **`parent:`** — singular, hierarchical ("belongs to"). Meeting → Project or Area, Zettel → Source Book, Project → Area. If a note is structurally a child of a single Map of Content, set the map as `parent:`.
+- **`related:`** — plural, associative ("connected to"). Maps discover notes via this field. Use for all lateral connections — Maps of Content, peer notes, people, articles, etc. There is no separate property for map links; `related:` serves both map and non-map associations.
 - **`challenges:`** — Idea Compass East. Genuine intellectual tension, not just different topics. LLM suggests; user decides.
 
 Structural relationships → frontmatter properties. Contextual mentions → inline wikilinks. Many connections deserve both. See `references/conventions-detail.md#linking-properties-compared` for the full comparison table.

@@ -25,7 +25,6 @@ source: kindle | readwise | web
 parent: "[[Book or Article]]"
 related: "[[Highlights]]"
 dg-publish: true
-maps: []
 ```
 
 ### Body

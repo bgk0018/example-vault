@@ -16,7 +16,7 @@ Navigational index notes that aggregate related notes via dataview queries. Maps
 
 ## Do
 - Use a plain descriptive name without a date suffix for the filename
-- Follow the standardized body structure (Summary → Exploration → Projects → Concepts → Notes → References → Other)
+- Follow the standardized body structure (Summary → Areas → Exploration → Projects → Concepts → Notes → References → Other)
 - Set `dg-publish: true` — maps are published by default
 - Add `aliases` and `related` manually after creation if applicable
 - Let dataview queries do the aggregation — notes connect to maps via their own `related:` or `parent:` fields
@@ -49,6 +49,11 @@ Every map follows this standardized layout:
 
 ## Summary
 [Brief overview of the topic]
+
+## Areas
+> [!target]- Areas of Responsibility
+> Ongoing responsibilities related to this topic.
+[Dataview: #🛒 WHERE contains(related, this.file.link)]
 
 ## Exploration
 > [!bulb]- Ideas and Questions I've Captured
@@ -87,8 +92,12 @@ Every map follows this standardized layout:
 - Notes do NOT need to live inside a `maps/` subfolder — they stay in their own folders
 
 ## How Maps Connect to Areas
+
+Maps are the **convergence point** — they show what you're doing (areas), finishing (projects), understanding (zettel), and creating (garden) in one view. This makes imbalance visible: all area activity + no zettel notes = "grinding but not learning"; all zettel + no area = "studying but not applying."
+
 - If a map is conceptually tied to an area of responsibility, add the area to the map's `related:` property (e.g., `related: "[[Politics]]"` on `Trump Presidency.md`)
 - The area's "Related Maps" Dataview query auto-discovers maps that reference it — no manual linking needed on the area side
+- A topic can have BOTH an area and a map — they serve different purposes (accountability vs. knowledge convergence)
 
 ## Template
 - `templates/f-map.md`

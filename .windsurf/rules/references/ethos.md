@@ -78,9 +78,9 @@ Areas implement **Tiago Forte's** PARA concept of **Areas of Responsibility** �
 
 The **three-part project test** gates what belongs in `projects/` vs `areas/`: Does it have a (1) finite outcome, (2) multiple steps, and (3) foreseeable time horizon? If all three → project. If it's an ongoing responsibility → area.
 
-Area files double as navigational indexes (similar to Maps of Content) with Dataview queries that aggregate their children — projects, meetings, concepts, and references. This reflects the **vertical slice** principle: everything a domain needs to function lives together.
+Area files are **accountability dashboards** — they surface projects, meetings, and tasks via Dataview queries. They are NOT knowledge indexes; that role belongs to Maps of Content. Maps are the **convergence point** where all note types (areas, projects, zettelkasten, garden) meet for a topic, making imbalance visible. A topic can have both an area (accountability) and a map (knowledge convergence).
 
-Key principles: ongoing (not finite), accountability (not just interest), contains projects, reviewed at a different cadence than projects (horizon scan vs staleness check).
+Key principles: ongoing (not finite), accountability (not just interest), flat structure (no topic nesting — sole exception is person-management relationship folders), contains projects, reviewed at a different cadence than projects (horizon scan vs staleness check).
 
 ---
 
