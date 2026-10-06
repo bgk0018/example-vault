@@ -1,5 +1,7 @@
 <%*  
-	let Name = (await tp.system.prompt("Name"));  
+	const _args = window._templater_args || {};
+	delete window._templater_args;
+	let Name = _args.name || (await tp.system.prompt("Name"));  
 	let uniqueId = moment().format("YYYYMMDDHHmm");  
 	let filename = Name + " - " + uniqueId;  
 	await tp.file.rename(filename);  
@@ -16,7 +18,6 @@ dg-publish: true
 referenced-in:
 modified-dates:
 append_modified_update: true
-maps:
 ---
 # Content
 

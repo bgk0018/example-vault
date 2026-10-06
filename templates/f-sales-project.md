@@ -1,5 +1,7 @@
 <%*  
-	let clientName = (await tp.system.prompt("Client Name"));  
+	const _args = window._templater_args || {};
+	delete window._templater_args;
+	let clientName = _args.name || (await tp.system.prompt("Client Name"));  
 	let filename = clientName + " Sales Project";  
 	await tp.file.rename(filename);
 
@@ -80,8 +82,6 @@ Win a paid engagement with <% clientName %> for [solution area].
 - [[projects/<% filename %>/tasks/Draft Statement of Work]]
 - [[projects/<% filename %>/tasks/Deliver proposal]]
 
----
-- [ ] #📋 [[<% filename %>]]: Determine next action 🔁 every month 📅 <% tp.date.now() %>
 ---
 
 ```dataview

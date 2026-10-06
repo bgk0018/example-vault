@@ -1,5 +1,7 @@
 <%*  
-	let name = (await tp.system.prompt("Area Name"));  
+	const _args = window._templater_args || {};
+	delete window._templater_args;
+	let name = _args.name || (await tp.system.prompt("Area Name"));  
 	await tp.file.rename(name);
 
 	const directoryPath = "areas/" + name
@@ -28,21 +30,11 @@ related:
 
 # <% name %>
 
-## Summary
+## Objective
+> What does maintaining this responsibility well look like?
 
-
-## Sub-areas
-
-> [!folder]- Sub-areas
-
-```dataview
-TABLE WITHOUT ID
-	link(file.link, default(aliases[0], file.name)) as "Name",
-	description as "Description"
-FROM #🛒
-WHERE contains(parent, this.file.link)
-SORT file.name ASC
-```
+## Metrics
+> How do you know this area is healthy?
 
 ## Projects
 
@@ -80,3 +72,5 @@ FROM "maps"
 WHERE contains(related, this.file.link)
 SORT file.name ASC
 ```
+
+

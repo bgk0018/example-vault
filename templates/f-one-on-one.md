@@ -1,9 +1,21 @@
 <%*  
-	let name = (await tp.system.prompt("Name"));  
+	const _args = window._templater_args || {};
+	delete window._templater_args;
+	let name = _args.name || (await tp.system.prompt("Person Name"));  
 	let uniqueId = moment().format("YYYYMMDDHHmm");  
 	let filename = name + " One on One - " + uniqueId;
-	let folder = "areas/Career Development/" + name;
+
+	// Find the relationship sub-area folder for this person
+	const dv = this.app.plugins.plugins["dataview"].api;
+	let areas = dv.pages("#🛒").where(p => p.file.folder.startsWith("areas/")).file.sort(n => n.name);
+	let areaNames = areas.name;
+	let parentArea = _args.project || (await tp.system.suggester(areaNames, areaNames));
+
+	let folder = "areas/" + parentArea + "/" + name;
 	await tp.file.rename(filename);
+	if (!(await this.app.vault.adapter.exists(folder))) {
+		await this.app.vault.createFolder(folder);
+	}
 	await tp.file.move(folder + "/" + filename);
 -%>
 ---
@@ -14,7 +26,7 @@ project: "[[<% name %>]]"
 attendees: "[[<% name %>]]"
 modified-dates:
 append_modified_update: true
-maps:
+related:
 ---
 # <% filename %>
 

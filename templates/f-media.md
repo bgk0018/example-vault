@@ -1,5 +1,7 @@
 <%*  
-	let Name = (await tp.system.prompt("Name"));  
+	const _args = window._templater_args || {};
+	delete window._templater_args;
+	let Name = _args.name || (await tp.system.prompt("Name"));  
 	await tp.file.rename(Name);  
 -%>
 ---
@@ -14,7 +16,7 @@ published:
 dg-publish: true
 append_modified_update: true
 modified-dates:
-maps:
+related:
 ---
 # <% Name %>
 

@@ -1,6 +1,8 @@
 <%*  
-	let person = await tp.system.prompt("Person");
-	let parentArea = await tp.system.prompt("Parent Area (e.g., Career Development)");
+	const _args = window._templater_args || {};
+	delete window._templater_args;
+	let person = _args.name || (await tp.system.prompt("Person"));
+	let parentArea = _args.project || (await tp.system.prompt("Parent Area (e.g., Career Development)"));
 	let folder = person
 
 	let filename = person;  

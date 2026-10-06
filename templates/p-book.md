@@ -9,21 +9,21 @@ create-date: "[[{{date}}]]"
 title: "{{title}}"
 publisher: "{{publisher}}"
 publish-date: "{{publishDate}}"
-page-count: {{totalPage}}
+page-count:
+  "{ totalPage }": 
 isbn10: "{{isbn10}}"
 isbn13: "{{isbn13}}"
 cover: "{{coverUrl}}"
 cssclasses:
   - cards
   - cards-cols-4
-recommended-by:
+recommended-by: 
 status: todo
-related:
-parent:
+related: 
+parent: 
 dg-publish: false
 append_modified_update: true
-modified-dates:
-maps: []
+modified-dates: 
 authors:
   - "{{authors}}"
 ---

@@ -11,7 +11,7 @@ create-date: "[[<% tp.date.now() %>]]"
 name: <% tp.file.title %>
 append_modified_update: true
 modified-dates:
-maps: []
+related:
 ---
 # <% tp.file.title %>
 

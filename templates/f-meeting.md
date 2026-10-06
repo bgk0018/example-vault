@@ -1,5 +1,7 @@
 <%*  
-	const meeting = (await tp.system.prompt("Name")) + " Meeting";  
+	const _args = window._templater_args || {};
+	delete window._templater_args;
+	const meeting = (_args.name || (await tp.system.prompt("Name"))) + " Meeting";  
 	const uniqueId = moment().format("YYYYMMDDHHmm");  
 	const Filename = meeting + " - " + uniqueId;
 
@@ -10,9 +12,9 @@
     let targets = dv.pages("#🚧 or #🛒").file.sort(n => n.name);
     let suggestions = targets.name;
     let values = targets.name;
-    const projectName = await tp.system.suggester(suggestions,values);
+    const projectName = _args.project || (await tp.system.suggester(suggestions,values));
 
-	await tp.file.rename(Filename);
+	await tp.file.rename(Filename);  
     // Determine folder: areas/ for 🛒, projects/ for 🚧
     const targetPage = dv.page(projectName);
     const isArea = targetPage && targetPage.tags && targetPage.tags.includes("🛒");
@@ -34,7 +36,6 @@ attendees:
 related:
 modified-dates:
 append_modified_update: true
-maps:
 ---
 # <% Filename %>
 

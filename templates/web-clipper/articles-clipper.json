@@ -2,17 +2,12 @@
 	"schemaVersion": "0.1.0",
 	"name": "Articles",
 	"behavior": "create",
-	"noteContentFormat": "# {{title}}\n\n## Concepts\n```dataview\nTABLE WITHOUT ID \n    link(file.link, default(aliases[0], file.name)) as \"Name\",\n    \"Weight: \" + default(length(file.inlinks), 0) as \"Weight\"\nFROM #📖 \nWHERE contains(referenced-in, this.file.link)\nSORT default(length(file.inlinks), 0) DESC\n```\n\n>[!summary]- Description\n> {{schema:description}}\n\n## Content\n\n{{content}}",
+	"noteContentFormat": ">[!summary]- Description\n> {{schema:description}}\n\n# {{title}}\n\n## Content\n\n{{content}}",
 	"properties": [
 		{
 			"name": "tags",
 			"value": "📰",
 			"type": "multitext"
-		},
-		{
-			"name": "create-date",
-			"value": "[[{{date|date:\\\"YYYY-MM-DD\\\"}}]]",
-			"type": "text"
 		},
 		{
 			"name": "title",
@@ -25,8 +20,8 @@
 			"type": "text"
 		},
 		{
-			"name": "author",
-			"value": "{{author|split:\\\", \\\"|wikilink|join}}",
+			"name": "authors",
+			"value": "{{\\\"the author(s) of this article — return only human names as a comma-separated list, no URLs or organizations\\\"|split:\\\", \\\"|wikilink|join}}",
 			"type": "multitext"
 		},
 		{
@@ -45,17 +40,32 @@
 			"type": "checkbox"
 		},
 		{
+			"name": "create-date",
+			"value": "[[{{date|date:\\\"YYYY-MM-DD\\\"}}]]",
+			"type": "text"
+		},
+		{
+			"name": "related",
+			"value": "{{meta:name:keywords|split:\\\", \\\"|wikilink|join}}",
+			"type": "multitext"
+		},
+		{
+			"name": "parent",
+			"value": "",
+			"type": "text"
+		},
+		{
 			"name": "modified-dates",
 			"value": "",
 			"type": "multitext"
 		},
 		{
-			"name": "maps",
-			"value": "",
-			"type": "multitext"
+			"name": "append_modified_update",
+			"value": "true",
+			"type": "checkbox"
 		}
 	],
 	"triggers": [],
 	"noteNameFormat": "{{title}}",
-	"path": "read-it-later"
+	"path": "inbox"
 }

@@ -1,5 +1,7 @@
 <%*  
-	let projectName = (await tp.system.prompt("Name"));  
+	const _args = window._templater_args || {};
+	delete window._templater_args;
+	let projectName = _args.name || (await tp.system.prompt("Name"));  
 	let filename = projectName + " Project";  
 	await tp.file.rename(filename);
 
@@ -60,8 +62,6 @@ related:
 - [[projects/<% filename %>/tasks/Create brainstorm]]
 - [[projects/<% filename %>/tasks/Create metrics]]
 
----
-- [ ] #📋 [[<% filename %>]]: Determine next action 🔁 every month 📅 <% tp.date.now() %>
 ---
 
 # Result

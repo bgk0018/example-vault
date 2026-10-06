@@ -1,5 +1,7 @@
 <%*  
-	let name = (await tp.system.prompt("Name"));  
+	const _args = window._templater_args || {};
+	delete window._templater_args;
+	let name = _args.name || (await tp.system.prompt("Name"));  
 	await tp.file.rename(name);
 
 	const directoryPath = "maps"
@@ -23,6 +25,20 @@ dg-publish: true
 ## Summary
 
 
+## Areas
+
+> [!target]- Areas of Responsibility
+> Ongoing responsibilities related to this topic.
+
+```dataview
+TABLE WITHOUT ID
+	link(file.link, default(aliases[0], file.name)) as "Name",
+	description as "Description"
+FROM #🛒
+WHERE
+	contains(related, this.file.link)
+SORT file.name ASC
+```
 
 ## Exploration
 
@@ -123,6 +139,7 @@ WHERE !contains(file.tags, "📰")
 	AND !contains(file.tags, "❓")
 	AND !contains(file.tags, "🚧")
 	AND !contains(file.tags, "🧙")
+	AND !contains(file.tags, "🛒")
 	AND (
 	contains(related, this.file.link) or
 	contains(parent, this.file.link))

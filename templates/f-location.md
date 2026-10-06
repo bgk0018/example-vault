@@ -1,16 +1,15 @@
 ---
 tags:
   - 📌
-aliases:
+aliases: 
 create-date: "[[<% tp.date.now() %>]]"
 location:
   - 
   - 
-related:
+related: 
 dg-publish: false
 append_modified_update: true
-modified-dates:
-maps: []
+modified-dates: 
 ---
 # <% tp.file.title %>
 

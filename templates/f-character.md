@@ -1,5 +1,7 @@
 <%*  
-	let Name = (await tp.system.prompt("Name"));  
+	const _args = window._templater_args || {};
+	delete window._templater_args;
+	let Name = _args.name || (await tp.system.prompt("Name"));  
 	let filename = Name
 	await tp.file.rename(filename);  
 -%>

@@ -1,5 +1,7 @@
 <%*  
-	const meeting = (await tp.system.prompt("Name"));  
+	const _args = window._templater_args || {};
+	delete window._templater_args;
+	const meeting = _args.name || (await tp.system.prompt("Name"));  
 	const uniqueId = moment().format("YYYYMMDDHHmm");  
 	const Filename = uniqueId + " - " + meeting;
 
@@ -10,9 +12,9 @@
     let targets = dv.pages("#🚧 or #🛒").file.sort(n => n.name);
     let suggestions = targets.name;
     let values = targets.name;
-    const projectName = await tp.system.suggester(suggestions,values);
+    const projectName = _args.project || (await tp.system.suggester(suggestions,values));
 
-	await tp.file.rename(Filename);
+	await tp.file.rename(Filename);  
     // Determine folder: areas/ for 🛒, projects/ for 🚧
     const targetPage = dv.page(projectName);
     const directoryPath = targetPage ? targetPage.file.folder : "projects/" + projectName

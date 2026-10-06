@@ -38,4 +38,38 @@ append_modified_update: true
 
 # Journal
 
+# Workout
+
+| Exercise | Type | Sets×Reps | Weight | Failure |
+| -------- | ---- | --------- | ------ | ------- |
+
+> [!INFO]- Exercise & Type Cheat Sheet
+> **Types:** ME = Max Effort · DE = Dynamic Effort · VD = Volume Day · IN = Intensity
+>
+> | Lift | Variations | Types |
+> | ---- | ---------- | ----- |
+> | Squat | Conventional, Box, Pin | ME, DE (Conv only), VD |
+> | Deadlift | Conventional, Paused, Snatch Grip, Deficit | ME, DE (Conv only), VD |
+> | Bench Press | Conventional, Close Grip, Paused, Pin | ME, DE (Conv only), VD |
+> | Overhead Press | Conventional, Pin | ME, IN, VD |
+> | Accessories | Chin Ups, Dips, Bent Over Rows | VD only |
+
+> [!TIP]- Weight & Rep Calculator
+> **ME (Max Effort)** — 4-7 min rest
+> - 1×1 work up to max, then 3×3 @ 80% of variation ME
+>
+> **DE (Dynamic Effort)** — 60-90 sec rest
+> - Bench: 10×3 @ 65% of ME
+> - Deadlift: 6×2 @ 75% of ME
+> - Squat: waves — 12×2 @ 60%, 10×2 @ 65%, 8×2 @ 70%
+>
+> **VD (Volume Day)** — 4-6 min rest
+> - Bench: 3×5 @ 70% of variation ME
+> - Deadlift: 2×5 @ 70% of variation ME
+> - Squat: 4×4 @ 75% of variation ME
+> - OHP: 5×5 @ 70% of variation ME
+>
+> **IN (Intensity, OHP only)** — 2 min rest
+> - Conventional: 10×1 @ 85% of ME
+> - Pin: 5×1 @ 85% of ME
 

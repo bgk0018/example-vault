@@ -1,5 +1,7 @@
 <%*  
-	let name = (await tp.system.prompt("Name"));  
+	const _args = window._templater_args || {};
+	delete window._templater_args;
+	let name = _args.name || (await tp.system.prompt("Name"));  
 	let uniqueId = moment().format("YYYYMMDDHHmm");  
 	let filename = name + " - " + uniqueId;  
 	await tp.file.rename(filename);  

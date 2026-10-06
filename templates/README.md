@@ -11,6 +11,7 @@ Templates encode the vault's design decisions into repeatable scaffolding. Each 
 ```
 templates/
   banners/            # Banner images used in note headers (WebP)
+  snippets/           # Insertable body fragments (not full templates)
   f-*.md              # Folder-creating templates (main templates)
   p-*.md              # Property/partial templates
   startup-journal.md  # Startup journal template
@@ -19,6 +20,7 @@ templates/
 - **`f-` prefix** — Full templates that create and place a note (rename, move, create subfolders)
 - **`p-` prefix** — Partial templates that inject properties or content into an existing note
 - **`banners/`** — Banner images referenced by `banner:` frontmatter; do not rename or delete without updating templates
+- **`snippets/`** — Body fragments inserted into an existing note via Templater/core "Insert template"; not standalone note templates
 
 ## Template Inventory
 
@@ -48,6 +50,7 @@ templates/
 | `f-character.md` | RPG character | — | (current folder) |
 | `f-fleeting.md` | Fleeting note | 🍃 | (current folder) |
 | `f-idea.md` | Idea note | 💡 | (current folder) |
+| `snippets/agent-task-body.md` | Agent TaskNote body (Agent Prompt / Skills & Tools / Definition of Done / Run Log) | 📋 | inserted into an existing task |
 
 ## Template Syntax
 
@@ -63,3 +66,4 @@ templates/
 - **Do not rename template files** — they may be referenced by Templater hotkeys or commands
 - **Update templates first** when adding new frontmatter fields vault-wide
 - **Keep banner images** in `templates/banners/`; do not delete or rename without updating references
+- **Agent TaskNote fields** — register agent-task frontmatter (`agent-execution`, `hermes-profile`, `agent-skills`, `agent-tools`, `agent-autocomplete`) as **TaskNotes User Fields** (Settings → TaskNotes → User Fields) so they appear in the create modal. **Never** add the agent body sections to the global `p-tasks.md` body template — it applies to every task; use `snippets/agent-task-body.md` instead. See `.devin/plans/hermes-agent-tasknote-manual-runbook-2fd092.md`.
